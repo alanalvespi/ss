@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  plantype_strategy: 1
+  plantype_id: 1
+  strategy_id: 1
+  plantypestrategyFund_id: 1
+  deposit_fund_id: 1
+
+two:
+  plantype_strategy: 1
+  plantype_id: 1
+  strategy_id: 1
+  plantypestrategyFund_id: 1
+  deposit_fund_id: 1

@@ -1,0 +1,33 @@
+<%= form_for(@policyfund) do |f| %>
+  <% if @policyfund.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@policyfund.errors.count, "error") %> prohibited this policyfund from being saved:</h2>
+
+      <ul>
+      <% @policyfund.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :policyfund_id %><br />
+    <%= f.number_field :policyfund_id %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_id %><br />
+    <%= f.number_field :policy_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fund_id %><br />
+    <%= f.number_field :fund_id %>
+  </div>
+  <div class="field">
+    <%= f.label :policyfund_value %><br />
+    <%= f.text_field :policyfund_value %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

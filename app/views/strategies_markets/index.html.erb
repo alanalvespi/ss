@@ -1,0 +1,27 @@
+<h1>Listing strategies_markets</h1>
+
+<table>
+  <tr>
+    <th>Strategy market</th>
+    <th>Strategy</th>
+    <th>Market</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @strategies_markets.each do |strategies_market| %>
+  <tr>
+    <td><%= strategies_market.strategy_market_id %></td>
+    <td><%= strategies_market.strategy_id %></td>
+    <td><%= strategies_market.market_id %></td>
+    <td><%= link_to 'Show', strategies_market %></td>
+    <td><%= link_to 'Edit', edit_strategies_market_path(strategies_market) %></td>
+    <td><%= link_to 'Destroy', strategies_market, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Strategies markets', new_strategies_market_path %>

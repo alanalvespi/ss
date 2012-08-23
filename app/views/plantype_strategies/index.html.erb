@@ -1,0 +1,31 @@
+<h1>Listing plantype_strategies</h1>
+
+<table>
+  <tr>
+    <th>Plantype strategy</th>
+    <th>Plantype</th>
+    <th>Strategy</th>
+    <th>Plantypestrategyfund</th>
+    <th>Deposit fund</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @plantype_strategies.each do |plantype_strategy| %>
+  <tr>
+    <td><%= plantype_strategy.plantype_strategy %></td>
+    <td><%= plantype_strategy.plantype_id %></td>
+    <td><%= plantype_strategy.strategy_id %></td>
+    <td><%= plantype_strategy.plantypestrategyFund_id %></td>
+    <td><%= plantype_strategy.deposit_fund_id %></td>
+    <td><%= link_to 'Show', plantype_strategy %></td>
+    <td><%= link_to 'Edit', edit_plantype_strategy_path(plantype_strategy) %></td>
+    <td><%= link_to 'Destroy', plantype_strategy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plantype strategy', new_plantype_strategy_path %>

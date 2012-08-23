@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fund_id: 1
+  fund_name: MyString
+  fund_identifier: MyString
+  market_id: 1
+  fund_currency: MyString
+  fund_fkey: MyString
+  fund_type: MyString
+  company_id: 1
+  plantype_id: 1
+  fund_isin: MyString
+  last_mod: 2012-08-22 19:48:30
+  state: 1
+  reason: MyString
+
+two:
+  fund_id: 1
+  fund_name: MyString
+  fund_identifier: MyString
+  market_id: 1
+  fund_currency: MyString
+  fund_fkey: MyString
+  fund_type: MyString
+  company_id: 1
+  plantype_id: 1
+  fund_isin: MyString
+  last_mod: 2012-08-22 19:48:30
+  state: 1
+  reason: MyString

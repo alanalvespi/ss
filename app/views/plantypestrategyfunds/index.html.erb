@@ -1,0 +1,31 @@
+<h1>Listing plantypestrategyfunds</h1>
+
+<table>
+  <tr>
+    <th>Plantypestrategyfund</th>
+    <th>Plantypestrategy</th>
+    <th>Plantypefund</th>
+    <th>Deposit plantype fund</th>
+    <th>Market</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @plantypestrategyfunds.each do |plantypestrategyfund| %>
+  <tr>
+    <td><%= plantypestrategyfund.plantypestrategyfund_id %></td>
+    <td><%= plantypestrategyfund.plantypestrategy_id %></td>
+    <td><%= plantypestrategyfund.plantypefund_id %></td>
+    <td><%= plantypestrategyfund.deposit_plantype_fund_id %></td>
+    <td><%= plantypestrategyfund.market_id %></td>
+    <td><%= link_to 'Show', plantypestrategyfund %></td>
+    <td><%= link_to 'Edit', edit_plantypestrategyfund_path(plantypestrategyfund) %></td>
+    <td><%= link_to 'Destroy', plantypestrategyfund, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plantypestrategyfunds', new_plantypestrategyfund_path %>

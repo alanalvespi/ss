@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Plantypestrategyfund:</b>
+  <%= @plantypestrategyfund.plantypestrategyfund_id %>
+</p>
+
+<p>
+  <b>Plantypestrategy:</b>
+  <%= @plantypestrategyfund.plantypestrategy_id %>
+</p>
+
+<p>
+  <b>Plantypefund:</b>
+  <%= @plantypestrategyfund.plantypefund_id %>
+</p>
+
+<p>
+  <b>Deposit plantype fund:</b>
+  <%= @plantypestrategyfund.deposit_plantype_fund_id %>
+</p>
+
+<p>
+  <b>Market:</b>
+  <%= @plantypestrategyfund.market_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_plantypestrategyfund_path(@plantypestrategyfund) %> |
+<%= link_to 'Back', plantypestrategyfunds_index_path %>

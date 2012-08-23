@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  policyfund_id: 1
+  policy_id: 1
+  fund_id: 1
+  policyfund_value: 9.99
+
+two:
+  policyfund_id: 1
+  policy_id: 1
+  fund_id: 1
+  policyfund_value: 9.99

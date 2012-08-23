@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  strategy_id: 1
+  strategy_name: MyString
+  strategy_initial_switch_percentage: 1
+  strategy_filter: 1
+  strategy_trigger_in: 9.99
+  strategy_trigger_out: 9.99
+
+two:
+  strategy_id: 1
+  strategy_name: MyString
+  strategy_initial_switch_percentage: 1
+  strategy_filter: 1
+  strategy_trigger_in: 9.99
+  strategy_trigger_out: 9.99

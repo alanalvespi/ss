@@ -1,0 +1,69 @@
+<%= form_for(@policy) do |f| %>
+  <% if @policy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@policy.errors.count, "error") %> prohibited this policy from being saved:</h2>
+
+      <ul>
+      <% @policy.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :policy_id %><br />
+    <%= f.number_field :policy_id %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_number %><br />
+    <%= f.text_field :policy_number %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_start %><br />
+    <%= f.date_select :policy_start %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_currency %><br />
+    <%= f.text_field :policy_currency %>
+  </div>
+  <div class="field">
+    <%= f.label :client_id %><br />
+    <%= f.number_field :client_id %>
+  </div>
+  <div class="field">
+    <%= f.label :plantype_id %><br />
+    <%= f.number_field :plantype_id %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_amount_on_deposit %><br />
+    <%= f.text_field :policy_amount_on_deposit %>
+  </div>
+  <div class="field">
+    <%= f.label :strategy_id %><br />
+    <%= f.number_field :strategy_id %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_no_markets_invested %><br />
+    <%= f.number_field :policy_no_markets_invested %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_value %><br />
+    <%= f.text_field :policy_value %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_single_premium %><br />
+    <%= f.number_field :policy_single_premium %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_total_invested %><br />
+    <%= f.text_field :policy_total_invested %>
+  </div>
+  <div class="field">
+    <%= f.label :policy_missing %><br />
+    <%= f.number_field :policy_missing %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

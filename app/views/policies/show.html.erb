@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Policy:</b>
+  <%= @policy.policy_id %>
+</p>
+
+<p>
+  <b>Policy number:</b>
+  <%= @policy.policy_number %>
+</p>
+
+<p>
+  <b>Policy start:</b>
+  <%= @policy.policy_start %>
+</p>
+
+<p>
+  <b>Policy currency:</b>
+  <%= @policy.policy_currency %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%= @policy.client_id %>
+</p>
+
+<p>
+  <b>Plantype:</b>
+  <%= @policy.plantype_id %>
+</p>
+
+<p>
+  <b>Policy amount on deposit:</b>
+  <%= @policy.policy_amount_on_deposit %>
+</p>
+
+<p>
+  <b>Strategy:</b>
+  <%= @policy.strategy_id %>
+</p>
+
+<p>
+  <b>Policy no markets invested:</b>
+  <%= @policy.policy_no_markets_invested %>
+</p>
+
+<p>
+  <b>Policy value:</b>
+  <%= @policy.policy_value %>
+</p>
+
+<p>
+  <b>Policy single premium:</b>
+  <%= @policy.policy_single_premium %>
+</p>
+
+<p>
+  <b>Policy total invested:</b>
+  <%= @policy.policy_total_invested %>
+</p>
+
+<p>
+  <b>Policy missing:</b>
+  <%= @policy.policy_missing %>
+</p>
+
+
+<%= link_to 'Edit', edit_policy_path(@policy) %> |
+<%= link_to 'Back', policies_index_path %>

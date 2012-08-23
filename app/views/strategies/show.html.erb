@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Strategy:</b>
+  <%= @strategy.strategy_id %>
+</p>
+
+<p>
+  <b>Strategy name:</b>
+  <%= @strategy.strategy_name %>
+</p>
+
+<p>
+  <b>Strategy initial switch percentage:</b>
+  <%= @strategy.strategy_initial_switch_percentage %>
+</p>
+
+<p>
+  <b>Strategy filter:</b>
+  <%= @strategy.strategy_filter %>
+</p>
+
+<p>
+  <b>Strategy trigger in:</b>
+  <%= @strategy.strategy_trigger_in %>
+</p>
+
+<p>
+  <b>Strategy trigger out:</b>
+  <%= @strategy.strategy_trigger_out %>
+</p>
+
+
+<%= link_to 'Edit', edit_strategy_path(@strategy) %> |
+<%= link_to 'Back', strategies_index_path %>

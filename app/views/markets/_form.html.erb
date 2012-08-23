@@ -1,0 +1,93 @@
+<%= form_for(@market) do |f| %>
+  <% if @market.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@market.errors.count, "error") %> prohibited this market from being saved:</h2>
+
+      <ul>
+      <% @market.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :market_id %><br />
+    <%= f.number_field :market_id %>
+  </div>
+  <div class="field">
+    <%= f.label :market_name %><br />
+    <%= f.text_field :market_name %>
+  </div>
+  <div class="field">
+    <%= f.label :query_name %><br />
+    <%= f.text_field :query_name %>
+  </div>
+  <div class="field">
+    <%= f.label :query_section %><br />
+    <%= f.text_field :query_section %>
+  </div>
+  <div class="field">
+    <%= f.label :market_msci_name %><br />
+    <%= f.text_field :market_msci_name %>
+  </div>
+  <div class="field">
+    <%= f.label :msci_index_code %><br />
+    <%= f.number_field :msci_index_code %>
+  </div>
+  <div class="field">
+    <%= f.label :market_in %><br />
+    <%= f.number_field :market_in %>
+  </div>
+  <div class="field">
+    <%= f.label :market_current_date %><br />
+    <%= f.date_select :market_current_date %>
+  </div>
+  <div class="field">
+    <%= f.label :market_current_price %><br />
+    <%= f.text_field :market_current_price %>
+  </div>
+  <div class="field">
+    <%= f.label :market_dailychange %><br />
+    <%= f.text_field :market_dailychange %>
+  </div>
+  <div class="field">
+    <%= f.label :market_reference_date %><br />
+    <%= f.date_select :market_reference_date %>
+  </div>
+  <div class="field">
+    <%= f.label :market_reference_price %><br />
+    <%= f.text_field :market_reference_price %>
+  </div>
+  <div class="field">
+    <%= f.label :market_change_from_ref %><br />
+    <%= f.text_field :market_change_from_ref %>
+  </div>
+  <div class="field">
+    <%= f.label :market_change_from_switch %><br />
+    <%= f.text_field :market_change_from_switch %>
+  </div>
+  <div class="field">
+    <%= f.label :market_override %><br />
+    <%= f.number_field :market_override %>
+  </div>
+  <div class="field">
+    <%= f.label :market_switch %><br />
+    <%= f.text_field :market_switch %>
+  </div>
+  <div class="field">
+    <%= f.label :market_last_switch_date %><br />
+    <%= f.date_select :market_last_switch_date %>
+  </div>
+  <div class="field">
+    <%= f.label :market_last_switch_price %><br />
+    <%= f.text_field :market_last_switch_price %>
+  </div>
+  <div class="field">
+    <%= f.label :market_current_process_date %><br />
+    <%= f.date_select :market_current_process_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

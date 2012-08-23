@@ -1,0 +1,47 @@
+<h1>Listing policies</h1>
+
+<table>
+  <tr>
+    <th>Policy</th>
+    <th>Policy number</th>
+    <th>Policy start</th>
+    <th>Policy currency</th>
+    <th>Client</th>
+    <th>Plantype</th>
+    <th>Policy amount on deposit</th>
+    <th>Strategy</th>
+    <th>Policy no markets invested</th>
+    <th>Policy value</th>
+    <th>Policy single premium</th>
+    <th>Policy total invested</th>
+    <th>Policy missing</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @policies.each do |policy| %>
+  <tr>
+    <td><%= policy.policy_id %></td>
+    <td><%= policy.policy_number %></td>
+    <td><%= policy.policy_start %></td>
+    <td><%= policy.policy_currency %></td>
+    <td><%= policy.client_id %></td>
+    <td><%= policy.plantype_id %></td>
+    <td><%= policy.policy_amount_on_deposit %></td>
+    <td><%= policy.strategy_id %></td>
+    <td><%= policy.policy_no_markets_invested %></td>
+    <td><%= policy.policy_value %></td>
+    <td><%= policy.policy_single_premium %></td>
+    <td><%= policy.policy_total_invested %></td>
+    <td><%= policy.policy_missing %></td>
+    <td><%= link_to 'Show', policy %></td>
+    <td><%= link_to 'Edit', edit_policy_path(policy) %></td>
+    <td><%= link_to 'Destroy', policy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Policies', new_policy_path %>

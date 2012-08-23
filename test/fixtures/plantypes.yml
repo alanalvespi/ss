@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  plantype_id: 1
+  plantype_name: MyString
+  company_id: 1
+  plantype_currency: MyString
+  deposit_fund_id: 1
+
+two:
+  plantype_id: 1
+  plantype_name: MyString
+  company_id: 1
+  plantype_currency: MyString
+  deposit_fund_id: 1

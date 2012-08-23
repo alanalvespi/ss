@@ -1,0 +1,37 @@
+<%= form_for(@plantypestrategyfund) do |f| %>
+  <% if @plantypestrategyfund.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plantypestrategyfund.errors.count, "error") %> prohibited this plantypestrategyfund from being saved:</h2>
+
+      <ul>
+      <% @plantypestrategyfund.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :plantypestrategyfund_id %><br />
+    <%= f.number_field :plantypestrategyfund_id %>
+  </div>
+  <div class="field">
+    <%= f.label :plantypestrategy_id %><br />
+    <%= f.number_field :plantypestrategy_id %>
+  </div>
+  <div class="field">
+    <%= f.label :plantypefund_id %><br />
+    <%= f.number_field :plantypefund_id %>
+  </div>
+  <div class="field">
+    <%= f.label :deposit_plantype_fund_id %><br />
+    <%= f.number_field :deposit_plantype_fund_id %>
+  </div>
+  <div class="field">
+    <%= f.label :market_id %><br />
+    <%= f.number_field :market_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

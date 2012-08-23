@@ -1,0 +1,2 @@
+module PlantypestrategyfundsHelper
+end

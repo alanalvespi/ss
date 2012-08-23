@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Policyfund:</b>
+  <%= @policyfund.policyfund_id %>
+</p>
+
+<p>
+  <b>Policy:</b>
+  <%= @policyfund.policy_id %>
+</p>
+
+<p>
+  <b>Fund:</b>
+  <%= @policyfund.fund_id %>
+</p>
+
+<p>
+  <b>Policyfund value:</b>
+  <%= @policyfund.policyfund_value %>
+</p>
+
+
+<%= link_to 'Edit', edit_policyfund_path(@policyfund) %> |
+<%= link_to 'Back', policyfunds_index_path %>

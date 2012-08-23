@@ -1,0 +1,29 @@
+<h1>Listing policyfunds</h1>
+
+<table>
+  <tr>
+    <th>Policyfund</th>
+    <th>Policy</th>
+    <th>Fund</th>
+    <th>Policyfund value</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @policyfunds.each do |policyfund| %>
+  <tr>
+    <td><%= policyfund.policyfund_id %></td>
+    <td><%= policyfund.policy_id %></td>
+    <td><%= policyfund.fund_id %></td>
+    <td><%= policyfund.policyfund_value %></td>
+    <td><%= link_to 'Show', policyfund %></td>
+    <td><%= link_to 'Edit', edit_policyfund_path(policyfund) %></td>
+    <td><%= link_to 'Destroy', policyfund, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Policyfunds', new_policyfund_path %>

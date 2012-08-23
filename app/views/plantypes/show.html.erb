@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Plantype:</b>
+  <%= @plantype.plantype_id %>
+</p>
+
+<p>
+  <b>Plantype name:</b>
+  <%= @plantype.plantype_name %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @plantype.company_id %>
+</p>
+
+<p>
+  <b>Plantype currency:</b>
+  <%= @plantype.plantype_currency %>
+</p>
+
+<p>
+  <b>Deposit fund:</b>
+  <%= @plantype.deposit_fund_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_plantype_path(@plantype) %> |
+<%= link_to 'Back', plantypes_index_path %>

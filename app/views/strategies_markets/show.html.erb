@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Strategy market:</b>
+  <%= @strategies_market.strategy_market_id %>
+</p>
+
+<p>
+  <b>Strategy:</b>
+  <%= @strategies_market.strategy_id %>
+</p>
+
+<p>
+  <b>Market:</b>
+  <%= @strategies_market.market_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_strategies_market_path(@strategies_market) %> |
+<%= link_to 'Back', strategies_markets_index_path %>

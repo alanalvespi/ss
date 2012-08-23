@@ -1,0 +1,33 @@
+<h1>Listing strategies</h1>
+
+<table>
+  <tr>
+    <th>Strategy</th>
+    <th>Strategy name</th>
+    <th>Strategy initial switch percentage</th>
+    <th>Strategy filter</th>
+    <th>Strategy trigger in</th>
+    <th>Strategy trigger out</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @strategies.each do |strategy| %>
+  <tr>
+    <td><%= strategy.strategy_id %></td>
+    <td><%= strategy.strategy_name %></td>
+    <td><%= strategy.strategy_initial_switch_percentage %></td>
+    <td><%= strategy.strategy_filter %></td>
+    <td><%= strategy.strategy_trigger_in %></td>
+    <td><%= strategy.strategy_trigger_out %></td>
+    <td><%= link_to 'Show', strategy %></td>
+    <td><%= link_to 'Edit', edit_strategy_path(strategy) %></td>
+    <td><%= link_to 'Destroy', strategy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Strategies', new_strategy_path %>

@@ -1,0 +1,47 @@
+<h1>Listing plantypefunds</h1>
+
+<table>
+  <tr>
+    <th>Fund</th>
+    <th>Fund name</th>
+    <th>Fund identifier</th>
+    <th>Market</th>
+    <th>Fund currency</th>
+    <th>Fund fkey</th>
+    <th>Fund type</th>
+    <th>Company</th>
+    <th>Plantype</th>
+    <th>Fund isin</th>
+    <th>Last mod</th>
+    <th>State</th>
+    <th>Reason</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @plantypefunds.each do |plantypefund| %>
+  <tr>
+    <td><%= plantypefund.fund_id %></td>
+    <td><%= plantypefund.fund_name %></td>
+    <td><%= plantypefund.fund_identifier %></td>
+    <td><%= plantypefund.market_id %></td>
+    <td><%= plantypefund.fund_currency %></td>
+    <td><%= plantypefund.fund_fkey %></td>
+    <td><%= plantypefund.fund_type %></td>
+    <td><%= plantypefund.company_id %></td>
+    <td><%= plantypefund.plantype_id %></td>
+    <td><%= plantypefund.fund_isin %></td>
+    <td><%= plantypefund.last_mod %></td>
+    <td><%= plantypefund.state %></td>
+    <td><%= plantypefund.reason %></td>
+    <td><%= link_to 'Show', plantypefund %></td>
+    <td><%= link_to 'Edit', edit_plantypefund_path(plantypefund) %></td>
+    <td><%= link_to 'Destroy', plantypefund, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plantypefunds', new_plantypefund_path %>

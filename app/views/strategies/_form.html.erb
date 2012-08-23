@@ -1,0 +1,41 @@
+<%= form_for(@strategy) do |f| %>
+  <% if @strategy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@strategy.errors.count, "error") %> prohibited this strategy from being saved:</h2>
+
+      <ul>
+      <% @strategy.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :strategy_id %><br />
+    <%= f.number_field :strategy_id %>
+  </div>
+  <div class="field">
+    <%= f.label :strategy_name %><br />
+    <%= f.text_field :strategy_name %>
+  </div>
+  <div class="field">
+    <%= f.label :strategy_initial_switch_percentage %><br />
+    <%= f.number_field :strategy_initial_switch_percentage %>
+  </div>
+  <div class="field">
+    <%= f.label :strategy_filter %><br />
+    <%= f.number_field :strategy_filter %>
+  </div>
+  <div class="field">
+    <%= f.label :strategy_trigger_in %><br />
+    <%= f.text_field :strategy_trigger_in %>
+  </div>
+  <div class="field">
+    <%= f.label :strategy_trigger_out %><br />
+    <%= f.text_field :strategy_trigger_out %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module PlantypesHelper
+end

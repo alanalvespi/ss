@@ -1,0 +1,59 @@
+<h1>Listing markets</h1>
+
+<table>
+  <tr>
+    <th>Market</th>
+    <th>Market name</th>
+    <th>Query name</th>
+    <th>Query section</th>
+    <th>Market msci name</th>
+    <th>Msci index code</th>
+    <th>Market in</th>
+    <th>Market current date</th>
+    <th>Market current price</th>
+    <th>Market dailychange</th>
+    <th>Market reference date</th>
+    <th>Market reference price</th>
+    <th>Market change from ref</th>
+    <th>Market change from switch</th>
+    <th>Market override</th>
+    <th>Market switch</th>
+    <th>Market last switch date</th>
+    <th>Market last switch price</th>
+    <th>Market current process date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @markets.each do |market| %>
+  <tr>
+    <td><%= market.market_id %></td>
+    <td><%= market.market_name %></td>
+    <td><%= market.query_name %></td>
+    <td><%= market.query_section %></td>
+    <td><%= market.market_msci_name %></td>
+    <td><%= market.msci_index_code %></td>
+    <td><%= market.market_in %></td>
+    <td><%= market.market_current_date %></td>
+    <td><%= market.market_current_price %></td>
+    <td><%= market.market_dailychange %></td>
+    <td><%= market.market_reference_date %></td>
+    <td><%= market.market_reference_price %></td>
+    <td><%= market.market_change_from_ref %></td>
+    <td><%= market.market_change_from_switch %></td>
+    <td><%= market.market_override %></td>
+    <td><%= market.market_switch %></td>
+    <td><%= market.market_last_switch_date %></td>
+    <td><%= market.market_last_switch_price %></td>
+    <td><%= market.market_current_process_date %></td>
+    <td><%= link_to 'Show', market %></td>
+    <td><%= link_to 'Edit', edit_market_path(market) %></td>
+    <td><%= link_to 'Destroy', market, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Market', new_market_path %>

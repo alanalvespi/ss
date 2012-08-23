@@ -1,0 +1,31 @@
+<h1>Listing plantypes</h1>
+
+<table>
+  <tr>
+    <th>Plantype</th>
+    <th>Plantype name</th>
+    <th>Company</th>
+    <th>Plantype currency</th>
+    <th>Deposit fund</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @plantypes.each do |plantype| %>
+  <tr>
+    <td><%= plantype.plantype_id %></td>
+    <td><%= plantype.plantype_name %></td>
+    <td><%= plantype.company_id %></td>
+    <td><%= plantype.plantype_currency %></td>
+    <td><%= plantype.deposit_fund_id %></td>
+    <td><%= link_to 'Show', plantype %></td>
+    <td><%= link_to 'Edit', edit_plantype_path(plantype) %></td>
+    <td><%= link_to 'Destroy', plantype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plantypes', new_plantype_path %>
