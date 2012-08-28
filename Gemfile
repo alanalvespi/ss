@@ -9,6 +9,8 @@ gem 'mysql2'
 
 gem 'sequel'
 
+gem 'roo'
+
 
 
 # Gems used only for assets and not required
