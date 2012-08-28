@@ -95,7 +95,6 @@ $now          = Time.now
                 :company_id       => company_id,
                 :plantype_id      => pid,
                 :fund_isin        => isin,
-                :market_current_date => $now,
                 :last_mod         =>$now,
                 :state            =>0, 
                 :reason           =>nil)
