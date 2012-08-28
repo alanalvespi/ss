@@ -68,8 +68,7 @@ end
 
 
 begin 
-  envname = 'development'
-  DB = Wa.openDatabase(envname)
+  DB = Wa.openDatabase(environment)
 end
 
 $rowsupdated = 0
