@@ -10,30 +10,19 @@ require '../util/wa'
 #
 # Load Job Parameters
 #
+
 valuta = nil
-ARGV.each do |pair|
-  name, value = pair.split(/=/)
-  case name
-  when 'valuta'
-    ENV['VALUTA'] = value
 
-  when 'username'
-    ENV['username'] = value
+Wa.loadArguments(
+  {'valuta'=>nil,
+  'username'=>nil,
+  'password'=>nil,
+  'database'=>nil,
+  'host'=>'localhost',
+  'port'=>'3306',
+  'logfile'=>nil
+  })
 
-  when 'password'
-    value = '' unless value
-    ENV['password'] = value
-
-  when 'database'
-    ENV['database'] = value
-
-  when 'host'
-    ENV['host'] = value
-  end
-end
-
-
-ENV['host'] = 'localhost' unless ENV.has_key?('host')
 valuta = ENV['VALUTA'] 
 
 raise WaError.new('E-DailyMarketUpdate:ParmError, Valuta date parameter not specified, please add valuta="YYYY-MM-DD" to command ') unless valuta
@@ -41,6 +30,7 @@ raise WaError.new('E-DailyMarketUpdate:ParmError, username parameter not specifi
 raise WaError.new('E-DailyMarketUpdate:ParmError, password parameter not specified, please add password="db-password" to command ') unless ENV.has_key?('password')
 raise WaError.new('E-DailyMarketUpdate:ParmError, database parameter not specified, please add database="db-name"     to command ') unless ENV.has_key?('database')
 raise WaError.new('E-DailyMarketUpdate:ParmError, host     parameter not specified, please add     host="hostname"    to command ') unless ENV.has_key?('host')
+raise WaError.new('E-DailyMarketUpdate:ParmError, port     parameter not specified, please add     port="port-no"     to command ') unless ENV.has_key?('port')
 
 xls_list =
 { 'SC'=>{:filename=>'SC.xls',:format=>'msibarra',:url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+(DM)&style=C&asOf=Month+Day,+Year&currency=USD&size=Standard+(Large%2BMid+Cap)&export=Excel_IEIPerfRegionalCountry'},
@@ -117,7 +107,8 @@ def update_db(query_name, section, msci_name, msci_index_code, valuta, last,day,
         :market_last_switch_date      => nil,
         :market_last_switch_price     => nil,
         :market_current_process_date  => valuta,
-        :last_mod                     => Now,
+        :changed_at                   => nil,
+        :created_at                   => Now,
         :state                        => 0,
         :reason                       => nil)
         $rowsinserted = $rowsinserted + 1      
@@ -132,7 +123,7 @@ def update_db(query_name, section, msci_name, msci_index_code, valuta, last,day,
       flds[:market_current_date]  = valuta
       flds[:market_current_price] = last
       flds[:market_dailychange]   = day
-      flds[:last_mod]             = Now
+      flds[:changed_at]           = Now
       flds[:state]                = 0
       flds[:reason]               = nil
       DB[:markets].filter(:query_name => query_name, :query_section => section, :msci_index_code => msci_index_code).update(flds)

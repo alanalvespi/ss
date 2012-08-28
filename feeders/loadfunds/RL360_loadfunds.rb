@@ -116,7 +116,7 @@ $now          = Time.now
         # Okay we got Record...  Update fields....
         flds[:fund_isin]     = isin     if (isin     != db_Fund[:fund_isin])
         flds[:fund_currency] = currency if (currency != db_Fund[:fund_currency])
-        flds[:last_mod]      = $now
+        flds[:changed_at]    = $now
         x = DB[:plantypefunds].filter(:fund_id=>fund_id).update(flds)
         $rowsupdated = $rowsupdated + 1  
               
@@ -129,7 +129,7 @@ $now          = Time.now
                 :company_id       => company_id,
                 :plantype_id      => pid,
                 :fund_isin        => isin,
-                :last_mod         =>$now,
+                :created_at       =>$now,
                 :state            =>0, 
                 :reason           =>nil)
         $rowsinserted = $rowsinserted + 1      

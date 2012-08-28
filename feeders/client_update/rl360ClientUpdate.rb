@@ -141,7 +141,7 @@ CSV.open(csv_file, 'r',  ',') do |row|
     # IF Client does not exist, add it to database... 
     #
     unless (client = Client.find(:client_name => client_name)) then
-      $db[:clients].insert(:client_name=>client_name, :last_mod=>$now, :state=>1, :reason=>"New") # Create new Client!!!
+      $db[:clients].insert(:client_name=>client_name, :created_at=>$now, :state=>1, :reason=>"New") # Create new Client!!!
       db_client = $db[:clients].filter(:client_name => client_name).first                         # Get newly added row
       client = Client.new(db_client)
       $clientsinserted = $clientsinserted + 1      
@@ -153,7 +153,7 @@ CSV.open(csv_file, 'r',  ',') do |row|
       $db[:plantypes].insert(
         :plantype_name=>plantype,
         :company_id=>company.company_id,
-        :last_mod=>$now, :state=>1, :reason=>"New")
+        :created_at=>$now, :state=>1, :reason=>"New")
       db_obj = $db[:plantypes].filter(:plantype_name => plantype_name,:company_id=>company.company_id).first # Get newly added row
       plantype = Plantype.new(db_obj)
       $plantypesinserted = $plantypesinserted + 1      
@@ -163,7 +163,7 @@ CSV.open(csv_file, 'r',  ',') do |row|
     # If PlantypeFunds does not exists, insert it into database
     #
     if (plantypefund = Plantypefund.find(:fund_identifier=>fund_identifier,:company_id=>company.company_id)) then
-      fld = {:last_mod=> $now}
+      fld = {:changed_at=> $now}
       fld[:fund_currency] = fund_currency if (plantypefund.fund_currency != fund_currency) 
       $db[:plantypefunds].filter(:fund_id=>plantypefund.fund_id).update( fld)
       plantypefund.upd(fld)  # Update local copy...
@@ -179,7 +179,7 @@ CSV.open(csv_file, 'r',  ',') do |row|
         :company_id       => company.company_id,  # int,
         :plantype_id      => plantype.plantype_id,# int NOT NULL,
         :fund_isin        => nil,                 # varchar(45),
-        :last_mod         => $now,                # timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        :created_at       => $now,                # timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
         :state            => 1,                   # smallint NOT NULL DEFAULT '0' COMMENT '0-Okay, 1-Error',
         :reason           => "New"                # varchar(255),)
         )
@@ -192,7 +192,7 @@ CSV.open(csv_file, 'r',  ',') do |row|
     # Fisrt time with this policy, update all static fields 
     
     if (policy = Policy.find(:policy_number=>policy_number)) then
-      fld = {:last_mod=> $now}
+      fld = {:changed_at=> $now}
       fld[:policy_start]    = policy_start    if (policy.policy_start    != policy_start) 
       fld[:policy_currency] = policy_currency if (policy.policy_currency != policy_currency)
       if (policy_single_premium) then
@@ -210,7 +210,7 @@ CSV.open(csv_file, 'r',  ',') do |row|
         :policy_single_premium    => policy_single_premium,
         :policy_total_invested    => policy_total_invested,
         :policy_amount_on_deposit => policy_amount_on_deposit,
-        :last_mod=>$now, :state=>1, :reason=>"New")
+        :created_at=>$now, :state=>1, :reason=>"New")
       db_policy = $db[:policies].filter(:policy_number => policy_number).first # Get newly added row
       policy = Policy.new(db_policy)
       $policiesinserted = $policiesinserted + 1      
@@ -222,7 +222,7 @@ CSV.open(csv_file, 'r',  ',') do |row|
     # if Policyfund does not exist, insert it.
     #
     if (policyfund = Policyfund.find(:policy_id=>policy.policy_id, :fund_id => plantypefund.fund_id)) then
-      fld = {:last_mod=> $now}
+      fld = {:changed_at=> $now}
       fld[:policyfund_value] = policyfund_value if (policyfund.policyfund_value != policyfund_value) 
       $db[:policyfunds].filter(:fund_id=>policyfund.fund_id).update( fld)
       policyfund.upd(fld)  # Update local copy...
@@ -232,7 +232,7 @@ CSV.open(csv_file, 'r',  ',') do |row|
           :policy_id        => policy.policy_id,      # int,
           :fund_id          => plantypefund.fund_id,  # int,
           :policyfund_value => policyfund_value,      # double COMMENT 'Value of funds held for this policy',
-          :last_mod => $now, :state => 1, :reason => "New"
+          :created_at => $now, :state => 1, :reason => "New"
           )
       o = $db[:policyfunds].filter(:policy_id=>policy.policy_id, :fund_id => plantypefund.fund_id).first # Get newly added row
       policyfund = Policyfund.new(o)
@@ -252,7 +252,7 @@ CSV.open(csv_file, 'r',  ',') do |row|
     end
      
     if(update_last_policy) then
-      fld = {:last_mod=> $now}
+      fld = {:changed_at=> $now}
       begin
           fld[:policy_value] = Policyfund.get_policy_value(last_policy.policy_id) 
       rescue WaError => e
