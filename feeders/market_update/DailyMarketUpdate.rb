@@ -13,13 +13,16 @@ require '../util/wa'
 valuta = nil
 ARGV.each do |pair|
   name, value = pair.split(/=/)
-  if (name == 'valuta') then
-    valuta = value
-  else 
-    ENV[name] = value
+  case name.downcase!
+  when 'valuta'
+    ENV['VALUTA'] = value
+  when 'env'
+    ENV['RAILS_ENV'] = value
   end
 end
 
+valuta = ENV['VALUTA'] 
+environment = ENV['RAILS_ENV'] 
 
 raise WaError.new('E-DailyMarketUpdate:ParmError, Valuta date parameter not specified, please add valuta="YYYY-MM-DD" to command ') unless valuta
 #raise WaError.new("E-DailyMarketUpdate:ParmError, Rails Environment not specified, please add ")

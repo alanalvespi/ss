@@ -12,12 +12,23 @@ require 'rl360_classes'
 require '../util/wa'
 
 
+#
+# Load Job Parameters
+#
+ARGV.each do |pair|
+  name, value = pair.split(/=/)
+  case name.downcase!
+  when 'env'
+    ENV['RAILS_ENV'] = value
+  end
+end
+
+environment = ENV['RAILS_ENV'] 
 
 $now = Time.now
 RL360_ISIN::Load()              # load Isins
 
-envname = 'development'
-$db = Wa.openDatabase(envname)   # connect to database
+$db = Wa.openDatabase(environment)   # connect to database
 
 
 

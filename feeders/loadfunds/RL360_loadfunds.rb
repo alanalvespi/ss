@@ -5,6 +5,24 @@ require 'yaml'
 require '../util/wa'
 
 
+
+
+
+valuta = nil
+ARGV.each do |pair|
+  name, value = pair.split(/=/)
+  case name.downcase!
+  when 'env'
+    ENV['RAILS_ENV'] = value
+  end
+end
+
+environment = ENV['RAILS_ENV'] 
+
+
+
+
+
 #
 # Load Funds for company RL360 from XLS
 #
@@ -30,7 +48,7 @@ end
 
 
 # Get Database Info
-DB = Wa.openDatabase('development')
+DB = Wa.openDatabase(environment)
 
 company_id       = DB[:company].filter(:company_name => 'RL360').select(:company_id).single_value
 db_Funds         = DB[:plantypefunds].filter(:company_id => company_id).map {|r| "#{r[:plantype_id]}:#{r[:fund_identifier]}"}
