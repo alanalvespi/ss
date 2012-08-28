@@ -16,16 +16,31 @@ ARGV.each do |pair|
   case name
   when 'valuta'
     ENV['VALUTA'] = value
-  when 'env'
-    ENV['RAILS_ENV'] = value
+
+  when 'username'
+    ENV['username'] = value
+
+  when 'password'
+    value = '' unless value
+    ENV['password'] = value
+
+  when 'database'
+    ENV['database'] = value
+
+  when 'host'
+    ENV['host'] = value
   end
 end
 
+
+ENV['host'] = 'localhost' unless ENV.has_key?('host')
 valuta = ENV['VALUTA'] 
-environment = ENV['RAILS_ENV'] 
 
 raise WaError.new('E-DailyMarketUpdate:ParmError, Valuta date parameter not specified, please add valuta="YYYY-MM-DD" to command ') unless valuta
-raise WaError.new("E-DailyMarketUpdate:ParmError, Rails Environment not specified, please add env=environment to command") unless environment
+raise WaError.new('E-DailyMarketUpdate:ParmError, username parameter not specified, please add username="db-username" to command ') unless ENV.has_key?('username')
+raise WaError.new('E-DailyMarketUpdate:ParmError, password parameter not specified, please add password="db-password" to command ') unless ENV.has_key?('password')
+raise WaError.new('E-DailyMarketUpdate:ParmError, database parameter not specified, please add database="db-name"     to command ') unless ENV.has_key?('database')
+raise WaError.new('E-DailyMarketUpdate:ParmError, host     parameter not specified, please add     host="hostname"    to command ') unless ENV.has_key?('host')
 
 xls_list =
 { 'SC'=>{:filename=>'SC.xls',:format=>'msibarra',:url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+(DM)&style=C&asOf=Month+Day,+Year&currency=USD&size=Standard+(Large%2BMid+Cap)&export=Excel_IEIPerfRegionalCountry'},
@@ -68,7 +83,7 @@ end
 
 
 begin 
-  DB = Wa.openDatabase(environment)
+  DB = Wa.openDatabase()
 end
 
 $rowsupdated = 0
