@@ -17,13 +17,15 @@ require '../util/wa'
 #
 ARGV.each do |pair|
   name, value = pair.split(/=/)
-  case name.downcase!
+  case name
   when 'env'
     ENV['RAILS_ENV'] = value
   end
 end
 
 environment = ENV['RAILS_ENV'] 
+raise WaError.new("E-DailyMarketUpdate:ParmError, Rails Environment not specified, please add env=environment to command") unless environment
+
 
 $now = Time.now
 RL360_ISIN::Load()              # load Isins

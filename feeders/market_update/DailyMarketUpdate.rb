@@ -13,7 +13,7 @@ require '../util/wa'
 valuta = nil
 ARGV.each do |pair|
   name, value = pair.split(/=/)
-  case name.downcase!
+  case name
   when 'valuta'
     ENV['VALUTA'] = value
   when 'env'
@@ -25,7 +25,7 @@ valuta = ENV['VALUTA']
 environment = ENV['RAILS_ENV'] 
 
 raise WaError.new('E-DailyMarketUpdate:ParmError, Valuta date parameter not specified, please add valuta="YYYY-MM-DD" to command ') unless valuta
-#raise WaError.new("E-DailyMarketUpdate:ParmError, Rails Environment not specified, please add ")
+raise WaError.new("E-DailyMarketUpdate:ParmError, Rails Environment not specified, please add env=environment to command") unless environment
 
 xls_list =
 { 'SC'=>{:filename=>'SC.xls',:format=>'msibarra',:url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+(DM)&style=C&asOf=Month+Day,+Year&currency=USD&size=Standard+(Large%2BMid+Cap)&export=Excel_IEIPerfRegionalCountry'},
