@@ -1,6 +1,5 @@
 
 
-
 class WaError < StandardError
   attr_reader :severity, :routine, :errcode, :reason, :msg, :prev
   def initialize(msg,prev = nil)
