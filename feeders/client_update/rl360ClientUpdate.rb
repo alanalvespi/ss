@@ -12,25 +12,43 @@ require 'rl360_classes'
 require '../util/wa'
 
 
+
 #
 # Load Job Parameters
 #
+valuta = nil
 ARGV.each do |pair|
   name, value = pair.split(/=/)
   case name
-  when 'env'
-    ENV['RAILS_ENV'] = value
+
+  when 'username'
+    ENV['username'] = value
+
+  when 'password'
+    value = '' unless value
+    ENV['password'] = value
+
+  when 'database'
+    ENV['database'] = value
+
+  when 'host'
+    ENV['host'] = value
   end
 end
 
-environment = ENV['RAILS_ENV'] 
-raise WaError.new("E-DailyMarketUpdate:ParmError, Rails Environment not specified, please add env=environment to command") unless environment
+
+ENV['host'] = 'localhost' unless ENV.has_key?('host')
+
+raise WaError.new('E-DailyMarketUpdate:ParmError, username parameter not specified, please add username="db-username" to command ') unless ENV.has_key?('username')
+raise WaError.new('E-DailyMarketUpdate:ParmError, password parameter not specified, please add password="db-password" to command ') unless ENV.has_key?('password')
+raise WaError.new('E-DailyMarketUpdate:ParmError, database parameter not specified, please add database="db-name"     to command ') unless ENV.has_key?('database')
+raise WaError.new('E-DailyMarketUpdate:ParmError, host     parameter not specified, please add     host="hostname"    to command ') unless ENV.has_key?('host')
 
 
 $now = Time.now
 RL360_ISIN::Load()              # load Isins
 
-$db = Wa.openDatabase(environment)   # connect to database
+$db = Wa.openDatabase()   # connect to database
 
 
 
