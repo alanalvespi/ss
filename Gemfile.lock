@@ -85,6 +85,7 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    sequel (3.38.0)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -108,4 +109,5 @@ DEPENDENCIES
   mysql2
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
+  sequel
   uglifier (>= 1.0.3)
