@@ -1,4 +1,6 @@
 Ss::Application.routes.draw do
+  resources :currencies
+
   resources :plantypes
 
   resources :policyfunds
