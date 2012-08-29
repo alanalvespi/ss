@@ -6,7 +6,7 @@ one:
   company_id: 1
   plantype_currency: MyString
   deposit_fund_id: 1
-  last_mod: 2012-08-28
+  last_mod: 2012-08-29
   state: 1
   reason: MyString
 
@@ -16,6 +16,6 @@ two:
   company_id: 1
   plantype_currency: MyString
   deposit_fund_id: 1
-  last_mod: 2012-08-28
+  last_mod: 2012-08-29
   state: 1
   reason: MyString

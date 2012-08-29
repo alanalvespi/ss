@@ -17,7 +17,7 @@ class PlantypesControllerTest < ActionController::TestCase
   end
 
   test "should create plantype" do
-    assert_difference('Plantypes.count') do
+    assert_difference('Plantype.count') do
       post :create, plantype: { company_id: @plantype.company_id, deposit_fund_id: @plantype.deposit_fund_id, last_mod: @plantype.last_mod, plantype_currency: @plantype.plantype_currency, plantype_id: @plantype.plantype_id, plantype_name: @plantype.plantype_name, reason: @plantype.reason, state: @plantype.state }
     end
 
@@ -40,10 +40,10 @@ class PlantypesControllerTest < ActionController::TestCase
   end
 
   test "should destroy plantype" do
-    assert_difference('Plantypes.count', -1) do
+    assert_difference('Plantype.count', -1) do
       delete :destroy, id: @plantype
     end
 
-    assert_redirected_to plantypes_index_path
+    assert_redirected_to plantypes_path
   end
 end
