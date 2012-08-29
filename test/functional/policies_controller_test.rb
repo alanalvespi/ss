@@ -18,7 +18,7 @@ class PoliciesControllerTest < ActionController::TestCase
 
   test "should create policy" do
     assert_difference('Policies.count') do
-      post :create, policy: { client_id: @policy.client_id, plantype_id: @policy.plantype_id, policy_amount_on_deposit: @policy.policy_amount_on_deposit, policy_currency: @policy.policy_currency, policy_id: @policy.policy_id, policy_missing: @policy.policy_missing, policy_no_markets_invested: @policy.policy_no_markets_invested, policy_number: @policy.policy_number, policy_single_premium: @policy.policy_single_premium, policy_start: @policy.policy_start, policy_total_invested: @policy.policy_total_invested, policy_value: @policy.policy_value, strategy_id: @policy.strategy_id }
+      post :create, policy: { client_id: @policy.client_id, last_mod: @policy.last_mod, plantype_id: @policy.plantype_id, policy_amount_on_deposit: @policy.policy_amount_on_deposit, policy_currency: @policy.policy_currency, policy_id: @policy.policy_id, policy_missing: @policy.policy_missing, policy_no_markets_invested: @policy.policy_no_markets_invested, policy_number: @policy.policy_number, policy_single_premium: @policy.policy_single_premium, policy_start: @policy.policy_start, policy_total_invested: @policy.policy_total_invested, policy_value: @policy.policy_value, reason: @policy.reason, state: @policy.state, strategy_id: @policy.strategy_id }
     end
 
     assert_redirected_to policy_path(assigns(:policy))
@@ -35,7 +35,7 @@ class PoliciesControllerTest < ActionController::TestCase
   end
 
   test "should update policy" do
-    put :update, id: @policy, policy: { client_id: @policy.client_id, plantype_id: @policy.plantype_id, policy_amount_on_deposit: @policy.policy_amount_on_deposit, policy_currency: @policy.policy_currency, policy_id: @policy.policy_id, policy_missing: @policy.policy_missing, policy_no_markets_invested: @policy.policy_no_markets_invested, policy_number: @policy.policy_number, policy_single_premium: @policy.policy_single_premium, policy_start: @policy.policy_start, policy_total_invested: @policy.policy_total_invested, policy_value: @policy.policy_value, strategy_id: @policy.strategy_id }
+    put :update, id: @policy, policy: { client_id: @policy.client_id, last_mod: @policy.last_mod, plantype_id: @policy.plantype_id, policy_amount_on_deposit: @policy.policy_amount_on_deposit, policy_currency: @policy.policy_currency, policy_id: @policy.policy_id, policy_missing: @policy.policy_missing, policy_no_markets_invested: @policy.policy_no_markets_invested, policy_number: @policy.policy_number, policy_single_premium: @policy.policy_single_premium, policy_start: @policy.policy_start, policy_total_invested: @policy.policy_total_invested, policy_value: @policy.policy_value, reason: @policy.reason, state: @policy.state, strategy_id: @policy.strategy_id }
     assert_redirected_to policy_path(assigns(:policy))
   end
 

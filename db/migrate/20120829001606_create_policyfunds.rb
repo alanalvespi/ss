@@ -5,6 +5,9 @@ class CreatePolicyfunds < ActiveRecord::Migration
       t.integer :policy_id
       t.integer :fund_id
       t.decimal :policyfund_value
+      t.date :last_mod
+      t.integer :state
+      t.string :reason
 
       t.timestamps
     end

@@ -11,9 +11,10 @@ one:
   company_id: 1
   plantype_id: 1
   fund_isin: MyString
-  last_mod: 2012-08-22 19:48:30
-  state: 1
+  last_mod: 2012-08-28 19:07:42
   reason: MyString
+  state: 1
+  fund_currency: MyString
 
 two:
   fund_id: 1
@@ -26,6 +27,7 @@ two:
   company_id: 1
   plantype_id: 1
   fund_isin: MyString
-  last_mod: 2012-08-22 19:48:30
-  state: 1
+  last_mod: 2012-08-28 19:07:42
   reason: MyString
+  state: 1
+  fund_currency: MyString

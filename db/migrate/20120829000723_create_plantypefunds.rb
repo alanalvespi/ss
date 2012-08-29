@@ -11,9 +11,10 @@ class CreatePlantypefunds < ActiveRecord::Migration
       t.integer :company_id
       t.integer :plantype_id
       t.string :fund_isin
-      t.datetime :last_mod
-      t.integer :state
+      t.timestamp :last_mod
       t.string :reason
+      t.integer :state
+      t.string :fund_currency
 
       t.timestamps
     end

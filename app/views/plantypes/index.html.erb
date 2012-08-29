@@ -7,6 +7,9 @@
     <th>Company</th>
     <th>Plantype currency</th>
     <th>Deposit fund</th>
+    <th>Last mod</th>
+    <th>State</th>
+    <th>Reason</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +22,9 @@
     <td><%= plantype.company_id %></td>
     <td><%= plantype.plantype_currency %></td>
     <td><%= plantype.deposit_fund_id %></td>
+    <td><%= plantype.last_mod %></td>
+    <td><%= plantype.state %></td>
+    <td><%= plantype.reason %></td>
     <td><%= link_to 'Show', plantype %></td>
     <td><%= link_to 'Edit', edit_plantype_path(plantype) %></td>
     <td><%= link_to 'Destroy', plantype, method: :delete, data: { confirm: 'Are you sure?' } %></td>

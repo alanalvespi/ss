@@ -13,8 +13,9 @@
     <th>Plantype</th>
     <th>Fund isin</th>
     <th>Last mod</th>
-    <th>State</th>
     <th>Reason</th>
+    <th>State</th>
+    <th>Fund currency</th>
     <th></th>
     <th></th>
     <th></th>
@@ -33,8 +34,9 @@
     <td><%= plantypefund.plantype_id %></td>
     <td><%= plantypefund.fund_isin %></td>
     <td><%= plantypefund.last_mod %></td>
-    <td><%= plantypefund.state %></td>
     <td><%= plantypefund.reason %></td>
+    <td><%= plantypefund.state %></td>
+    <td><%= plantypefund.fund_currency %></td>
     <td><%= link_to 'Show', plantypefund %></td>
     <td><%= link_to 'Edit', edit_plantypefund_path(plantypefund) %></td>
     <td><%= link_to 'Destroy', plantypefund, method: :delete, data: { confirm: 'Are you sure?' } %></td>

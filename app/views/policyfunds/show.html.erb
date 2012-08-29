@@ -20,6 +20,21 @@
   <%= @policyfund.policyfund_value %>
 </p>
 
+<p>
+  <b>Last mod:</b>
+  <%= @policyfund.last_mod %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @policyfund.state %>
+</p>
+
+<p>
+  <b>Reason:</b>
+  <%= @policyfund.reason %>
+</p>
+
 
 <%= link_to 'Edit', edit_policyfund_path(@policyfund) %> |
 <%= link_to 'Back', policyfunds_index_path %>

@@ -7,6 +7,9 @@
     <th>Full address</th>
     <th>Client company address</th>
     <th>Client company address change</th>
+    <th>Last mod</th>
+    <th>State</th>
+    <th>Reason</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +22,9 @@
     <td><%= client.full_address %></td>
     <td><%= client.client_company_address %></td>
     <td><%= client.client_company_address_change %></td>
+    <td><%= client.last_mod %></td>
+    <td><%= client.state %></td>
+    <td><%= client.reason %></td>
     <td><%= link_to 'Show', client %></td>
     <td><%= link_to 'Edit', edit_client_path(client) %></td>
     <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>

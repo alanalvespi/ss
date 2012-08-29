@@ -20,6 +20,10 @@ class CreateMarkets < ActiveRecord::Migration
       t.date :market_last_switch_date
       t.decimal :market_last_switch_price
       t.date :market_current_process_date
+      t.timestamp :last_mod
+      t.integer :state
+      t.string :reason
+      t.string :market_currency
 
       t.timestamps
     end

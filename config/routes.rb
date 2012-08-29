@@ -1,25 +1,25 @@
 Ss::Application.routes.draw do
-  resources :strategies_markets
-
-  resources :strategies
+  resources :plantypes
 
   resources :policyfunds
 
   resources :policies
 
-  resources :plantype_strategies
-
-  resources :plantypestrategyfunds
-
-  resources :plantypes
+  resources :clients
 
   resources :plantypefunds
 
   resources :markets
 
-  resources :companies
+  resources :strategies_markets
 
-  resources :clients
+  resources :strategies
+
+  resources :plantype_strategies
+
+  resources :plantypestrategyfunds
+
+  resources :companies
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

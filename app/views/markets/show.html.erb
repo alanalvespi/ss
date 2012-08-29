@@ -95,6 +95,26 @@
   <%= @market.market_current_process_date %>
 </p>
 
+<p>
+  <b>Last mod:</b>
+  <%= @market.last_mod %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @market.state %>
+</p>
+
+<p>
+  <b>Reason:</b>
+  <%= @market.reason %>
+</p>
+
+<p>
+  <b>Market currency:</b>
+  <%= @market.market_currency %>
+</p>
+
 
 <%= link_to 'Edit', edit_market_path(@market) %> |
 <%= link_to 'Back', markets_path %>
