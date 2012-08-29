@@ -17,7 +17,7 @@ class StrategiesControllerTest < ActionController::TestCase
   end
 
   test "should create strategy" do
-    assert_difference('Strategies.count') do
+    assert_difference('Strategy.count') do
       post :create, strategy: { strategy_filter: @strategy.strategy_filter, strategy_id: @strategy.strategy_id, strategy_initial_switch_percentage: @strategy.strategy_initial_switch_percentage, strategy_name: @strategy.strategy_name, strategy_trigger_in: @strategy.strategy_trigger_in, strategy_trigger_out: @strategy.strategy_trigger_out }
     end
 
@@ -40,10 +40,10 @@ class StrategiesControllerTest < ActionController::TestCase
   end
 
   test "should destroy strategy" do
-    assert_difference('Strategies.count', -1) do
+    assert_difference('Strategy.count', -1) do
       delete :destroy, id: @strategy
     end
 
-    assert_redirected_to strategies_index_path
+    assert_redirected_to strategies_path
   end
 end

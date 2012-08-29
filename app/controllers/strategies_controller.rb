@@ -2,7 +2,7 @@ class StrategiesController < ApplicationController
   # GET /strategies
   # GET /strategies.json
   def index
-    @strategies = Strategies.all
+    @strategies = Strategy.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class StrategiesController < ApplicationController
   # GET /strategies/1
   # GET /strategies/1.json
   def show
-    @strategy = Strategies.find(params[:id])
+    @strategy = Strategy.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class StrategiesController < ApplicationController
   # GET /strategies/new
   # GET /strategies/new.json
   def new
-    @strategy = Strategies.new
+    @strategy = Strategy.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,17 +34,17 @@ class StrategiesController < ApplicationController
 
   # GET /strategies/1/edit
   def edit
-    @strategy = Strategies.find(params[:id])
+    @strategy = Strategy.find(params[:id])
   end
 
   # POST /strategies
   # POST /strategies.json
   def create
-    @strategy = Strategies.new(params[:strategy])
+    @strategy = Strategy.new(params[:strategy])
 
     respond_to do |format|
       if @strategy.save
-        format.html { redirect_to @strategy, notice: 'Strategies was successfully created.' }
+        format.html { redirect_to @strategy, notice: 'Strategy was successfully created.' }
         format.json { render json: @strategy, status: :created, location: @strategy }
       else
         format.html { render action: "new" }
@@ -56,11 +56,11 @@ class StrategiesController < ApplicationController
   # PUT /strategies/1
   # PUT /strategies/1.json
   def update
-    @strategy = Strategies.find(params[:id])
+    @strategy = Strategy.find(params[:id])
 
     respond_to do |format|
       if @strategy.update_attributes(params[:strategy])
-        format.html { redirect_to @strategy, notice: 'Strategies was successfully updated.' }
+        format.html { redirect_to @strategy, notice: 'Strategy was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -72,11 +72,11 @@ class StrategiesController < ApplicationController
   # DELETE /strategies/1
   # DELETE /strategies/1.json
   def destroy
-    @strategy = Strategies.find(params[:id])
+    @strategy = Strategy.find(params[:id])
     @strategy.destroy
 
     respond_to do |format|
-      format.html { redirect_to strategies_index_url }
+      format.html { redirect_to strategies_url }
       format.json { head :no_content }
     end
   end
