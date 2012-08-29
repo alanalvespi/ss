@@ -5,8 +5,7 @@ class CreatePlantypes < ActiveRecord::Migration
       t.string :plantype_name
       t.integer :company_id
       t.string :plantype_currency
-      t.integer :deposit_fund_id
-      t.date :last_mod
+      t.integer :deposit_fund_id    
       t.integer :state
       t.string :reason
 
