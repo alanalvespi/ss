@@ -2,7 +2,7 @@ class PlantypefundsController < ApplicationController
   # GET /plantypefunds
   # GET /plantypefunds.json
   def index
-    @plantypefunds = Plantypefunds.all
+    @plantypefunds = Plantypefund.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class PlantypefundsController < ApplicationController
   # GET /plantypefunds/1
   # GET /plantypefunds/1.json
   def show
-    @plantypefund = Plantypefunds.find(params[:id])
+    @plantypefund = Plantypefund.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class PlantypefundsController < ApplicationController
   # GET /plantypefunds/new
   # GET /plantypefunds/new.json
   def new
-    @plantypefund = Plantypefunds.new
+    @plantypefund = Plantypefund.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,17 +34,17 @@ class PlantypefundsController < ApplicationController
 
   # GET /plantypefunds/1/edit
   def edit
-    @plantypefund = Plantypefunds.find(params[:id])
+    @plantypefund = Plantypefund.find(params[:id])
   end
 
   # POST /plantypefunds
   # POST /plantypefunds.json
   def create
-    @plantypefund = Plantypefunds.new(params[:plantypefund])
+    @plantypefund = Plantypefund.new(params[:plantypefund])
 
     respond_to do |format|
       if @plantypefund.save
-        format.html { redirect_to @plantypefund, notice: 'Plantypefunds was successfully created.' }
+        format.html { redirect_to @plantypefund, notice: 'Plantypefund was successfully created.' }
         format.json { render json: @plantypefund, status: :created, location: @plantypefund }
       else
         format.html { render action: "new" }
@@ -56,11 +56,11 @@ class PlantypefundsController < ApplicationController
   # PUT /plantypefunds/1
   # PUT /plantypefunds/1.json
   def update
-    @plantypefund = Plantypefunds.find(params[:id])
+    @plantypefund = Plantypefund.find(params[:id])
 
     respond_to do |format|
       if @plantypefund.update_attributes(params[:plantypefund])
-        format.html { redirect_to @plantypefund, notice: 'Plantypefunds was successfully updated.' }
+        format.html { redirect_to @plantypefund, notice: 'Plantypefund was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -72,11 +72,11 @@ class PlantypefundsController < ApplicationController
   # DELETE /plantypefunds/1
   # DELETE /plantypefunds/1.json
   def destroy
-    @plantypefund = Plantypefunds.find(params[:id])
+    @plantypefund = Plantypefund.find(params[:id])
     @plantypefund.destroy
 
     respond_to do |format|
-      format.html { redirect_to plantypefunds_index_url }
+      format.html { redirect_to plantypefunds_url }
       format.json { head :no_content }
     end
   end

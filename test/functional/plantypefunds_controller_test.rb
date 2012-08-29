@@ -17,8 +17,8 @@ class PlantypefundsControllerTest < ActionController::TestCase
   end
 
   test "should create plantypefund" do
-    assert_difference('Plantypefunds.count') do
-      post :create, plantypefund: { company_id: @plantypefund.company_id, fund_currency: @plantypefund.fund_currency, fund_currency: @plantypefund.fund_currency, fund_fkey: @plantypefund.fund_fkey, fund_id: @plantypefund.fund_id, fund_identifier: @plantypefund.fund_identifier, fund_isin: @plantypefund.fund_isin, fund_name: @plantypefund.fund_name, fund_type: @plantypefund.fund_type, last_mod: @plantypefund.last_mod, market_id: @plantypefund.market_id, plantype_id: @plantypefund.plantype_id, reason: @plantypefund.reason, state: @plantypefund.state }
+    assert_difference('Plantypefund.count') do
+      post :create, plantypefund: { company_id: @plantypefund.company_id, fund_currency: @plantypefund.fund_currency, fund_fkey: @plantypefund.fund_fkey, fund_id: @plantypefund.fund_id, fund_identifier: @plantypefund.fund_identifier, fund_name: @plantypefund.fund_name, fund_type: @plantypefund.fund_type, market_id: @plantypefund.market_id }
     end
 
     assert_redirected_to plantypefund_path(assigns(:plantypefund))
@@ -35,15 +35,15 @@ class PlantypefundsControllerTest < ActionController::TestCase
   end
 
   test "should update plantypefund" do
-    put :update, id: @plantypefund, plantypefund: { company_id: @plantypefund.company_id, fund_currency: @plantypefund.fund_currency, fund_currency: @plantypefund.fund_currency, fund_fkey: @plantypefund.fund_fkey, fund_id: @plantypefund.fund_id, fund_identifier: @plantypefund.fund_identifier, fund_isin: @plantypefund.fund_isin, fund_name: @plantypefund.fund_name, fund_type: @plantypefund.fund_type, last_mod: @plantypefund.last_mod, market_id: @plantypefund.market_id, plantype_id: @plantypefund.plantype_id, reason: @plantypefund.reason, state: @plantypefund.state }
+    put :update, id: @plantypefund, plantypefund: { company_id: @plantypefund.company_id, fund_currency: @plantypefund.fund_currency, fund_fkey: @plantypefund.fund_fkey, fund_id: @plantypefund.fund_id, fund_identifier: @plantypefund.fund_identifier, fund_name: @plantypefund.fund_name, fund_type: @plantypefund.fund_type, market_id: @plantypefund.market_id }
     assert_redirected_to plantypefund_path(assigns(:plantypefund))
   end
 
   test "should destroy plantypefund" do
-    assert_difference('Plantypefunds.count', -1) do
+    assert_difference('Plantypefund.count', -1) do
       delete :destroy, id: @plantypefund
     end
 
-    assert_redirected_to plantypefunds_index_path
+    assert_redirected_to plantypefunds_path
   end
 end
