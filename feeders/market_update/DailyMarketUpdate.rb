@@ -23,11 +23,13 @@ Wa.loadArguments(
   'logfile'=>nil
   })
 
-valuta = ENV['VALUTA'] 
+valuta = ENV['valuta'] 
+
+
 
 raise WaError.new('E-DailyMarketUpdate:ParmError, Valuta date parameter not specified, please add valuta="YYYY-MM-DD" to command ') unless valuta
 raise WaError.new('E-DailyMarketUpdate:ParmError, username parameter not specified, please add username="db-username" to command ') unless ENV.has_key?('username')
-raise WaError.new('E-DailyMarketUpdate:ParmError, password parameter not specified, please add password="db-password" to command ') unless ENV.has_key?('password')
+#raise WaError.new('E-DailyMarketUpdate:ParmError, password parameter not specified, please add password="db-password" to command ') unless ENV.has_key?('password')
 raise WaError.new('E-DailyMarketUpdate:ParmError, database parameter not specified, please add database="db-name"     to command ') unless ENV.has_key?('database')
 raise WaError.new('E-DailyMarketUpdate:ParmError, host     parameter not specified, please add     host="hostname"    to command ') unless ENV.has_key?('host')
 raise WaError.new('E-DailyMarketUpdate:ParmError, port     parameter not specified, please add     port="port-no"     to command ') unless ENV.has_key?('port')
@@ -107,7 +109,7 @@ def update_db(query_name, section, msci_name, msci_index_code, valuta, last,day,
         :market_last_switch_date      => nil,
         :market_last_switch_price     => nil,
         :market_current_process_date  => valuta,
-        :changed_at                   => nil,
+        :updated_at                   => Now,
         :created_at                   => Now,
         :state                        => 0,
         :reason                       => nil)
@@ -123,7 +125,7 @@ def update_db(query_name, section, msci_name, msci_index_code, valuta, last,day,
       flds[:market_current_date]  = valuta
       flds[:market_current_price] = last
       flds[:market_dailychange]   = day
-      flds[:changed_at]           = Now
+      flds[:updated_at]           = Now
       flds[:state]                = 0
       flds[:reason]               = nil
       DB[:markets].filter(:query_name => query_name, :query_section => section, :msci_index_code => msci_index_code).update(flds)
