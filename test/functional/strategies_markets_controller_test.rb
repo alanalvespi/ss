@@ -17,7 +17,7 @@ class StrategiesMarketsControllerTest < ActionController::TestCase
   end
 
   test "should create strategies_market" do
-    assert_difference('StrategiesMarkets.count') do
+    assert_difference('StrategiesMarket.count') do
       post :create, strategies_market: { market_id: @strategies_market.market_id, strategy_id: @strategies_market.strategy_id, strategy_market_id: @strategies_market.strategy_market_id }
     end
 
@@ -40,10 +40,10 @@ class StrategiesMarketsControllerTest < ActionController::TestCase
   end
 
   test "should destroy strategies_market" do
-    assert_difference('StrategiesMarkets.count', -1) do
+    assert_difference('StrategiesMarket.count', -1) do
       delete :destroy, id: @strategies_market
     end
 
-    assert_redirected_to strategies_markets_index_path
+    assert_redirected_to strategies_markets_path
   end
 end
