@@ -1,4 +1,6 @@
 Ss::Application.routes.draw do
+  resources :policyfunds
+
   resources :strategies_markets
 
   resources :policies
@@ -12,8 +14,6 @@ Ss::Application.routes.draw do
   resources :clients
 
   resources :currencies
-
-  resources :policyfunds
 
   resources :markets
 

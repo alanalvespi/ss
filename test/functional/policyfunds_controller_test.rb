@@ -17,7 +17,7 @@ class PolicyfundsControllerTest < ActionController::TestCase
   end
 
   test "should create policyfund" do
-    assert_difference('Policyfunds.count') do
+    assert_difference('Policyfund.count') do
       post :create, policyfund: { fund_id: @policyfund.fund_id, last_mod: @policyfund.last_mod, policy_id: @policyfund.policy_id, policyfund_id: @policyfund.policyfund_id, policyfund_value: @policyfund.policyfund_value, reason: @policyfund.reason, state: @policyfund.state }
     end
 
@@ -40,10 +40,10 @@ class PolicyfundsControllerTest < ActionController::TestCase
   end
 
   test "should destroy policyfund" do
-    assert_difference('Policyfunds.count', -1) do
+    assert_difference('Policyfund.count', -1) do
       delete :destroy, id: @policyfund
     end
 
-    assert_redirected_to policyfunds_index_path
+    assert_redirected_to policyfunds_path
   end
 end

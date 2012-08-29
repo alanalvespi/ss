@@ -2,7 +2,7 @@ class PolicyfundsController < ApplicationController
   # GET /policyfunds
   # GET /policyfunds.json
   def index
-    @policyfunds = Policyfunds.all
+    @policyfunds = Policyfund.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class PolicyfundsController < ApplicationController
   # GET /policyfunds/1
   # GET /policyfunds/1.json
   def show
-    @policyfund = Policyfunds.find(params[:id])
+    @policyfund = Policyfund.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class PolicyfundsController < ApplicationController
   # GET /policyfunds/new
   # GET /policyfunds/new.json
   def new
-    @policyfund = Policyfunds.new
+    @policyfund = Policyfund.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,17 +34,17 @@ class PolicyfundsController < ApplicationController
 
   # GET /policyfunds/1/edit
   def edit
-    @policyfund = Policyfunds.find(params[:id])
+    @policyfund = Policyfund.find(params[:id])
   end
 
   # POST /policyfunds
   # POST /policyfunds.json
   def create
-    @policyfund = Policyfunds.new(params[:policyfund])
+    @policyfund = Policyfund.new(params[:policyfund])
 
     respond_to do |format|
       if @policyfund.save
-        format.html { redirect_to @policyfund, notice: 'Policyfunds was successfully created.' }
+        format.html { redirect_to @policyfund, notice: 'Policyfund was successfully created.' }
         format.json { render json: @policyfund, status: :created, location: @policyfund }
       else
         format.html { render action: "new" }
@@ -56,11 +56,11 @@ class PolicyfundsController < ApplicationController
   # PUT /policyfunds/1
   # PUT /policyfunds/1.json
   def update
-    @policyfund = Policyfunds.find(params[:id])
+    @policyfund = Policyfund.find(params[:id])
 
     respond_to do |format|
       if @policyfund.update_attributes(params[:policyfund])
-        format.html { redirect_to @policyfund, notice: 'Policyfunds was successfully updated.' }
+        format.html { redirect_to @policyfund, notice: 'Policyfund was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -72,11 +72,11 @@ class PolicyfundsController < ApplicationController
   # DELETE /policyfunds/1
   # DELETE /policyfunds/1.json
   def destroy
-    @policyfund = Policyfunds.find(params[:id])
+    @policyfund = Policyfund.find(params[:id])
     @policyfund.destroy
 
     respond_to do |format|
-      format.html { redirect_to policyfunds_index_url }
+      format.html { redirect_to policyfunds_url }
       format.json { head :no_content }
     end
   end
