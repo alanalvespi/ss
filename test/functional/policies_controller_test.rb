@@ -17,7 +17,7 @@ class PoliciesControllerTest < ActionController::TestCase
   end
 
   test "should create policy" do
-    assert_difference('Policies.count') do
+    assert_difference('Policy.count') do
       post :create, policy: { client_id: @policy.client_id, last_mod: @policy.last_mod, plantype_id: @policy.plantype_id, policy_amount_on_deposit: @policy.policy_amount_on_deposit, policy_currency: @policy.policy_currency, policy_id: @policy.policy_id, policy_missing: @policy.policy_missing, policy_no_markets_invested: @policy.policy_no_markets_invested, policy_number: @policy.policy_number, policy_single_premium: @policy.policy_single_premium, policy_start: @policy.policy_start, policy_total_invested: @policy.policy_total_invested, policy_value: @policy.policy_value, reason: @policy.reason, state: @policy.state, strategy_id: @policy.strategy_id }
     end
 
@@ -40,10 +40,10 @@ class PoliciesControllerTest < ActionController::TestCase
   end
 
   test "should destroy policy" do
-    assert_difference('Policies.count', -1) do
+    assert_difference('Policy.count', -1) do
       delete :destroy, id: @policy
     end
 
-    assert_redirected_to policies_index_path
+    assert_redirected_to policies_path
   end
 end
