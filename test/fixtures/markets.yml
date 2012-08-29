@@ -8,18 +8,22 @@ one:
   market_msci_name: MyString
   msci_index_code: 1
   market_in: 1
-  market_current_date: 2012-08-22
+  market_current_date: 2012-08-28
   market_current_price: 9.99
   market_dailychange: 9.99
-  market_reference_date: 2012-08-22
+  market_reference_date: 2012-08-28
   market_reference_price: 9.99
   market_change_from_ref: 9.99
   market_change_from_switch: 9.99
   market_override: 1
   market_switch: MyString
-  market_last_switch_date: 2012-08-22
+  market_last_switch_date: 2012-08-28
   market_last_switch_price: 9.99
-  market_current_process_date: 2012-08-22
+  market_current_process_date: 2012-08-28
+  last_mod: 2012-08-28 18:59:07
+  state: 1
+  reason: MyString
+  market_currency: MyString
 
 two:
   market_id: 1
@@ -29,15 +33,19 @@ two:
   market_msci_name: MyString
   msci_index_code: 1
   market_in: 1
-  market_current_date: 2012-08-22
+  market_current_date: 2012-08-28
   market_current_price: 9.99
   market_dailychange: 9.99
-  market_reference_date: 2012-08-22
+  market_reference_date: 2012-08-28
   market_reference_price: 9.99
   market_change_from_ref: 9.99
   market_change_from_switch: 9.99
   market_override: 1
   market_switch: MyString
-  market_last_switch_date: 2012-08-22
+  market_last_switch_date: 2012-08-28
   market_last_switch_price: 9.99
-  market_current_process_date: 2012-08-22
+  market_current_process_date: 2012-08-28
+  last_mod: 2012-08-28 18:59:07
+  state: 1
+  reason: MyString
+  market_currency: MyString

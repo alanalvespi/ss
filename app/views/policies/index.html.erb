@@ -15,6 +15,9 @@
     <th>Policy single premium</th>
     <th>Policy total invested</th>
     <th>Policy missing</th>
+    <th>Last mod</th>
+    <th>State</th>
+    <th>Reason</th>
     <th></th>
     <th></th>
     <th></th>
@@ -35,6 +38,9 @@
     <td><%= policy.policy_single_premium %></td>
     <td><%= policy.policy_total_invested %></td>
     <td><%= policy.policy_missing %></td>
+    <td><%= policy.last_mod %></td>
+    <td><%= policy.state %></td>
+    <td><%= policy.reason %></td>
     <td><%= link_to 'Show', policy %></td>
     <td><%= link_to 'Edit', edit_policy_path(policy) %></td>
     <td><%= link_to 'Destroy', policy, method: :delete, data: { confirm: 'Are you sure?' } %></td>

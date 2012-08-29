@@ -3,7 +3,7 @@
 one:
   policy_id: 1
   policy_number: MyString
-  policy_start: 2012-08-23
+  policy_start: 2012-08-28
   policy_currency: MyString
   client_id: 1
   plantype_id: 1
@@ -14,11 +14,14 @@ one:
   policy_single_premium: 1
   policy_total_invested: 9.99
   policy_missing: 1
+  last_mod: 2012-08-28
+  state: 1
+  reason: MyString
 
 two:
   policy_id: 1
   policy_number: MyString
-  policy_start: 2012-08-23
+  policy_start: 2012-08-28
   policy_currency: MyString
   client_id: 1
   plantype_id: 1
@@ -29,3 +32,6 @@ two:
   policy_single_premium: 1
   policy_total_invested: 9.99
   policy_missing: 1
+  last_mod: 2012-08-28
+  state: 1
+  reason: MyString

@@ -18,7 +18,7 @@ class PolicyfundsControllerTest < ActionController::TestCase
 
   test "should create policyfund" do
     assert_difference('Policyfunds.count') do
-      post :create, policyfund: { fund_id: @policyfund.fund_id, policy_id: @policyfund.policy_id, policyfund_id: @policyfund.policyfund_id, policyfund_value: @policyfund.policyfund_value }
+      post :create, policyfund: { fund_id: @policyfund.fund_id, last_mod: @policyfund.last_mod, policy_id: @policyfund.policy_id, policyfund_id: @policyfund.policyfund_id, policyfund_value: @policyfund.policyfund_value, reason: @policyfund.reason, state: @policyfund.state }
     end
 
     assert_redirected_to policyfund_path(assigns(:policyfund))
@@ -35,7 +35,7 @@ class PolicyfundsControllerTest < ActionController::TestCase
   end
 
   test "should update policyfund" do
-    put :update, id: @policyfund, policyfund: { fund_id: @policyfund.fund_id, policy_id: @policyfund.policy_id, policyfund_id: @policyfund.policyfund_id, policyfund_value: @policyfund.policyfund_value }
+    put :update, id: @policyfund, policyfund: { fund_id: @policyfund.fund_id, last_mod: @policyfund.last_mod, policy_id: @policyfund.policy_id, policyfund_id: @policyfund.policyfund_id, policyfund_value: @policyfund.policyfund_value, reason: @policyfund.reason, state: @policyfund.state }
     assert_redirected_to policyfund_path(assigns(:policyfund))
   end
 

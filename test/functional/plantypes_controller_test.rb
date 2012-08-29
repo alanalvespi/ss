@@ -18,7 +18,7 @@ class PlantypesControllerTest < ActionController::TestCase
 
   test "should create plantype" do
     assert_difference('Plantypes.count') do
-      post :create, plantype: { company_id: @plantype.company_id, deposit_fund_id: @plantype.deposit_fund_id, plantype_currency: @plantype.plantype_currency, plantype_id: @plantype.plantype_id, plantype_name: @plantype.plantype_name }
+      post :create, plantype: { company_id: @plantype.company_id, deposit_fund_id: @plantype.deposit_fund_id, last_mod: @plantype.last_mod, plantype_currency: @plantype.plantype_currency, plantype_id: @plantype.plantype_id, plantype_name: @plantype.plantype_name, reason: @plantype.reason, state: @plantype.state }
     end
 
     assert_redirected_to plantype_path(assigns(:plantype))
@@ -35,7 +35,7 @@ class PlantypesControllerTest < ActionController::TestCase
   end
 
   test "should update plantype" do
-    put :update, id: @plantype, plantype: { company_id: @plantype.company_id, deposit_fund_id: @plantype.deposit_fund_id, plantype_currency: @plantype.plantype_currency, plantype_id: @plantype.plantype_id, plantype_name: @plantype.plantype_name }
+    put :update, id: @plantype, plantype: { company_id: @plantype.company_id, deposit_fund_id: @plantype.deposit_fund_id, last_mod: @plantype.last_mod, plantype_currency: @plantype.plantype_currency, plantype_id: @plantype.plantype_id, plantype_name: @plantype.plantype_name, reason: @plantype.reason, state: @plantype.state }
     assert_redirected_to plantype_path(assigns(:plantype))
   end
 

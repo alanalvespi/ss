@@ -21,6 +21,10 @@
     <th>Market last switch date</th>
     <th>Market last switch price</th>
     <th>Market current process date</th>
+    <th>Last mod</th>
+    <th>State</th>
+    <th>Reason</th>
+    <th>Market currency</th>
     <th></th>
     <th></th>
     <th></th>
@@ -47,6 +51,10 @@
     <td><%= market.market_last_switch_date %></td>
     <td><%= market.market_last_switch_price %></td>
     <td><%= market.market_current_process_date %></td>
+    <td><%= market.last_mod %></td>
+    <td><%= market.state %></td>
+    <td><%= market.reason %></td>
+    <td><%= market.market_currency %></td>
     <td><%= link_to 'Show', market %></td>
     <td><%= link_to 'Edit', edit_market_path(market) %></td>
     <td><%= link_to 'Destroy', market, method: :delete, data: { confirm: 'Are you sure?' } %></td>

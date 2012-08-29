@@ -87,6 +87,22 @@
     <%= f.label :market_current_process_date %><br />
     <%= f.date_select :market_current_process_date %>
   </div>
+  <div class="field">
+    <%= f.label :last_mod %><br />
+    <%= f.datetime_select :last_mod %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.number_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :reason %><br />
+    <%= f.text_field :reason %>
+  </div>
+  <div class="field">
+    <%= f.label :market_currency %><br />
+    <%= f.text_field :market_currency %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

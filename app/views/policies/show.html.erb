@@ -65,6 +65,21 @@
   <%= @policy.policy_missing %>
 </p>
 
+<p>
+  <b>Last mod:</b>
+  <%= @policy.last_mod %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @policy.state %>
+</p>
+
+<p>
+  <b>Reason:</b>
+  <%= @policy.reason %>
+</p>
+
 
 <%= link_to 'Edit', edit_policy_path(@policy) %> |
 <%= link_to 'Back', policies_index_path %>

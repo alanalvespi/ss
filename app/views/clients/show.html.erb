@@ -25,6 +25,21 @@
   <%= @client.client_company_address_change %>
 </p>
 
+<p>
+  <b>Last mod:</b>
+  <%= @client.last_mod %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @client.state %>
+</p>
+
+<p>
+  <b>Reason:</b>
+  <%= @client.reason %>
+</p>
+
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_index_path %>

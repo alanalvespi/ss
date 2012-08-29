@@ -5,9 +5,15 @@ one:
   policy_id: 1
   fund_id: 1
   policyfund_value: 9.99
+  last_mod: 2012-08-28
+  state: 1
+  reason: MyString
 
 two:
   policyfund_id: 1
   policy_id: 1
   fund_id: 1
   policyfund_value: 9.99
+  last_mod: 2012-08-28
+  state: 1
+  reason: MyString

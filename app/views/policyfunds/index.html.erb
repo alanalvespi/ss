@@ -6,6 +6,9 @@
     <th>Policy</th>
     <th>Fund</th>
     <th>Policyfund value</th>
+    <th>Last mod</th>
+    <th>State</th>
+    <th>Reason</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +20,9 @@
     <td><%= policyfund.policy_id %></td>
     <td><%= policyfund.fund_id %></td>
     <td><%= policyfund.policyfund_value %></td>
+    <td><%= policyfund.last_mod %></td>
+    <td><%= policyfund.state %></td>
+    <td><%= policyfund.reason %></td>
     <td><%= link_to 'Show', policyfund %></td>
     <td><%= link_to 'Edit', edit_policyfund_path(policyfund) %></td>
     <td><%= link_to 'Destroy', policyfund, method: :delete, data: { confirm: 'Are you sure?' } %></td>

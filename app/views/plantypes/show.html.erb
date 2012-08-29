@@ -25,6 +25,21 @@
   <%= @plantype.deposit_fund_id %>
 </p>
 
+<p>
+  <b>Last mod:</b>
+  <%= @plantype.last_mod %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @plantype.state %>
+</p>
+
+<p>
+  <b>Reason:</b>
+  <%= @plantype.reason %>
+</p>
+
 
 <%= link_to 'Edit', edit_plantype_path(@plantype) %> |
 <%= link_to 'Back', plantypes_index_path %>

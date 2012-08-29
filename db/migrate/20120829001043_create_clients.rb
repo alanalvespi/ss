@@ -6,6 +6,9 @@ class CreateClients < ActiveRecord::Migration
       t.string :full_address
       t.string :client_company_address
       t.integer :client_company_address_change
+      t.date :last_mod
+      t.integer :state
+      t.string :reason
 
       t.timestamps
     end

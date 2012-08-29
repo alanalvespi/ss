@@ -14,6 +14,9 @@ class CreatePolicies < ActiveRecord::Migration
       t.integer :policy_single_premium
       t.decimal :policy_total_invested
       t.integer :policy_missing
+      t.date :last_mod
+      t.integer :state
+      t.string :reason
 
       t.timestamps
     end

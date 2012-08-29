@@ -6,6 +6,9 @@ one:
   full_address: MyString
   client_company_address: MyString
   client_company_address_change: 1
+  last_mod: 2012-08-28
+  state: 1
+  reason: MyString
 
 two:
   client_id: 1
@@ -13,3 +16,6 @@ two:
   full_address: MyString
   client_company_address: MyString
   client_company_address_change: 1
+  last_mod: 2012-08-28
+  state: 1
+  reason: MyString
