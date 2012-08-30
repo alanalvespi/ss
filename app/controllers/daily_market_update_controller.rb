@@ -1,0 +1,2 @@
+class DailyMarketUpdateController < ApplicationController
+end
