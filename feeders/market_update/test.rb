@@ -29,6 +29,7 @@ port     = '3306'
 
 
 require 'find'
+require "active_support/core_ext"
 dir = 'data'
 data = {}
 Find.find(dir) do |path|
@@ -39,12 +40,13 @@ Find.find(dir) do |path|
   parts[0..-2].each { |p|
     next unless p
     #p "[#{p}]" 
-    t[p] = {} unless t.has_key?(p) 
+    p = "_#{p}" if p.to_i
+    t[p] = {} unless t.has_key?(p)
     t = t[p]
   }
 
-  t[parts[-1]] = path unless FileTest.directory?(path)
+  t[parts[-1]] = { "path"=> path, "name"=>parts[-1], "size"=>File.size(path), "create"=>File.ctime(path), "modify"=>File.mtime(path) } unless FileTest.directory?(path)
 end
 
 
-p data
+p data.to_xml(:root=>'market_update')
