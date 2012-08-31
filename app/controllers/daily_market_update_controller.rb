@@ -1,2 +1,0 @@
-class DailyMarketUpdateController < ApplicationController
-end

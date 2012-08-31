@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DailyMarketUpdateControllerTest < ActionController::TestCase
+class FeederControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end
