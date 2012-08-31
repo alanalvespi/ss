@@ -14,8 +14,9 @@ require 'find'
       }
     drop_dirs = {
       'feeders'       => 1,
-      'market-update' => 1,
-      'data'          => 1
+      'market_update' => 1,
+      'client_update' => 1,
+      'loadfunds'     => 1
     }  
     
     dir =  directory_config[params[:id]]
@@ -33,8 +34,10 @@ require 'find'
         t[p] = {} unless t.has_key?(p)
         t = t[p]
       }
-    
-      t[parts[-1]] = { "path"=> path, "name"=>parts[-1], "size"=>File.size(path), "create"=>File.ctime(path), "modify"=>File.mtime(path) } unless FileTest.directory?(path)
+      
+      atrname = parts[-1]
+      atrname = atrname.gsub(".",'') 
+      t[atrname] = { "path"=> path, "name"=>parts[-1], "size"=>File.size(path), "create"=>File.ctime(path), "modify"=>File.mtime(path) } unless FileTest.directory?(path)
     end
     
     respond_to do |format|
@@ -61,8 +64,27 @@ require 'find'
         'user'        => db_conf['username'],
         'password'    => db_conf['password'],
         'host'        => db_conf['host'],
+        'port'        => db_conf['port']
+      },
+      'client_update' => {
+        'execdir'     => "feeders/#{batch_name}",
+        'pgm'         => 'RL360ClientUpdate.rb',
+        'logfile'     => 'RL360ClientUpdate.log',
+        'database'    => db_conf['database'],
+        'user'        => db_conf['username'],
+        'password'    => db_conf['password'],
+        'host'        => db_conf['host'],
+        'port'        => db_conf['port']
+      },
+      'loadfunds' => {
+        'execdir'     => "feeders/#{batch_name}",
+        'pgm'         => 'RL360_loadfunds.rb',
+        'logfile'     => 'RL360_loadfunds.log',
+        'database'    => db_conf['database'],
+        'user'        => db_conf['username'],
+        'password'    => db_conf['password'],
+        'host'        => db_conf['host'],
         'port'        => db_conf['port'],
-        'valuta'      => valuta
       }
     }
     
@@ -72,7 +94,18 @@ require 'find'
     c['host'] = 'localhost' unless c['host']
     c['port'] = '3306'      unless c['port']
     
-    result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} valuta=#{c['valuta']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
+    case batch_name
+      
+    when 'market_update'
+      result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} valuta=#{valuta} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
+      
+    when 'client_update'
+      result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
+      
+    when 'loadfunds'
+      result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
+
+    end
     
     @feeder = "#{batch_name} Execution Started"     
   end
