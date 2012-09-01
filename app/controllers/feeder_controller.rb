@@ -8,19 +8,24 @@ require 'find'
   def show
     # tmp = Dir.getwd  directory is ss (root of project)
     directory_config =  
-      {'market_update'=>'feeders/market_update/data',
-      'client_update'=>'feeders/market_update/data',
-      'load_funds'   =>'feeders/load_funds/data',
+      {'market_update' => 'public/data/feeders/market_update',
+       'client_update' => 'public/data/feeders/client_update',
+       'load_funds'    => 'public/data/feeders/loadfunds',
       }
     drop_dirs = {
+      'public'        => 1,
+      'data'          => 1,
       'feeders'       => 1,
       'market_update' => 1,
       'client_update' => 1,
       'loadfunds'     => 1
     }  
     xml  = '<?xml version="1.0" encoding="UTF-8"?>'
+    
     dir =  directory_config[params[:id]]
-    @feeder = {}
+      
+    @feeder = {'name'=>'data', 'type'=>'dir'}
+    
     Find.find(dir) do |path|
       #p "\n>>#{path}::"
       parts = path.split('/')
@@ -37,11 +42,11 @@ require 'find'
       atrname = atrname.gsub(".",'') 
       t[atrname] = { 'type'=>'file', "path"=> path, "name"=>parts[-1], "size"=>File.size(path), "create"=>File.ctime(path), "modify"=>File.mtime(path) } unless FileTest.directory?(path)
     end
-    
+      
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @feeder }
-      format.xml  { render xml: genxml(@feeder['data'],xml) }
+      format.xml  { render xml: genxml(@feeder,xml) }
     end
   end
 
