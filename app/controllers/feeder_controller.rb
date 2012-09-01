@@ -38,9 +38,10 @@ require 'find'
         t = t[p]
       }
       
+      http_path = path.gsub('public/','')
       atrname = parts[-1]
       atrname = atrname.gsub(".",'') 
-      t[atrname] = { 'type'=>'file', "path"=> path, "name"=>parts[-1], "size"=>File.size(path), "create"=>File.ctime(path), "modify"=>File.mtime(path) } unless FileTest.directory?(path)
+      t[atrname] = { 'type'=>'file', "path"=> http_path, "name"=>parts[-1], "size"=>File.size(path), "create"=>File.ctime(path), "modify"=>File.mtime(path) } unless FileTest.directory?(path)
     end
       
     respond_to do |format|
