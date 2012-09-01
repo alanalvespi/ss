@@ -68,10 +68,24 @@ month = "%02d" % as_of.month
 year  = "%4d" % as_of.year
 
 dirname = ''
-['data',year,month,day].each do |part| 
+['../../public/data/feeders/market_update',year,month,day].each do |part| 
  dirname = dirname + part + '/'
  Dir::mkdir(dirname) unless FileTest::directory?(dirname) 
 end
+log_fn = "#{dirname}market_update.log"
+puts "redirecting output to #{log_fn}"
+
+$stdout.reopen(log_fn,"w")
+$stderr = $stdout
+puts "output redirected to #{log_fn}"
+
+
+marker_fn = "#{dirname}Started_#{valuta}.mark"
+marker_file = File.new(marker_fn, "w")
+marker_file.close()
+
+
+
 
 
 begin 
@@ -85,7 +99,7 @@ Now = Time.now
 
 def update_db(query_name, section, msci_name, msci_index_code, valuta, last,day, market) 
   begin
-    flds = {:last_mod=>Now,:state=>0,:reason=>nil}
+    flds = {:created_at=>Now,:updated_at=>Now,:state=>0,:reason=>nil}
     db_market = DB[:markets].filter(:query_name => query_name, :query_section => section, :msci_index_code => msci_index_code).first
     unless db_market then
       db_Insert = DB[:markets]
@@ -225,8 +239,7 @@ puts "Market Update As Of: #{valuta} Complete"
 putJson( dirname + 'MakertUpdate.json',markets)
 putYaml( dirname + 'MakertUpdate.yml',markets)
 
-
-
+File.delete(marker_fn)
 
 
  

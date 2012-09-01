@@ -39,12 +39,6 @@ module Wa
     end
     
     # Process Global parameters
-    if (ENV.has_key?('logfile')) then
-      puts "redirecting output to  #{ENV['logfile']}"
-      $stdout.reopen(ENV['logfile'],"w")
-      $stderr = $stdout
-      puts "output redirected to  #{ENV['logfile']}"
-    end
     
   end
   
