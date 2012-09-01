@@ -1,6 +1,6 @@
 class CreateClients < ActiveRecord::Migration
   def change
-    create_table :clients do |t|
+    create_table :clients, {:primary_key => :client_id} do |t|
       t.integer :client_id
       t.string :client_name
       t.string :full_address

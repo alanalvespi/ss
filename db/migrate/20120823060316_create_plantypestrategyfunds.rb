@@ -1,6 +1,6 @@
 class CreatePlantypestrategyfunds < ActiveRecord::Migration
   def change
-    create_table :plantypestrategyfunds do |t|
+    create_table :plantypestrategyfunds, {:primary_key => :plantypestrategyfund_id} do |t|
       t.integer :plantypestrategyfund_id
       t.integer :plantypestrategy_id
       t.integer :plantypefund_id

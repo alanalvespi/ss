@@ -1,6 +1,6 @@
 class CreatePolicyfunds < ActiveRecord::Migration
   def change
-    create_table :policyfunds do |t|
+    create_table :policyfunds, {:primary_key => :policyfund_id} do |t|
       t.integer :policyfund_id
       t.integer :policy_id
       t.integer :fund_id

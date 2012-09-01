@@ -1,6 +1,6 @@
 class CreatePolicies < ActiveRecord::Migration
   def change
-    create_table :policies do |t|
+    create_table :policies, {:primary_key => :policy_id} do |t|
       t.integer :policy_id
       t.string :policy_number
       t.date :policy_start
