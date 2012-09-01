@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="061ae909-528f-4e02-a68e-2c21d3d4cfb5" kpf_version="5" name="ss.komodoproject">
+<preference-set idref="061ae909-528f-4e02-a68e-2c21d3d4cfb5">
+<preference-set id="Invocations">
+<preference-set id="Project">
+  <string id="cookieparams"></string>
+  <string relative="path" id="cwd"></string>
+  <string id="documentRoot"></string>
+  <string id="executable-params"></string>
+  <string id="filename"></string>
+  <string id="getparams"></string>
+  <string id="language">Ruby</string>
+  <string id="mpostparams"></string>
+  <string id="params"></string>
+  <string id="postparams"></string>
+  <string id="posttype">application/x-www-form-urlencoded</string>
+  <string id="request-method">GET</string>
+  <boolean id="show-dialog">1</boolean>
+  <boolean id="sim-cgi">0</boolean>
+  <boolean id="use-console">0</boolean>
+  <string id="userCGIEnvironment"></string>
+  <string id="userEnvironment"></string>
+</preference-set>
+</preference-set>
+  <string id="currentInvocationLanguage">Ruby</string>
+  <string relative="path" id="import_dirname"></string>
+  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;_svn;.git;.hg;.bzr;*%25*;tmp*.html;.DS_Store;*.swp;*.kpf;*.komodoproject;.komodotools;__pycache__</string>
+  <string id="import_include_matches"></string>
+  <string id="language">Ruby</string>
+  <string id="lastInvocation">Project</string>
+  <string id="rubyDefaultInterpreter">C:\RailsInstaller\Ruby1.9.3\bin\ruby.exe</string>
+  <string id="rubyExtraPaths"></string>
+  <boolean id="ruby_debuggerlogenabled">0</boolean>
+  <string id="ruby_debuggerlogpath"></string>
+</preference-set>
+</project>
