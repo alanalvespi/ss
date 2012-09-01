@@ -18,7 +18,7 @@ require 'find'
       'client_update' => 1,
       'loadfunds'     => 1
     }  
-    
+    xml  = '<?xml version="1.0" encoding="UTF-8"?>'
     dir =  directory_config[params[:id]]
     @feeder = {}
     Find.find(dir) do |path|
@@ -28,24 +28,44 @@ require 'find'
       # travel/make directory structures 
       parts[0..-2].each { |p|
         next unless p
-        next if drop_dirs.has_key?(p)
-        #p "[#{p}]" 
-        p = "_#{p}" if (p.to_i != 0)
-        t[p] = {} unless t.has_key?(p)
+        next if drop_dirs.has_key?(p) 
+        t[p] = { 'type' => 'dir', 'name'=>p } unless t.has_key?(p)
         t = t[p]
       }
       
       atrname = parts[-1]
       atrname = atrname.gsub(".",'') 
-      t[atrname] = { "path"=> path, "name"=>parts[-1], "size"=>File.size(path), "create"=>File.ctime(path), "modify"=>File.mtime(path) } unless FileTest.directory?(path)
+      t[atrname] = { 'type'=>'file', "path"=> path, "name"=>parts[-1], "size"=>File.size(path), "create"=>File.ctime(path), "modify"=>File.mtime(path) } unless FileTest.directory?(path)
     end
     
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @feeder }
-      format.xml { render xml: @feeder }
+      format.xml  { render xml: genxml(@feeder['data'],xml) }
     end
   end
+
+def genxml(t, x ) 
+  if (t['type'] == 'file') then
+    x = "#{x}\n<file"
+    t.keys.each { | k |
+      next if k == 'type'
+      x = "#{x} #{k}=\"#{t[k]}\"" 
+    }
+    return "#{x} />"
+  end
+  
+  # Here a Directory
+  x = "#{x}\n<dir name=\"#{t['name']}\">"
+  t.keys.each { |s|
+    next if s == 'name'
+    next if s == 'type'
+    x = genxml(t[s],x)  
+  }
+  return "#{x}\n</dir>"
+  
+end
+
 
   # PUT /feeders/market_update
   # PUT /feeders/market_update.json
