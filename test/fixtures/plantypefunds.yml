@@ -9,6 +9,10 @@ one:
   fund_fkey: MyString
   fund_type: MyString
   company_id: 1
+  plantype_id: 1
+  fund_isin: MyString
+  reason: MyString
+  state: 1
 
 two:
   fund_id: 1
@@ -19,3 +23,7 @@ two:
   fund_fkey: MyString
   fund_type: MyString
   company_id: 1
+  plantype_id: 1
+  fund_isin: MyString
+  reason: MyString
+  state: 1

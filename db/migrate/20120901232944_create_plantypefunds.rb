@@ -9,6 +9,10 @@ class CreatePlantypefunds < ActiveRecord::Migration
       t.string :fund_fkey
       t.string :fund_type
       t.integer :company_id
+      t.integer :plantype_id
+      t.string :fund_isin
+      t.string :reason
+      t.integer :state
 
       t.timestamps
     end
