@@ -5,6 +5,8 @@ module ExchangeRate
   Xrate_cache = {}
   
   def ExchangeRate::Get(fund_currency,policy_currency)
+    # same currency?
+    return 1.0 if fund_currency == policy_currency
   
     # get from cache
     ckey = "#{fund_currency}:#{policy_currency}"

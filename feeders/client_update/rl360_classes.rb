@@ -51,7 +51,7 @@ class Company < DB_Table
   attr_accessor   :company_id           ,# int AUTO_INCREMENT NOT NULL,
                   :company_name         ,# varchar(45),
                   :company_last_update   # date,
-  self.table = :company
+  self.table = :companies
   self.instances = []
   
   def to_s

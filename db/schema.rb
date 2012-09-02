@@ -11,10 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829212427) do
+ActiveRecord::Schema.define(:version => 20120901232944) do
 
-  create_table "clients", :force => true do |t|
-    t.integer  "client_id"
+  create_table "clients", :primary_key => "client_id", :force => true do |t|
     t.string   "client_name"
     t.string   "full_address"
     t.string   "client_company_address"
@@ -26,23 +25,20 @@ ActiveRecord::Schema.define(:version => 20120829212427) do
     t.datetime "updated_at",                    :null => false
   end
 
-  create_table "companies", :force => true do |t|
-    t.integer  "company_id"
+  create_table "companies", :primary_key => "company_id", :force => true do |t|
     t.string   "company_name"
     t.date     "company_last_update"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end
 
-  create_table "currencies", :force => true do |t|
-    t.integer  "currency_id"
+  create_table "currencies", :primary_key => "currency_id", :force => true do |t|
     t.string   "currency_name"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "markets", :force => true do |t|
-    t.integer  "market_id"
+  create_table "markets", :primary_key => "market_id", :force => true do |t|
     t.string   "market_name"
     t.string   "query_name"
     t.string   "query_section"
@@ -68,8 +64,7 @@ ActiveRecord::Schema.define(:version => 20120829212427) do
     t.datetime "updated_at",                                                 :null => false
   end
 
-  create_table "plantype_strategies", :force => true do |t|
-    t.integer  "plantype_strategy"
+  create_table "plantype_strategies", :primary_key => "plantype_strategy", :force => true do |t|
     t.integer  "plantype_id"
     t.integer  "strategy_id"
     t.integer  "plantypestrategyFund_id"
@@ -78,8 +73,7 @@ ActiveRecord::Schema.define(:version => 20120829212427) do
     t.datetime "updated_at",              :null => false
   end
 
-  create_table "plantypefunds", :force => true do |t|
-    t.integer  "fund_id"
+  create_table "plantypefunds", :primary_key => "fund_id", :force => true do |t|
     t.string   "fund_name"
     t.string   "fund_identifier"
     t.integer  "market_id"
@@ -95,20 +89,19 @@ ActiveRecord::Schema.define(:version => 20120829212427) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "plantypes", :force => true do |t|
-    t.integer  "plantype_id"
+  create_table "plantypes", :primary_key => "plantype_id", :force => true do |t|
     t.string   "plantype_name"
     t.integer  "company_id"
     t.string   "plantype_currency"
     t.integer  "deposit_fund_id"
+    t.date     "last_mod"
     t.integer  "state"
     t.string   "reason"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
 
-  create_table "plantypestrategyfunds", :force => true do |t|
-    t.integer  "plantypestrategyfund_id"
+  create_table "plantypestrategyfunds", :primary_key => "plantypestrategyfund_id", :force => true do |t|
     t.integer  "plantypestrategy_id"
     t.integer  "plantypefund_id"
     t.integer  "deposit_plantype_fund_id"
@@ -117,8 +110,7 @@ ActiveRecord::Schema.define(:version => 20120829212427) do
     t.datetime "updated_at",               :null => false
   end
 
-  create_table "policies", :force => true do |t|
-    t.integer  "policy_id"
+  create_table "policies", :primary_key => "policy_id", :force => true do |t|
     t.string   "policy_number"
     t.date     "policy_start"
     t.string   "policy_currency"
@@ -131,25 +123,25 @@ ActiveRecord::Schema.define(:version => 20120829212427) do
     t.integer  "policy_single_premium"
     t.decimal  "policy_total_invested",      :precision => 10, :scale => 0
     t.integer  "policy_missing"
+    t.date     "last_mod"
     t.integer  "state"
     t.string   "reason"
     t.datetime "created_at",                                                :null => false
     t.datetime "updated_at",                                                :null => false
   end
 
-  create_table "policyfunds", :force => true do |t|
-    t.integer  "policyfund_id"
+  create_table "policyfunds", :primary_key => "policyfund_id", :force => true do |t|
     t.integer  "policy_id"
     t.integer  "fund_id"
     t.decimal  "policyfund_value", :precision => 10, :scale => 0
+    t.date     "last_mod"
     t.integer  "state"
     t.string   "reason"
     t.datetime "created_at",                                      :null => false
     t.datetime "updated_at",                                      :null => false
   end
 
-  create_table "strategies", :force => true do |t|
-    t.integer  "strategy_id"
+  create_table "strategies", :primary_key => "strategy_id", :force => true do |t|
     t.string   "strategy_name"
     t.integer  "strategy_initial_switch_percentage"
     t.integer  "strategy_filter"
@@ -159,12 +151,11 @@ ActiveRecord::Schema.define(:version => 20120829212427) do
     t.datetime "updated_at",                                                        :null => false
   end
 
-  create_table "strategies_markets", :force => true do |t|
-    t.integer  "strategy_market_id"
+  create_table "strategies_markets", :primary_key => "strategy_market_id", :force => true do |t|
     t.integer  "strategy_id"
     t.integer  "market_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

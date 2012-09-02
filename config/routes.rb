@@ -23,7 +23,15 @@ Ss::Application.routes.draw do
 
   resources :companies
 
-  resources :feeder 
+  
+  # Special Routes for Feeders
+  match "/feeder/:id"               => "feeder#show"
+  match "/feeder/start/:id"         => "feeder#start"
+  
+  
+  
+  
+   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

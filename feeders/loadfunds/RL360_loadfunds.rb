@@ -4,7 +4,25 @@ require 'roo'
 require 'yaml'
 require '../util/wa'
 
+# Todays Date
+as_of  = Date.today
+day   = "%02d" % as_of.day
+month = "%02d" % as_of.month
+year  = "%4d" % as_of.year
 
+
+dirname = ''
+['../../public/data/feeders/loadfunds',year,month,day].each do |part| 
+ dirname = dirname + part + '/'
+ Dir::mkdir(dirname) unless FileTest::directory?(dirname) 
+end
+
+log_fn = "#{dirname}loadfunds.log"
+puts "redirecting output to #{log_fn}"
+
+$stdout.reopen(log_fn,"w")
+$stderr = $stdout
+puts "output redirected to #{log_fn}"
 
 #
 # Load Job Parameters
@@ -66,7 +84,7 @@ end
 # Get Database Info
 DB = Wa.openDatabase()
 
-company_id       = DB[:company].filter(:company_name => 'RL360').select(:company_id).single_value
+company_id       = DB[:companies].filter(:company_name => 'RL360').select(:company_id).single_value
 db_Funds         = DB[:plantypefunds].filter(:company_id => company_id).map {|r| "#{r[:plantype_id]}:#{r[:fund_identifier]}"}
 plantype_list    = DB[:plantypes].map {|r| r[:plantype_id]}
 db_PlantypeFunds = DB[:plantypefunds]
@@ -89,11 +107,12 @@ $now          = Time.now
   begin  
     $rowno = $rowno + 1
     identifier = book.cell(row,'A').to_i
-    flds ={:last_mod=>$now,:state=>0,:reason=>nil}
+    flds ={:created_at=>$now,:updated_at=>$now,:state=>0,:reason=>nil}
     if (identifier == 0) then
       flds[:state]=1
       flds[:reason]='has no internal id'  
-      $errors = $errors + 1  
+      $errors = $errors + 1 
+      puts WaError.new("E-RL360_loadfunds:NoIntId, No Internal Id, Could not process row #{$rowno}") 
     end
 
     pppcode    = book.cell(row,'B').to_i

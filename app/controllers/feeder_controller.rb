@@ -2,15 +2,15 @@ class FeederController < ApplicationController
 
 require 'find'
 
-  # GET /feeders/market_update
-  # GET /clients/market_update.json
-  # GET /clients/market_update.xml
+  # GET /feeder/market_update
+  # GET /feeder/market_update.json
+  # GET /feeder/market_update.xml
   def show
     # tmp = Dir.getwd  directory is ss (root of project)
     directory_config =  
       {'market_update' => 'public/data/feeders/market_update',
        'client_update' => 'public/data/feeders/client_update',
-       'load_funds'    => 'public/data/feeders/loadfunds',
+       'loadfunds'     => 'public/data/feeders/loadfunds',
       }
     drop_dirs = {
       'public'        => 1,
@@ -21,6 +21,9 @@ require 'find'
       'loadfunds'     => 1
     }  
     xml  = '<?xml version="1.0" encoding="UTF-8"?>'
+    
+    raise ActionController::RoutingError.new("Not Found, #{params[:id]}") unless directory_config.has_key?(params[:id])
+
     
     dir =  directory_config[params[:id]]
       
@@ -73,11 +76,10 @@ def genxml(t, x )
 end
 
 
-  # PUT /feeders/market_update
-  # PUT /feeders/market_update.json
-  def update
+  # Get /feeder/start/market_update
+  
+  def start
     batch_name = params[:id]
-    valuta = params[:valuta]
     env = Rails.env
     db_conf = Ss::Application.config.database_configuration[env]
 
@@ -120,16 +122,36 @@ end
     c['host'] = 'localhost' unless c['host']
     c['port'] = '3306'      unless c['port']
     
+    
+    
+    as_of = Date.today 
+    
+    if params.has_key?(:valuta) then
+      valuta = params[:valuta] 
+      as_of = Date.parse(valuta)   
+    end
+    
+      
+    # Valuta Date
+    
+    day   = "%02d" % as_of.day
+    month = "%02d" % as_of.month
+    year  = "%4d" % as_of.year
+
+
     case batch_name
       
     when 'market_update'
       result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} valuta=#{valuta} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
-      
+      redirect_to("/data/feeders/market_update/#{year}/#{month}/#{day}/market_update.log")
+
     when 'client_update'
       result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
+      redirect_to("/data/feeders/client_update/#{year}/#{month}/#{day}/RL360ClientUpdate.log")
       
     when 'loadfunds'
       result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
+      redirect_to("/data/feeders/loadfunds/#{year}/#{month}/#{day}/loadfunds.log")
 
     end
     
