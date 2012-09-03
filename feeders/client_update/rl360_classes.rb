@@ -136,7 +136,7 @@ class Plantypefund < DB_Table
   self.instances = []
   
   def to_s
-    return "Plantypefund::#{identifier}:(#{fund_name})"
+    return "Plantypefund::#{fund_identifier}:(#{fund_name})"
   end
 end
 
