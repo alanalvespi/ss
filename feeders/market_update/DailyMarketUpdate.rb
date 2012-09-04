@@ -35,10 +35,26 @@ raise WaError.new('E-DailyMarketUpdate:ParmError, host     parameter not specifi
 raise WaError.new('E-DailyMarketUpdate:ParmError, port     parameter not specified, please add     port="port-no"     to command ') unless ENV.has_key?('port')
 
 xls_list =
-{ 'SC'=>{:filename=>'SC.xls',:format=>'msibarra',:url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+%28DM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Standard+%28Large%2BMid+Cap%29&export=Excel_IEIPerfRegionalCountry'},
-  'EM'=>{:filename=>'EM.xls',:format=>'msibarra',:url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Emerging+Markets+%28EM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Standard+%28Large%2BMid+Cap%29&export=Excel_IEIPerfRegionalCountry'},
-  'DM'=>{:filename=>'DM.xls',:format=>'msibarra',:url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+%28DM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Small+Cap&export=Excel_IEIPerfRegionalCountry'},
-  'AC'=>{:filename=>'AC.xls',:format=>'msibarra',:url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=0&priceLevel=0&market=1896&style=C&asOf=Month+Day%2C+Year&currency=15&size=77&export=Excel_IEIPerfRegional'}
+{ 'SC'=>{:filename=>'SC.xls',
+         :market_name=>'Small Captital',
+         :format=>'msibarra',
+         :url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+%28DM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Standard+%28Large%2BMid+Cap%29&export=Excel_IEIPerfRegionalCountry'
+         },
+  'EM'=>{:filename=>'EM.xls',
+         :market_name=>'Emerging Markets (EM)',
+         :format=>'msibarra',
+         :url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Emerging+Markets+%28EM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Standard+%28Large%2BMid+Cap%29&export=Excel_IEIPerfRegionalCountry'
+         },
+  'DM'=>{:filename=>'DM.xls',
+         :market_name=>'Developed Markets (DM)',
+         :format=>'msibarra',
+         :url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+%28DM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Small+Cap&export=Excel_IEIPerfRegionalCountry'
+         },
+  'AC'=>{:filename=>'AC.xls',
+         :market_name=>'All Country (DM+EM)',
+         :format=>'msibarra',
+         :url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=0&priceLevel=0&market=1896&style=C&asOf=Month+Day%2C+Year&currency=15&size=77&export=Excel_IEIPerfRegional'
+         }
 }
 
 def getXLS(url,filename)
@@ -166,7 +182,7 @@ xls_list.keys().each do |xls_name|
   first_row = book.first_row
   last_row  = book.last_row
   first_cell = nil
-  market = {}
+  market = {'Market'=> xls['market_name']}
   colheads = {}
   idx = {}
   query_section = ''
@@ -183,7 +199,8 @@ xls_list.keys().each do |xls_name|
     if (first_cell) then # if first cell not empty
       # Check what first row is....
       if (first_cell[-2,2] == ' :') then # is it a keyword?
-        market[first_cell[0..-3]] = book.cell(row,'B')  # yes, store keyword
+        keyword = first_cell[0..-3]      # yes, store keyword
+        market[keyword] = book.cell(row,'B')  unless keyword == 'Market'
         
       elsif ((first_cell == 'Regional Performance') or (first_cell == 'Country Performance')) then     # is it a section header
         query_section = first_cell
