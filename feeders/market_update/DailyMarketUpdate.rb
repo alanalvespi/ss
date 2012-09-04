@@ -36,7 +36,7 @@ raise WaError.new('E-DailyMarketUpdate:ParmError, port     parameter not specifi
 
 xls_list =
 { 'SC'=>{:filename=>'SC.xls',
-         :market_name=>'Small Captital',
+         :market_name=>'Small Capital (SC)',
          :format=>'msibarra',
          :url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+%28DM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Standard+%28Large%2BMid+Cap%29&export=Excel_IEIPerfRegionalCountry'
          },
@@ -51,7 +51,7 @@ xls_list =
          :url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+%28DM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Small+Cap&export=Excel_IEIPerfRegionalCountry'
          },
   'AC'=>{:filename=>'AC.xls',
-         :market_name=>'All Country (DM+EM)',
+         :market_name=>'All Country (AC)',
          :format=>'msibarra',
          :url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=0&priceLevel=0&market=1896&style=C&asOf=Month+Day%2C+Year&currency=15&size=77&export=Excel_IEIPerfRegional'
          }
@@ -182,7 +182,8 @@ xls_list.keys().each do |xls_name|
   first_row = book.first_row
   last_row  = book.last_row
   first_cell = nil
-  market = {'Market'=> xls['market_name']}
+  market = {}
+  market['Market'] = xls['market_name']
   colheads = {}
   idx = {}
   query_section = ''
