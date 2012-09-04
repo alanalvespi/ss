@@ -145,11 +145,12 @@ def update_db(query_name, section, msci_name, msci_index_code, valuta, last,day,
         :reason                       => nil)
         $rowsinserted = $rowsinserted + 1      
     else
-      if (db_market[:market_current_date]) then 
-        if (db_market[:market_current_date] >= Date.parse(valuta)) then
-          raise WaError.new("E-DailyMarketUpdate:BadValuta, Row in Markets table has market_current_date #{db_market[:market_current_date]} newer or same as valuta #{valuta}")
-        end
-      end 
+      # @note Indexes are not unique so some are already updated....
+      #if (db_market[:market_current_date]) then 
+      #  if (db_market[:market_current_date] >= Date.parse(valuta)) then
+      #    raise WaError.new("E-DailyMarketUpdate:BadValuta, Row in Markets table has market_current_date #{db_market[:market_current_date]} newer or same as valuta #{valuta}")
+      #  end
+      #end 
       flds[:market_currency]      = market['Currency']
       flds[:market_msci_name]     = msci_name 
       flds[:market_current_date]  = valuta
@@ -183,7 +184,7 @@ xls_list.keys().each do |xls_name|
   last_row  = book.last_row
   first_cell = nil
   market = {}
-  market['Market'] = xls['market_name']
+  market['Market'] = xls[:market_name]
   colheads = {}
   idx = {}
   query_section = ''
