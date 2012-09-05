@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120901232944) do
+ActiveRecord::Schema.define(:version => 20120905153834) do
 
   create_table "clients", :primary_key => "client_id", :force => true do |t|
     t.string   "client_name"
@@ -46,22 +46,23 @@ ActiveRecord::Schema.define(:version => 20120901232944) do
     t.integer  "msci_index_code"
     t.integer  "market_in"
     t.date     "market_current_date"
-    t.decimal  "market_current_price",        :precision => 10, :scale => 0
-    t.decimal  "market_dailychange",          :precision => 10, :scale => 0
+    t.float    "market_current_price"
+    t.float    "market_dailychange"
     t.date     "market_reference_date"
-    t.decimal  "market_reference_price",      :precision => 10, :scale => 0
-    t.decimal  "market_change_from_ref",      :precision => 10, :scale => 0
-    t.decimal  "market_change_from_switch",   :precision => 10, :scale => 0
+    t.float    "market_reference_price"
+    t.float    "market_change_from_ref"
+    t.float    "market_change_from_switch"
     t.integer  "market_override"
     t.string   "market_switch"
     t.date     "market_last_switch_date"
-    t.decimal  "market_last_switch_price",    :precision => 10, :scale => 0
+    t.float    "market_last_switch_price"
     t.date     "market_current_process_date"
+    t.datetime "last_mod"
     t.integer  "state"
     t.string   "reason"
     t.string   "market_currency"
-    t.datetime "created_at",                                                 :null => false
-    t.datetime "updated_at",                                                 :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "plantype_strategies", :primary_key => "plantype_strategy", :force => true do |t|
