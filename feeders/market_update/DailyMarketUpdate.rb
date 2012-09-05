@@ -38,7 +38,7 @@ xls_list =
 { 'SC'=>{:filename=>'SC.xls',
          :market_name=>'Small Capital (SC)',
          :format=>'msibarra',
-         :url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+%28DM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Standard+%28Large%2BMid+Cap%29&export=Excel_IEIPerfRegionalCountry'
+         :url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+%28DM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Small+Cap&export=Excel_IEIPerfRegionalCountry'
          },
   'EM'=>{:filename=>'EM.xls',
          :market_name=>'Emerging Markets (EM)',
@@ -48,7 +48,7 @@ xls_list =
   'DM'=>{:filename=>'DM.xls',
          :market_name=>'Developed Markets (DM)',
          :format=>'msibarra',
-         :url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+%28DM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Small+Cap&export=Excel_IEIPerfRegionalCountry'
+         :url=>'http://www.mscibarra.com/webapp/indexperf/excel?scope=R&priceLevel=Price&market=Developed+Markets+%28DM%29&style=C&asOf=Month+Day%2C+Year&currency=USD&size=Standard+%28Large%2BMid+Cap%29&export=Excel_IEIPerfRegionalCountry'
          },
   'AC'=>{:filename=>'AC.xls',
          :market_name=>'All Country (AC)',
