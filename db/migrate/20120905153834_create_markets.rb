@@ -1,6 +1,6 @@
 class CreateMarkets < ActiveRecord::Migration
   def change
-    create_table :markets do |t|
+    create_table :markets,{:primary_key => :market_id}  do |t|
       t.integer :market_id
       t.string :market_name
       t.string :query_name
