@@ -88,7 +88,16 @@ dirname = ''
  dirname = dirname + part + '/'
  Dir::mkdir(dirname) unless FileTest::directory?(dirname) 
 end
-log_fn = "#{dirname}market_update.log"
+
+logdirname = ''
+['../../public/logs/feeders/market_update',year,month,day].each do |part| 
+ logdirname = logdirname + part + '/'
+ Dir::mkdir(logdirname) unless FileTest::directory?(logdirname) 
+end
+
+
+
+log_fn = "#{logdirname}market_update.log"
 puts "redirecting output to #{log_fn}"
 
 $stdout.reopen(log_fn,"w")
@@ -96,7 +105,7 @@ $stderr = $stdout
 puts "output redirected to #{log_fn}"
 
 
-marker_fn = "#{dirname}Started_#{valuta}.mark"
+marker_fn = "#{logdirname}Started_#{valuta}.mark"
 marker_file = File.new(marker_fn, "w")
 marker_file.close()
 
@@ -255,8 +264,8 @@ puts "Number of Rows Insterted: #{$rowsinserted}"
 puts "Number of Rows Updated:   #{$rowsupdated}"
 puts "Number of Rows Insterted: #{$rowserrors}"
 puts "Market Update As Of: #{valuta} Complete"
-putJson( dirname + 'MakertUpdate.json',markets)
-putYaml( dirname + 'MakertUpdate.yml',markets)
+putJson( logdirname + 'MakertUpdate.json',markets)
+putYaml( logdirname + 'MakertUpdate.yml',markets)
 
 File.delete(marker_fn)
 
