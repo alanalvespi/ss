@@ -3,7 +3,8 @@
 <table>
   <tr>
     <th>Market</th>
-    <th>Market name</th>
+    <th>Market friendly name</th>
+    <th>Market classification</th>
     <th>Query name</th>
     <th>Query section</th>
     <th>Market msci name</th>
@@ -33,7 +34,8 @@
 <% @markets.each do |market| %>
   <tr>
     <td><%= market.market_id %></td>
-    <td><%= market.market_name %></td>
+    <td><%= market.market_friendly_name %></td>
+    <td><%= market.market_classification %></td>
     <td><%= market.query_name %></td>
     <td><%= market.query_section %></td>
     <td><%= market.market_msci_name %></td>
