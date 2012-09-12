@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905153834) do
+ActiveRecord::Schema.define(:version => 20120911160808) do
 
   create_table "clients", :primary_key => "client_id", :force => true do |t|
     t.string   "client_name"
@@ -39,7 +39,8 @@ ActiveRecord::Schema.define(:version => 20120905153834) do
   end
 
   create_table "markets", :primary_key => "market_id", :force => true do |t|
-    t.string   "market_name"
+    t.string   "market_friendly_name"
+    t.string   "market_classification"
     t.string   "query_name"
     t.string   "query_section"
     t.string   "market_msci_name"

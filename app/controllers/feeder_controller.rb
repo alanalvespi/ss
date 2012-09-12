@@ -142,16 +142,18 @@ end
     case batch_name
       
     when 'market_update'
-      result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} valuta=#{valuta} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
-      redirect_to("/data/feeders/market_update/#{year}/#{month}/#{day}/market_update.log")
+      cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} valuta=#{valuta} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
+      puts "About to execute <#{cmdline}>"
+      system(cmdline)
+      redirect_to("/logs/feeders/market_update/#{year}/#{month}/#{day}/market_update.log")
 
     when 'client_update'
       result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
-      redirect_to("/data/feeders/client_update/#{year}/#{month}/#{day}/RL360ClientUpdate.log")
+      redirect_to("/logs/feeders/client_update/#{year}/#{month}/#{day}/RL360ClientUpdate.log")
       
     when 'loadfunds'
       result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
-      redirect_to("/data/feeders/loadfunds/#{year}/#{month}/#{day}/loadfunds.log")
+      redirect_to("/logs/feeders/loadfunds/#{year}/#{month}/#{day}/loadfunds.log")
 
     end
     

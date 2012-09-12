@@ -129,11 +129,12 @@ def update_db(query_name, section, msci_name, msci_index_code, valuta, last,day,
     unless db_market then
       db_Insert = DB[:markets]
       db_Insert.insert(
-        :market_name                  => market['Market'],
+        :market_classification        => market['Market'],
         :query_name                   => query_name,
         :query_section                => section,
         :market_currency              => market['Currency'],
         :market_msci_name             => msci_name,
+        :market_friendly_name         => msci_name,
         :msci_index_code              => msci_index_code,
         :market_in                    => nil,
         :market_current_date          => valuta,
@@ -160,6 +161,7 @@ def update_db(query_name, section, msci_name, msci_index_code, valuta, last,day,
       #    raise WaError.new("E-DailyMarketUpdate:BadValuta, Row in Markets table has market_current_date #{db_market[:market_current_date]} newer or same as valuta #{valuta}")
       #  end
       #end 
+      flds[:market_classification]= market['Market']
       flds[:market_currency]      = market['Currency']
       flds[:market_msci_name]     = msci_name 
       flds[:market_current_date]  = valuta
