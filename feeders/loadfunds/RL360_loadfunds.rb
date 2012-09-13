@@ -17,17 +17,31 @@ dirname = ''
  Dir::mkdir(dirname) unless FileTest::directory?(dirname) 
 end
 
-log_fn = "#{dirname}loadfunds.log"
+logdirname = ''
+['../../public/logs/feeders/loadfunds',year,month,day].each do |part| 
+ logdirname = logdirname + part + '/'
+ Dir::mkdir(logdirname) unless FileTest::directory?(logdirname) 
+end
+
+
+
+log_fn = "#{logdirname}RL360loadfunds.log"
 puts "redirecting output to #{log_fn}"
 
 $stdout.reopen(log_fn,"w")
 $stderr = $stdout
 puts "output redirected to #{log_fn}"
 
+
+marker_fn = "#{logdirname}Started_#{year}#{month}#{day}.mark"
+marker_file = File.new(marker_fn, "w")
+marker_file.close()
+
+
 #
 # Load Job Parameters
 #
-valuta = nil
+
 ARGV.each do |pair|
   name, value = pair.split(/=/)
   case name
@@ -125,7 +139,7 @@ $now          = Time.now
       puts WaError.new("E-RL360_loadfunds:InvalidRow, Could not process row #{$rowno} ",e)
       flds[:state]=1
       flds[:reason]=e.reason
-      $errors = $errors + 1  
+      $errors += 1  
     end
     
     plantype_list.each() do |pid|
@@ -137,7 +151,7 @@ $now          = Time.now
         flds[:fund_currency] = currency if (currency != db_Fund[:fund_currency])
         flds[:updated_at]    = $now
         x = DB[:plantypefunds].filter(:fund_id=>fund_id).update(flds)
-        $rowsupdated = $rowsupdated + 1  
+        $rowsupdated += 1  
               
       else
         # No record Found... Insert it into the DB
@@ -152,17 +166,19 @@ $now          = Time.now
                 :updated_at       => $now,
                 :state            =>0, 
                 :reason           =>nil)
-        $rowsinserted = $rowsinserted + 1      
+        $rowsinserted += 1      
       end
     end
   rescue WaError => e
     puts WaError.new("W-RL360_loadfunds:IgnoringRow, Ignoring Row #{$rowno}",e)
-    $rowsignored = $rowsignored + 1      
+    $rowsignored += 1      
 
   end
-        
 end    
+puts "     Process Summary"
+puts "=========================="
 puts "No of Rows Inserted : #{$rowsinserted}"
 puts "No of Rows Updated  : #{$rowsupdated}"
 puts "No of Rows Ignored  : #{$rowsignored}"
 puts "No of Errors        : #{$errors}"
+puts "=========================="

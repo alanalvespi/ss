@@ -40,7 +40,7 @@ $stderr = $stdout
 puts "output redirected to #{log_fn}"
 
 
-marker_fn = "#{logdirname}Started_#{valuta}.mark"
+marker_fn = "#{logdirname}Started_#{year}#{month}#{day}.mark"
 marker_file = File.new(marker_fn, "w")
 marker_file.close()
 
@@ -48,7 +48,6 @@ marker_file.close()
 #
 # Load Job Parameters
 #
-valuta = nil
 ARGV.each do |pair|
   name, value = pair.split(/=/)
   case name
@@ -326,18 +325,18 @@ File.open(csv_file, 'r') do |filehandle|
     end
   end
 end
-puts "                   Process Sumary"
-puts "====================================================="
-puts "Number of rows read               : #{rowno}"
-puts "Number of rows with errors        : #{$errors}"
-puts "Number of clients inserted        : #{$clientsinserted}"
-puts "Number of plantypes inserted      : #{$plantypesinserted}"
-puts "Number of plantypes updated       : #{$plantypesupdated}"
-puts "Number of $policies inserted      : #{$policiesinserted}"
-puts "Number of $policies updated       : #{$policiesupdated}"
-puts "Number of $plantypefunds inserted : #{$plantypefundsinserted}"
-puts "Number of $plantypefunds updated  : #{$plantypefundsupdated}"
-puts "Number of $policyfunds inserted   : #{$policyfundsinserted}"
-puts "Number of $policyfunds inserted   : #{$policyfundsupdated}"
-puts "====================================================="
+puts "              Process Sumary"
+puts "======================================="
+puts "Number of rows read              : #{rowno}"
+puts "Number of rows with errors       : #{$errors}"
+puts "Number of clients inserted       : #{$clientsinserted}"
+puts "Number of plantypes inserted     : #{$plantypesinserted}"
+puts "Number of plantypes updated      : #{$plantypesupdated}"
+puts "Number of policies inserted      : #{$policiesinserted}"
+puts "Number of policies updated       : #{$policiesupdated}"
+puts "Number of plantypefunds inserted : #{$plantypefundsinserted}"
+puts "Number of plantypefunds updated  : #{$plantypefundsupdated}"
+puts "Number of policyfunds inserted   : #{$policyfundsinserted}"
+puts "Number of policyfunds updated    : #{$policyfundsupdated}"
+puts "======================================="
 

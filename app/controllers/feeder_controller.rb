@@ -148,12 +148,16 @@ end
       redirect_to("/logs/feeders/market_update/#{year}/#{month}/#{day}/market_update.log")
 
     when 'client_update'
-      result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
-      redirect_to("/logs/feeders/client_update/#{year}/#{month}/#{day}/RL360ClientUpdate.log")
+      cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
+      puts "About to execute <#{cmdline}>"
+      result = system(cmdline)
+      redirect_to("/logs/feeders/client_update/#{year}/#{month}/#{day}/client_update.log")
       
     when 'loadfunds'
-      result = system("bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}")
-      redirect_to("/logs/feeders/loadfunds/#{year}/#{month}/#{day}/loadfunds.log")
+      cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
+      puts "About to execute <#{cmdline}>"
+      result = system(cmdline)
+      redirect_to("/logs/feeders/loadfunds/#{year}/#{month}/#{day}/RL360loadfunds.log")
 
     end
     

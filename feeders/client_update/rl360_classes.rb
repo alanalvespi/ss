@@ -145,7 +145,8 @@ class Policy  < DB_Table
                   :state                       ,# int,
                   :reason                      ,# varchar(255),
                   :created_at                  ,# datetime NOT NULL,
-                  :updated_at                   # datetime NOT NULL,  self.table = :policies
+                  :updated_at                   # datetime NOT NULL,  
+  self.table = :policies
   self.instances = []
   
   def to_s

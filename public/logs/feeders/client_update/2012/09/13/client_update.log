@@ -1,0 +1,200 @@
+output redirected to ../../public/logs/feeders/client_update/2012/09/13/client_update.log
+Using database database: sentrysystem, :user => root, :password => , :host => localhost, :port => 
+
+E-RL360UpdateClient:FundFail, Could not update fund 43000 for policy CL10000131, on row 2, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for IE00B1W3WR42:USD
+
+E-RL360UpdateClient:FundFail, Could not update fund 17053 for policy CL10000131, on row 3, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0210527015:USD
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::1:(CL10000131)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::2:(CL10000136)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::3:(CL10000141)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360UpdateClient:FundFail, Could not update fund 17061 for policy CL10000216, on row 8, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0210526124:USD
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::4:(CL10000171)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360UpdateClient:FundFail, Could not update fund 30353 for policy CL10000216, on row 9, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0231203729:USD
+
+E-RL360UpdateClient:FundFail, Could not update fund 43000 for policy CL10000216, on row 10, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for IE00B1W3WR42:USD
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for 30453 in Policy CL10000216, on row 11
+
+E-RL360UpdateClient:FundFail, Could not update fund 39053 for policy CL10000216, on row 12, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0085870607:USD
+
+E-RL360UpdateClient:FundFail, Could not update fund 30151 for policy LP22026641, on row 14, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0211331839:USD
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::5:(CL10000216)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360UpdateClient:FundFail, Could not update fund 31251 for policy LP22026641, on row 16, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for GB0031413593:GBX
+
+E-RL360UpdateClient:FundFail, Could not update fund 33051 for policy LP22026641, on row 17, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for FR0010135103:EUR
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::6:(LP22026641)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360UpdateClient:FundFail, Could not update fund 33051 for policy LP22027167, on row 20, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for FR0010135103:EUR
+
+E-RL360UpdateClient:FundFail, Could not update fund 30151 for policy LP22027477, on row 21, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0211331839:USD
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::7:(LP22027167)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360UpdateClient:FundFail, Could not update fund 31250 for policy LP22027477, on row 24, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for GB0031412744:GBX
+
+E-RL360UpdateClient:FundFail, Could not update fund 33051 for policy LP22027477, on row 25, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for FR0010135103:EUR
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0220 in Policy PM10000220, on row 27
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0236 in Policy PM10000236, on row 28
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0329 in Policy PM10000329, on row 29
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0439 in Policy PM10000439, on row 30
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0482 in Policy PM10000482, on row 31
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0734 in Policy PM10000734, on row 32
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0755 in Policy PM10000755, on row 33
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0825 in Policy PM10000825, on row 34
+
+E-RL360UpdateClient:FundFail, Could not update fund 33051 for policy QN10000022, on row 35, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for FR0010135103:EUR
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::8:(LP22027477)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360UpdateClient:FundFail, Could not update fund 33052 for policy QN10000022, on row 36, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for FR0010149302:EUR
+
+E-RL360UpdateClient:FundFail, Could not update fund 17053 for policy QN10000022, on row 38, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0210527015:USD
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for 23056 in Policy QN10000022, on row 39
+
+E-RL360UpdateClient:FundFail, Could not update fund 28059 for policy QN10000022, on row 42, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for GB0031860934:GBX
+
+E-RL360UpdateClient:FundFail, Could not update fund 33051 for policy QN10000022, on row 43, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for FR0010135103:EUR
+
+E-RL360UpdateClient:FundFail, Could not update fund 33052 for policy QN10000022, on row 44, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for FR0010149302:EUR
+
+E-RL360UpdateClient:FundFail, Could not update fund 17053 for policy QN10000022, on row 46, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0210527015:USD
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for 23056 in Policy QN10000022, on row 47
+
+E-RL360UpdateClient:FundFail, Could not update fund 28059 for policy QN10000022, on row 50, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for GB0031860934:GBX
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::9:(QN10000022)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360UpdateClient:FundFail, Could not update fund 33052 for policy QN10000960, on row 53, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for FR0010149302:EUR
+
+E-RL360UpdateClient:FundFail, Could not update fund 33051 for policy QN10000960, on row 54, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for FR0010135103:EUR
+
+E-RL360UpdateClient:FundFail, Could not update fund 28059 for policy QN10000960, on row 56, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for GB0031860934:GBX
+
+E-RL360UpdateClient:FundFail, Could not update fund 33052 for policy QN10000960, on row 61, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for FR0010149302:EUR
+
+E-RL360UpdateClient:FundFail, Could not update fund 33051 for policy QN10000960, on row 62, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for FR0010135103:EUR
+
+E-RL360UpdateClient:FundFail, Could not update fund 28059 for policy QN10000960, on row 64, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for GB0031860934:GBX
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::10:(QN10000960)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::11:(QN10001266)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360UpdateClient:FundFail, Could not update fund 25012 for policy QN10001551, on row 71, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0345762628:USD
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::12:(QN10001461)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360UpdateClient:FundFail, Could not update fund 25012 for policy QN10001551, on row 72, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0345762628:USD
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::13:(QN10001551)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360UpdateClient:FundFail, Could not update fund 43000 for policy QN10001552, on row 74, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for IE00B1W3WR42:USD
+
+E-RL360UpdateClient:FundFail, Could not update fund 17053 for policy QN10001552, on row 75, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0210527015:USD
+
+E-RL360UpdateClient:FundFail, Could not update fund 43000 for policy QN10001552, on row 77, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for IE00B1W3WR42:USD
+
+E-RL360UpdateClient:FundFail, Could not update fund 17053 for policy QN10001552, on row 78, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0210527015:USD
+
+E-RL360UpdateClient:FundFail, Could not update fund 25012 for policy QN10001590, on row 79, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0345762628:USD
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::14:(QN10001552)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+
+E-RL360UpdateClient:FundFail, Could not update fund 43000 for policy QN10001590, on row 80, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for IE00B1W3WR42:USD
+
+E-RL360UpdateClient:FundFail, Could not update fund 17053 for policy QN10001590, on row 81, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0210527015:USD
+
+E-RL360UpdateClient:FundFail, Could not update fund 25012 for policy QN10001590, on row 82, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0345762628:USD
+
+E-RL360UpdateClient:FundFail, Could not update fund 43000 for policy QN10001590, on row 83, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for IE00B1W3WR42:USD
+
+E-RL360UpdateClient:FundFail, Could not update fund 17053 for policy QN10001590, on row 84, reason: 
+E-FundPrice:GetPriceFail, Failed to get price for LU0210527015:USD
+
+E-RL360ClientUpdate:BadPolicyValue, Could not get_policy for Policy::15:(QN10001590)
+E-PolicyFund:NoPolicyValue, PolicyFund::2:(P=1,F=2) has Null policyfund_value
+                   Process Sumary
+=====================================================
+Number of rows read               : 86
+Number of rows with errors        : 11
+Number of clients inserted        : 14
+Number of plantypes inserted      : 1
+Number of plantypes updated       : 0
+Number of $policies inserted      : 16
+Number of $policies updated       : 56
+Number of $plantypefunds inserted : 23
+Number of $plantypefunds updated  : 49
+Number of $policyfunds inserted   : 47
+Number of $policyfunds inserted   : 25
+=====================================================
