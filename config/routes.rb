@@ -1,4 +1,6 @@
 Ss::Application.routes.draw do
+  resources :strategies
+
   resources :markets
 
   resources :plantypefunds
@@ -8,8 +10,6 @@ Ss::Application.routes.draw do
   resources :strategies_markets
 
   resources :policies
-
-  resources :strategies
 
   resources :plantypes
 

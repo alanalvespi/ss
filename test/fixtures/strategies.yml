@@ -3,15 +3,15 @@
 one:
   strategy_id: 1
   strategy_name: MyString
-  strategy_initial_switch_percentage: 1
-  strategy_filter: 1
-  strategy_trigger_in: 9.99
-  strategy_trigger_out: 9.99
+  strategy_initial_switch_percentage: 1.5
+  strategy_filter: 1.5
+  strategy_trigger_in: 1.5
+  strategy_trigger_out: 1.5
 
 two:
   strategy_id: 1
   strategy_name: MyString
-  strategy_initial_switch_percentage: 1
-  strategy_filter: 1
-  strategy_trigger_in: 9.99
-  strategy_trigger_out: 9.99
+  strategy_initial_switch_percentage: 1.5
+  strategy_filter: 1.5
+  strategy_trigger_in: 1.5
+  strategy_trigger_out: 1.5
