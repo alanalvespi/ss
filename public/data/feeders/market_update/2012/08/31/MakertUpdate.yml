@@ -1,0 +1,1932 @@
+---
+Developed Markets (DM):
+  Market: Developed Markets (DM)
+  As Of: Aug 31, 2012
+  Currency: USD
+  Size: Standard (Large+Mid Cap)
+  Price Level: Price
+  Style: None
+  Family: None
+  section: Country Performance
+  Indexes:
+    EAFE:
+      MSCI Index: EAFE
+      MSCI Index Code: '990300'
+      Last: 1472.507
+      Day: 0.0058
+      MTD: 0.0236
+      3MTD: 0.1048
+      YTD: 0.0424
+      1 Yr: -0.0335
+      3 Yr: -0.0059
+      5 Yr: -0.0761
+    EAFE + CANADA:
+      MSCI Index: EAFE + CANADA
+      MSCI Index Code: '991100'
+      Last: 1475.396
+      Day: 0.0063
+      MTD: 0.0254
+      3MTD: 0.10300000000000001
+      YTD: 0.041100000000000005
+      1 Yr: -0.0385
+      3 Yr: -0.0005
+      5 Yr: -0.0708
+    EAFE ex ISRAEL:
+      MSCI Index: EAFE ex ISRAEL
+      MSCI Index Code: '144097'
+      Last: 1115.647
+      Day: 0.0058
+      MTD: 0.0239
+      3MTD: 0.10550000000000001
+      YTD: 0.0431
+      1 Yr: -0.0327
+      3 Yr: 
+      5 Yr: 
+    EAFE ex UK:
+      MSCI Index: EAFE ex UK
+      MSCI Index Code: '991600'
+      Last: 1611.146
+      Day: 0.0068000000000000005
+      MTD: 0.022799999999999997
+      3MTD: 0.1039
+      YTD: 0.0407
+      1 Yr: -0.052000000000000005
+      3 Yr: -0.018799999999999997
+      5 Yr: -0.0786
+    EASEA INDEX (EAFE ex JAPAN):
+      MSCI Index: EASEA INDEX (EAFE ex JAPAN)
+      MSCI Index Code: '991300'
+      Last: 1227.486
+      Day: 0.0111
+      MTD: 0.0319
+      3MTD: 0.12960000000000002
+      YTD: 0.0574
+      1 Yr: -0.022099999999999998
+      3 Yr: 0.003
+      5 Yr: -0.0746
+    EMU:
+      MSCI Index: EMU
+      MSCI Index Code: '106400'
+      Last: 139.307
+      Day: 0.0212
+      MTD: 0.0643
+      3MTD: 0.15410000000000001
+      YTD: 0.0384
+      1 Yr: -0.0733
+      3 Yr: -0.0629
+      5 Yr: -0.1173
+    EMU ex GERMANY:
+      MSCI Index: EMU ex GERMANY
+      MSCI Index Code: '106507'
+      Last: 129.715
+      Day: 0.0223
+      MTD: 0.0696
+      3MTD: 0.1653
+      YTD: 0.01
+      1 Yr: -0.1079
+      3 Yr: -0.0872
+      5 Yr: -0.1326
+    EU:
+      MSCI Index: EU
+      MSCI Index Code: '990600'
+      Last: 326.262
+      Day: 0.0131
+      MTD: 0.0436
+      3MTD: 0.1349
+      YTD: 0.0495
+      1 Yr: -0.022799999999999997
+      3 Yr: -0.0143
+      5 Yr: -0.092
+    EURO:
+      MSCI Index: EURO
+      MSCI Index Code: '106569'
+      Last: 825.804
+      Day: 0.022000000000000002
+      MTD: 0.0678
+      3MTD: 0.1635
+      YTD: 0.0414
+      1 Yr: -0.0603
+      3 Yr: -0.06309999999999999
+      5 Yr: -0.1148
+    EUROPE:
+      MSCI Index: EUROPE
+      MSCI Index Code: '990500'
+      Last: 1318.957
+      Day: 0.0126
+      MTD: 0.041100000000000005
+      3MTD: 0.1323
+      YTD: 0.050499999999999996
+      1 Yr: -0.0206
+      3 Yr: -0.005600000000000001
+      5 Yr: -0.0832
+    EUROPE & MIDDLE EAST:
+      MSCI Index: EUROPE & MIDDLE EAST
+      MSCI Index Code: '144115'
+      Last: 1142.728
+      Day: 0.0126
+      MTD: 0.0405
+      3MTD: 0.1308
+      YTD: 0.049400000000000006
+      1 Yr: -0.022000000000000002
+      3 Yr: 
+      5 Yr: 
+    EUROPE ex EMU:
+      MSCI Index: EUROPE ex EMU
+      MSCI Index Code: '106331'
+      Last: 158.6
+      Day: 0.0063
+      MTD: 0.0245
+      3MTD: 0.1166
+      YTD: 0.059500000000000004
+      1 Yr: 0.0217
+      3 Yr: 0.0466
+      5 Yr: -0.052300000000000006
+    EUROPE ex SWITZERLAND:
+      MSCI Index: EUROPE ex SWITZERLAND
+      MSCI Index Code: '995200'
+      Last: 1182.44
+      Day: 0.013000000000000001
+      MTD: 0.043899999999999995
+      3MTD: 0.13570000000000002
+      YTD: 0.0501
+      1 Yr: -0.019299999999999998
+      3 Yr: -0.012199999999999999
+      5 Yr: -0.0911
+    EUROPE ex UK:
+      MSCI Index: EUROPE ex UK
+      MSCI Index Code: '991700'
+      Last: 1412.752
+      Day: 0.0182
+      MTD: 0.0495
+      3MTD: 0.1467
+      YTD: 0.051699999999999996
+      1 Yr: -0.0482
+      3 Yr: -0.0286
+      5 Yr: -0.09140000000000001
+    FAR EAST:
+      MSCI Index: FAR EAST
+      MSCI Index Code: '990900'
+      Last: 2284.926
+      Day: -0.0104
+      MTD: -0.0067
+      3MTD: 0.032400000000000005
+      YTD: 0.0131
+      1 Yr: -0.0647
+      3 Yr: -0.0216
+      5 Yr: -0.0712
+    G7 INDEX:
+      MSCI Index: G7 INDEX
+      MSCI Index Code: '113647'
+      Last: 1119.819
+      Day: 0.0046
+      MTD: 0.023399999999999997
+      3MTD: 0.078
+      YTD: 0.0861
+      1 Yr: 0.075
+      3 Yr: 0.0655
+      5 Yr: -0.035
+    KOKUSAI INDEX (WORLD ex JP):
+      MSCI Index: KOKUSAI INDEX (WORLD ex JP)
+      MSCI Index Code: '991200'
+      Last: 1289.209
+      Day: 0.0075
+      MTD: 0.0258
+      3MTD: 0.09300000000000001
+      YTD: 0.0911
+      1 Yr: 0.07
+      3 Yr: 0.0667
+      5 Yr: -0.0345
+    NORDIC COUNTRIES:
+      MSCI Index: NORDIC COUNTRIES
+      MSCI Index Code: '990700'
+      Last: 4809.833
+      Day: 0.015600000000000001
+      MTD: 0.024
+      3MTD: 0.1592
+      YTD: 0.09539999999999998
+      1 Yr: 0.0194
+      3 Yr: 0.0434
+      5 Yr: -0.0642
+    NORTH AMERICA:
+      MSCI Index: NORTH AMERICA
+      MSCI Index Code: '990200'
+      Last: 1478.858
+      Day: 0.0055000000000000005
+      MTD: 0.022400000000000003
+      3MTD: 0.0738
+      YTD: 0.1106
+      1 Yr: 0.128
+      3 Yr: 0.1085
+      5 Yr: -0.0084
+    PACIFIC:
+      MSCI Index: PACIFIC
+      MSCI Index Code: '990800'
+      Last: 1956.465
+      Day: -0.0068000000000000005
+      MTD: -0.0070999999999999995
+      3MTD: 0.0582
+      YTD: 0.0294
+      1 Yr: -0.0548
+      3 Yr: -0.0034000000000000002
+      5 Yr: -0.0593
+    PACIFIC ex JAPAN:
+      MSCI Index: PACIFIC ex JAPAN
+      MSCI Index Code: '991400'
+      Last: 1219.096
+      Day: 0.0043
+      MTD: -0.0063
+      3MTD: 0.12369999999999999
+      YTD: 0.09699999999999999
+      1 Yr: -0.022400000000000003
+      3 Yr: 0.0593
+      5 Yr: -0.0172
+    PAN-EURO:
+      MSCI Index: PAN-EURO
+      MSCI Index Code: '106570'
+      Last: 946.016
+      Day: 0.0123
+      MTD: 0.0409
+      3MTD: 0.1351
+      YTD: 0.0471
+      1 Yr: -0.015300000000000001
+      3 Yr: -0.0087
+      5 Yr: -0.0828
+    WORLD:
+      MSCI Index: WORLD
+      MSCI Index Code: '990100'
+      Last: 1279.208
+      Day: 0.005699999999999999
+      MTD: 0.0229
+      3MTD: 0.0862
+      YTD: 0.0817
+      1 Yr: 0.056100000000000004
+      3 Yr: 0.0562
+      5 Yr: -0.0391
+    WORLD WITH USA GROSS:
+      MSCI Index: WORLD WITH USA GROSS
+      MSCI Index Code: '701609'
+      Last: 1381.353
+      Day: 0.005699999999999999
+      MTD: 0.0229
+      3MTD: 0.0862
+      YTD: 0.0817
+      1 Yr: 0.056100000000000004
+      3 Yr: 0.0562
+      5 Yr: -0.0391
+    WORLD ex AUSTRALIA:
+      MSCI Index: WORLD ex AUSTRALIA
+      MSCI Index Code: '996200'
+      Last: 1282.839
+      Day: 0.005699999999999999
+      MTD: 0.0241
+      3MTD: 0.08439999999999999
+      YTD: 0.0819
+      1 Yr: 0.059500000000000004
+      3 Yr: 0.056299999999999996
+      5 Yr: -0.0397
+    WORLD ex AUSTRALIA WITH USA GROSS:
+      MSCI Index: WORLD ex AUSTRALIA WITH USA GROSS
+      MSCI Index Code: '701610'
+      Last: 1356.642
+      Day: 0.005699999999999999
+      MTD: 0.0241
+      3MTD: 0.08439999999999999
+      YTD: 0.0819
+      1 Yr: 0.059500000000000004
+      3 Yr: 0.056299999999999996
+      5 Yr: -0.0397
+    WORLD ex EMU:
+      MSCI Index: WORLD ex EMU
+      MSCI Index Code: '106330'
+      Last: 157.873
+      Day: 0.0037
+      MTD: 0.0178
+      3MTD: 0.0781
+      YTD: 0.0874
+      1 Yr: 0.075
+      3 Yr: 0.076
+      5 Yr: -0.0259
+    WORLD ex EUROPE:
+      MSCI Index: WORLD ex EUROPE
+      MSCI Index Code: '106332'
+      Last: 1261.309
+      Day: 0.0031
+      MTD: 0.0165
+      3MTD: 0.0705
+      YTD: 0.0935
+      1 Yr: 0.0868
+      3 Yr: 0.0825
+      5 Yr: -0.0199
+    WORLD ex ISRAEL:
+      MSCI Index: WORLD ex ISRAEL
+      MSCI Index Code: '144079'
+      Last: 1216.518
+      Day: 0.005699999999999999
+      MTD: 0.023
+      3MTD: 0.08650000000000001
+      YTD: 0.0821
+      1 Yr: 0.056799999999999996
+      3 Yr: 
+      5 Yr: 
+    WORLD ex UK:
+      MSCI Index: WORLD ex UK
+      MSCI Index Code: '991500'
+      Last: 1281.139
+      Day: 0.006
+      MTD: 0.0225
+      3MTD: 0.08410000000000001
+      YTD: 0.08529999999999999
+      1 Yr: 0.0587
+      3 Yr: 0.0579
+      5 Yr: -0.0359
+    WORLD ex USA:
+      MSCI Index: WORLD ex USA
+      MSCI Index Code: '991000'
+      Last: 1504.51
+      Day: 0.0063
+      MTD: 0.0254
+      3MTD: 0.10300000000000001
+      YTD: 0.041100000000000005
+      1 Yr: -0.0385
+      3 Yr: -0.0005
+      5 Yr: -0.0708
+    AUSTRIA:
+      MSCI Index: AUSTRIA
+      MSCI Index Code: '904000'
+      Last: 915.958
+      Day: 0.0262
+      MTD: 0.016200000000000003
+      3MTD: 0.0886
+      YTD: -0.024399999999999998
+      1 Yr: -0.28059999999999996
+      3 Yr: -0.1461
+      5 Yr: -0.2238
+    BELGIUM:
+      MSCI Index: BELGIUM
+      MSCI Index Code: '905600'
+      Last: 1143.907
+      Day: 0.0143
+      MTD: 0.057699999999999994
+      3MTD: 0.1912
+      YTD: 0.2452
+      1 Yr: 0.1425
+      3 Yr: 0.050499999999999996
+      5 Yr: -0.1246
+    DENMARK:
+      MSCI Index: DENMARK
+      MSCI Index Code: '920800'
+      Last: 5611.234
+      Day: 0.0118
+      MTD: 0.032
+      3MTD: 0.15990000000000001
+      YTD: 0.2279
+      1 Yr: 0.20670000000000002
+      3 Yr: 0.0955
+      5 Yr: -0.0037
+    FINLAND:
+      MSCI Index: FINLAND
+      MSCI Index Code: '924600'
+      Last: 304.5
+      Day: 0.0191
+      MTD: 0.0575
+      3MTD: 0.099
+      YTD: -0.0605
+      1 Yr: -0.2126
+      3 Yr: -0.12710000000000002
+      5 Yr: -0.1953
+    FRANCE:
+      MSCI Index: FRANCE
+      MSCI Index Code: '925000'
+      Last: 1269.77
+      Day: 0.0178
+      MTD: 0.0583
+      3MTD: 0.1483
+      YTD: 0.0548
+      1 Yr: -0.0809
+      3 Yr: -0.0504
+      5 Yr: -0.1002
+    GERMANY:
+      MSCI Index: GERMANY
+      MSCI Index Code: '928000'
+      Last: 1517.714
+      Day: 0.018799999999999997
+      MTD: 0.052000000000000005
+      3MTD: 0.1288
+      YTD: 0.10980000000000001
+      1 Yr: 0.0172
+      3 Yr: 0.005699999999999999
+      5 Yr: -0.07429999999999999
+    GREECE:
+      MSCI Index: GREECE
+      MSCI Index Code: '930000'
+      Last: 68.663
+      Day: 0.0681
+      MTD: 0.09210000000000002
+      3MTD: 0.1348
+      YTD: -0.1594
+      1 Yr: -0.514
+      3 Yr: -0.479
+      5 Yr: -0.4028
+    IRELAND:
+      MSCI Index: IRELAND
+      MSCI Index Code: '937200'
+      Last: 113.548
+      Day: 0.013999999999999999
+      MTD: -0.0086
+      3MTD: -0.0013
+      YTD: -0.0408
+      1 Yr: 0.0735
+      3 Yr: -0.0374
+      5 Yr: -0.2609
+    ITALY:
+      MSCI Index: ITALY
+      MSCI Index Code: '938000'
+      Last: 229.339
+      Day: 0.0294
+      MTD: 0.1094
+      3MTD: 0.19149999999999998
+      YTD: -0.0223
+      1 Yr: -0.1343
+      3 Yr: -0.1476
+      5 Yr: -0.183
+    NETHERLANDS:
+      MSCI Index: NETHERLANDS
+      MSCI Index Code: '952800'
+      Last: 1813.634
+      Day: 0.015600000000000001
+      MTD: 0.038
+      3MTD: 0.1625
+      YTD: 0.059800000000000006
+      1 Yr: 0.0184
+      3 Yr: 0.0034999999999999996
+      5 Yr: -0.08039999999999999
+    NORWAY:
+      MSCI Index: NORWAY
+      MSCI Index Code: '957800'
+      Last: 2862.025
+      Day: 0.0163
+      MTD: 0.06860000000000001
+      3MTD: 0.1991
+      YTD: 0.1075
+      1 Yr: 0.026699999999999998
+      3 Yr: 0.098
+      5 Yr: -0.057999999999999996
+    PORTUGAL:
+      MSCI Index: PORTUGAL
+      MSCI Index Code: '962000'
+      Last: 79.289
+      Day: 0.017
+      MTD: 0.0977
+      3MTD: 0.1185
+      YTD: -0.1484
+      1 Yr: -0.3281
+      3 Yr: -0.1625
+      5 Yr: -0.1852
+    SPAIN:
+      MSCI Index: SPAIN
+      MSCI Index Code: '972400'
+      Last: 351.968
+      Day: 0.043
+      MTD: 0.1319
+      3MTD: 0.2519
+      YTD: -0.1558
+      1 Yr: -0.2559
+      3 Yr: -0.1807
+      5 Yr: -0.1434
+    SWEDEN:
+      MSCI Index: SWEDEN
+      MSCI Index Code: '975200'
+      Last: 6162.84
+      Day: 0.016
+      MTD: 0.0009
+      3MTD: 0.1617
+      YTD: 0.0885
+      1 Yr: 0.0265
+      3 Yr: 0.0707
+      5 Yr: -0.031400000000000004
+    SWITZERLAND:
+      MSCI Index: SWITZERLAND
+      MSCI Index Code: '975600'
+      Last: 3749.817
+      Day: 0.0106
+      MTD: 0.0227
+      3MTD: 0.1109
+      YTD: 0.053200000000000004
+      1 Yr: -0.028900000000000002
+      3 Yr: 0.0421
+      5 Yr: -0.0208
+    UNITED KINGDOM:
+      MSCI Index: UNITED KINGDOM
+      MSCI Index Code: '982600'
+      Last: 1119.919
+      Day: 0.0028000000000000004
+      MTD: 0.0263
+      3MTD: 0.1074
+      YTD: 0.0484
+      1 Yr: 0.0325
+      3 Yr: 0.041100000000000005
+      5 Yr: -0.0674
+    AUSTRALIA:
+      MSCI Index: AUSTRALIA
+      MSCI Index Code: '903600'
+      Last: 811.038
+      Day: 0.0032
+      MTD: -0.0083
+      3MTD: 0.138
+      YTD: 0.07690000000000001
+      1 Yr: -0.0268
+      3 Yr: 0.0537
+      5 Yr: -0.023799999999999998
+    HONG KONG:
+      MSCI Index: HONG KONG
+      MSCI Index Code: '934400'
+      Last: 7829.512
+      Day: 0.0032
+      MTD: 0.0042
+      3MTD: 0.0827
+      YTD: 0.09970000000000001
+      1 Yr: -0.0327
+      3 Yr: 0.0603
+      5 Yr: -0.0078000000000000005
+    JAPAN:
+      MSCI Index: JAPAN
+      MSCI Index Code: '939200'
+      Last: 2065.342
+      Day: -0.0143
+      MTD: -0.0076
+      3MTD: 0.0174
+      YTD: -0.0123
+      1 Yr: -0.076
+      3 Yr: -0.038
+      5 Yr: -0.0825
+    NEW ZEALAND:
+      MSCI Index: NEW ZEALAND
+      MSCI Index Code: '955400'
+      Last: 113.024
+      Day: 0.0203
+      MTD: 0.0033
+      3MTD: 0.084
+      YTD: 0.12480000000000001
+      1 Yr: -0.0045000000000000005
+      3 Yr: 0.0723
+      5 Yr: -0.0455
+    SINGAPORE:
+      MSCI Index: SINGAPORE
+      MSCI Index Code: '998100'
+      Last: 3980.818
+      Day: 0.01
+      MTD: -0.0138
+      3MTD: 0.1273
+      YTD: 0.1959
+      1 Yr: 0.0129
+      3 Yr: 0.08900000000000001
+      5 Yr: 0.0026
+    CANADA:
+      MSCI Index: CANADA
+      MSCI Index Code: '912400'
+      Last: 1641.938
+      Day: 0.0101
+      MTD: 0.0408
+      3MTD: 0.0892
+      YTD: 0.0304
+      1 Yr: -0.07780000000000001
+      3 Yr: 0.0525
+      5 Yr: -0.015
+    USA:
+      MSCI Index: USA
+      MSCI Index Code: '984000'
+      Last: 1341.924
+      Day: 0.0051
+      MTD: 0.0208
+      3MTD: 0.0724
+      YTD: 0.1186
+      1 Yr: 0.1512
+      3 Yr: 0.1143
+      5 Yr: -0.0074
+    ISRAEL:
+      MSCI Index: ISRAEL
+      MSCI Index Code: '300400'
+      Last: 185.319
+      Day: 0.0060999999999999995
+      MTD: -0.0271
+      3MTD: -0.0196
+      YTD: -0.0638
+      1 Yr: -0.1561
+      3 Yr: -0.0858
+      5 Yr: -0.0455
+Emerging Markets (EM):
+  Market: Emerging Markets (EM)
+  As Of: Aug 31, 2012
+  Currency: USD
+  Size: Standard (Large+Mid Cap)
+  Price Level: Price
+  Style: None
+  Family: None
+  section: Country Performance
+  Indexes:
+    ANDEAN:
+      MSCI Index: ANDEAN
+      MSCI Index Code: '139899'
+      Last: 5559.783
+      Day: 0.009399999999999999
+      MTD: -0.0163
+      3MTD: 0.009399999999999999
+      YTD: 0.06509999999999999
+      1 Yr: -0.047400000000000005
+      3 Yr: 0.14
+      5 Yr: 0.07490000000000001
+    ASIA APEX 50:
+      MSCI Index: ASIA APEX 50
+      MSCI Index Code: '136613'
+      Last: 786.527
+      Day: 0.0001
+      MTD: -0.0229
+      3MTD: 0.0347
+      YTD: 0.0659
+      1 Yr: -0.0098
+      3 Yr: 0.0521
+      5 Yr: -0.0219
+    BRIC:
+      MSCI Index: BRIC
+      MSCI Index Code: '127300'
+      Last: 263.589
+      Day: -0.001
+      MTD: -0.01
+      3MTD: 0.0292
+      YTD: -0.0159
+      1 Yr: -0.1485
+      3 Yr: -0.0126
+      5 Yr: -0.0541
+    BRIC WITH BRAZIL + INDIA + RUSSIA DR:
+      MSCI Index: BRIC WITH BRAZIL + INDIA + RUSSIA DR
+      MSCI Index Code: '701536'
+      Last: 841.066
+      Day: -0.001
+      MTD: -0.015300000000000001
+      3MTD: 0.0199
+      YTD: -0.03
+      1 Yr: -0.153
+      3 Yr: 
+      5 Yr: 
+    BRIC WITH BRAZIL ADR:
+      MSCI Index: BRIC WITH BRAZIL ADR
+      MSCI Index Code: '701425'
+      Last: 3266.292
+      Day: -0.0019
+      MTD: -0.0123
+      3MTD: 0.0268
+      YTD: -0.0176
+      1 Yr: -0.1494
+      3 Yr: -0.0125
+      5 Yr: -0.057
+    EFM (EMERGING + FRONTIER MARKETS):
+      MSCI Index: EFM (EMERGING + FRONTIER MARKETS)
+      MSCI Index Code: '136619'
+      Last: 748.409
+      Day: 0.0031
+      MTD: -0.004699999999999999
+      3MTD: 0.044500000000000005
+      YTD: 0.0322
+      1 Yr: -0.0832
+      3 Yr: 0.0375
+      5 Yr: -0.0304
+    EFM AFRICA:
+      MSCI Index: EFM AFRICA
+      MSCI Index Code: '136625'
+      Last: 908.804
+      Day: 0.0097
+      MTD: -0.0033
+      3MTD: 0.07339999999999999
+      YTD: 0.0706
+      1 Yr: -0.0451
+      3 Yr: 0.068
+      5 Yr: 0.005600000000000001
+    EFM AFRICA ex ZA:
+      MSCI Index: EFM AFRICA ex ZA
+      MSCI Index Code: '136626'
+      Last: 547.855
+      Day: 0.0013
+      MTD: 0.0668
+      3MTD: 0.1173
+      YTD: 0.2645
+      1 Yr: 0.1082
+      3 Yr: -0.023399999999999997
+      5 Yr: -0.0816
+    EFM ASIA:
+      MSCI Index: EFM ASIA
+      MSCI Index Code: '136627'
+      Last: 763.22
+      Day: -0.0005
+      MTD: -0.009000000000000001
+      3MTD: 0.025699999999999997
+      YTD: 0.0426
+      1 Yr: -0.0633
+      3 Yr: 0.044500000000000005
+      5 Yr: -0.028999999999999998
+    EFM CEEC ex RU:
+      MSCI Index: EFM CEEC ex RU
+      MSCI Index Code: '136621'
+      Last: 480.042
+      Day: 0.0245
+      MTD: 0.049
+      3MTD: 0.1408
+      YTD: 0.0693
+      1 Yr: -0.1949
+      3 Yr: -0.0579
+      5 Yr: -0.1222
+    EFM EMEA:
+      MSCI Index: EFM EMEA
+      MSCI Index Code: '136624'
+      Last: 674.392
+      Day: 0.011399999999999999
+      MTD: 0.0104
+      3MTD: 0.1045
+      YTD: 0.062400000000000004
+      1 Yr: -0.08650000000000001
+      3 Yr: 0.0351
+      5 Yr: -0.0508
+    EFM EUROPE + CIS (E+C):
+      MSCI Index: EFM EUROPE + CIS (E+C)
+      MSCI Index Code: '136622'
+      Last: 536.515
+      Day: 0.0147
+      MTD: 0.023399999999999997
+      3MTD: 0.1555
+      YTD: 0.0756
+      1 Yr: -0.1242
+      3 Yr: 0.0292
+      5 Yr: -0.0885
+    EFM EUROPE + CIS (E+C) ex RU:
+      MSCI Index: EFM EUROPE + CIS (E+C) ex RU
+      MSCI Index Code: '136623'
+      Last: 570.492
+      Day: 0.0256
+      MTD: 0.045700000000000005
+      3MTD: 0.19519999999999998
+      YTD: 0.1739
+      1 Yr: -0.0726
+      3 Yr: -0.0181
+      5 Yr: -0.0863
+    EFM LATIN AMERICA & CARIBBEAN INDEX:
+      MSCI Index: EFM LATIN AMERICA & CARIBBEAN INDEX
+      MSCI Index Code: '138432'
+      Last: 1159.896
+      Day: 0.0051
+      MTD: -0.0072
+      3MTD: 0.042800000000000005
+      YTD: -0.0209
+      1 Yr: -0.1306
+      3 Yr: 0.0227
+      5 Yr: 
+    EM (EMERGING MARKETS):
+      MSCI Index: EM (EMERGING MARKETS)
+      MSCI Index Code: '891800'
+      Last: 947.328
+      Day: 0.0031
+      MTD: -0.0054
+      3MTD: 0.0453
+      YTD: 0.0338
+      1 Yr: -0.08310000000000001
+      3 Yr: 0.041100000000000005
+      5 Yr: -0.0271
+    EM 50:
+      MSCI Index: EM 50
+      MSCI Index Code: '701519'
+      Last: 702.425
+      Day: 0.0016
+      MTD: -0.0147
+      3MTD: 0.0315
+      YTD: 0.0075
+      1 Yr: -0.07139999999999999
+      3 Yr: 0.0274
+      5 Yr: 
+    EM ASIA:
+      MSCI Index: EM ASIA
+      MSCI Index Code: '899700'
+      Last: 394.791
+      Day: -0.0006
+      MTD: -0.0092
+      3MTD: 0.025699999999999997
+      YTD: 0.0425
+      1 Yr: -0.06280000000000001
+      3 Yr: 0.0454
+      5 Yr: -0.0302
+    EM EASTERN EUROPE:
+      MSCI Index: EM EASTERN EUROPE
+      MSCI Index Code: '303000'
+      Last: 188.416
+      Day: 0.0123
+      MTD: 0.019299999999999998
+      3MTD: 0.1371
+      YTD: 0.0349
+      1 Yr: -0.16510000000000002
+      3 Yr: 0.0302
+      5 Yr: -0.09630000000000001
+    EM EASTERN EUROPE ex RUSSIA:
+      MSCI Index: EM EASTERN EUROPE ex RUSSIA
+      MSCI Index Code: '700098'
+      Last: 2360.181
+      Day: 0.027000000000000003
+      MTD: 0.051699999999999996
+      3MTD: 0.15839999999999999
+      YTD: 0.0834
+      1 Yr: -0.19329999999999997
+      3 Yr: -0.0548
+      5 Yr: -0.1108
+    EM EMEA:
+      MSCI Index: EM EMEA
+      MSCI Index Code: '123163'
+      Last: 324.898
+      Day: 0.0128
+      MTD: 0.009300000000000001
+      3MTD: 0.1165
+      YTD: 0.0708
+      1 Yr: -0.0928
+      3 Yr: 0.0484
+      5 Yr: -0.0359
+    EM EUROPE:
+      MSCI Index: EM EUROPE
+      MSCI Index Code: '302900'
+      Last: 426.384
+      Day: 0.0149
+      MTD: 0.0233
+      3MTD: 0.15960000000000002
+      YTD: 0.0786
+      1 Yr: -0.1215
+      3 Yr: 0.0337
+      5 Yr: -0.08470000000000001
+    EM EUROPE & MIDDLE EAST:
+      MSCI Index: EM EUROPE & MIDDLE EAST
+      MSCI Index Code: '999902'
+      Last: 362.468
+      Day: 0.0149
+      MTD: 0.0233
+      3MTD: 0.15960000000000002
+      YTD: 0.0786
+      1 Yr: -0.1215
+      3 Yr: 0.0337
+      5 Yr: -0.0664
+    EM FAR EAST:
+      MSCI Index: EM FAR EAST
+      MSCI Index Code: '891900'
+      Last: 352.932
+      Day: 0.0007000000000000001
+      MTD: -0.0115
+      3MTD: 0.0203
+      YTD: 0.0383
+      1 Yr: -0.0529
+      3 Yr: 0.054000000000000006
+      5 Yr: -0.028300000000000002
+    EM LATIN AMERICA:
+      MSCI Index: EM LATIN AMERICA
+      MSCI Index Code: '892000'
+      Last: 3540.457
+      Day: 0.0051
+      MTD: -0.0072
+      3MTD: 0.0432
+      YTD: -0.0172
+      1 Yr: -0.12619999999999998
+      3 Yr: 0.024300000000000002
+      5 Yr: -0.0079
+    EM LATIN AMERICA WITH BRAZIL ADR:
+      MSCI Index: EM LATIN AMERICA WITH BRAZIL ADR
+      MSCI Index Code: '701411'
+      Last: 4202.902
+      Day: 0.004699999999999999
+      MTD: -0.011699999999999999
+      3MTD: 0.0417
+      YTD: -0.0213
+      1 Yr: -0.1223
+      3 Yr: 0.0336
+      5 Yr: -0.0039000000000000003
+    EM WITH BRAZIL + INDIA + RUSSIA DR:
+      MSCI Index: EM WITH BRAZIL + INDIA + RUSSIA DR
+      MSCI Index Code: '701535'
+      Last: 1033.295
+      Day: 0.0034999999999999996
+      MTD: -0.006999999999999999
+      3MTD: 0.0434
+      YTD: 0.0332
+      1 Yr: -0.0776
+      3 Yr: 
+      5 Yr: 
+    EM WITH BRAZIL ADR:
+      MSCI Index: EM WITH BRAZIL ADR
+      MSCI Index Code: '701403'
+      Last: 2920.496
+      Day: 0.0029
+      MTD: -0.0060999999999999995
+      3MTD: 0.0451
+      YTD: 0.0354
+      1 Yr: -0.0802
+      3 Yr: 0.044000000000000004
+      5 Yr: -0.026699999999999998
+    EM ex ASIA:
+      MSCI Index: EM ex ASIA
+      MSCI Index Code: '121659'
+      Last: 1800.658
+      Day: 0.0086
+      MTD: 0.0002
+      3MTD: 0.0755
+      YTD: 0.0212
+      1 Yr: -0.11130000000000001
+      3 Yr: 0.0344
+      5 Yr: -0.024300000000000002
+    JORDAN + EGYPT + MOROCCO:
+      MSCI Index: JORDAN + EGYPT + MOROCCO
+      MSCI Index Code: '133711'
+      Last: 928.389
+      Day: 0.0032
+      MTD: 0.07719999999999999
+      3MTD: 0.0958
+      YTD: 0.2615
+      1 Yr: 0.0232
+      3 Yr: -0.08220000000000001
+      5 Yr: -0.0729
+    CHINA:
+      MSCI Index: CHINA
+      MSCI Index Code: '302400'
+      Last: 52.536
+      Day: -0.0046
+      MTD: -0.0319
+      3MTD: -0.014199999999999999
+      YTD: -0.005600000000000001
+      1 Yr: -0.1114
+      3 Yr: -0.025699999999999997
+      5 Yr: -0.0661
+    CHINA 50:
+      MSCI Index: CHINA 50
+      MSCI Index Code: '702192'
+      Last: 1003.421
+      Day: -0.0054
+      MTD: -0.0327
+      3MTD: 0.0034000000000000002
+      YTD: 0.0045000000000000005
+      1 Yr: -0.0842
+      3 Yr: -0.008
+      5 Yr: -0.06
+    INDIA:
+      MSCI Index: INDIA
+      MSCI Index Code: '935600'
+      Last: 374.346
+      Day: -0.0109
+      MTD: 0.01
+      3MTD: 0.0728
+      YTD: 0.0788
+      1 Yr: -0.1368
+      3 Yr: -0.0161
+      5 Yr: -0.0425
+    INDONESIA:
+      MSCI Index: INDONESIA
+      MSCI Index Code: '105767'
+      Last: 836.676
+      Day: 0.009300000000000001
+      MTD: -0.035699999999999996
+      3MTD: 0.0635
+      YTD: -0.0341
+      1 Yr: -0.0833
+      3 Yr: 0.15539999999999998
+      5 Yr: 0.10210000000000001
+    KOREA:
+      MSCI Index: KOREA
+      MSCI Index Code: '941000'
+      Last: 382.942
+      Day: -0.0007000000000000001
+      MTD: -0.0088
+      3MTD: 0.056799999999999996
+      YTD: 0.07200000000000001
+      1 Yr: -0.011399999999999999
+      3 Yr: 0.10310000000000001
+      5 Yr: -0.0215
+    MALAYSIA:
+      MSCI Index: MALAYSIA
+      MSCI Index Code: '105768'
+      Last: 468.039
+      Day: 0.0
+      MTD: 0.0040999999999999995
+      3MTD: 0.0447
+      YTD: 0.0645
+      1 Yr: 0.0579
+      3 Yr: 0.1465
+      5 Yr: 0.0662
+    PHILIPPINES:
+      MSCI Index: PHILIPPINES
+      MSCI Index Code: '860800'
+      Last: 418.25
+      Day: 0.0131
+      MTD: -0.0273
+      3MTD: 0.0458
+      YTD: 0.2323
+      1 Yr: 0.1949
+      3 Yr: 0.1924
+      5 Yr: 0.0599
+    TAIWAN:
+      MSCI Index: TAIWAN
+      MSCI Index Code: '915800'
+      Last: 249.836
+      Day: 0.0054
+      MTD: 0.0191
+      3MTD: 0.0002
+      YTD: 0.0421
+      1 Yr: -0.0716
+      3 Yr: 0.0483
+      5 Yr: -0.0363
+    THAILAND:
+      MSCI Index: THAILAND
+      MSCI Index Code: '105769'
+      Last: 370.382
+      Day: 0.0141
+      MTD: -0.0014000000000000002
+      3MTD: 0.056799999999999996
+      YTD: 0.1519
+      1 Yr: 0.056799999999999996
+      3 Yr: 0.2286
+      5 Yr: 0.0895
+    BRAZIL:
+      MSCI Index: BRAZIL
+      MSCI Index Code: '907600'
+      Last: 2597.954
+      Day: 0.0048
+      MTD: 0.0016
+      3MTD: 0.025699999999999997
+      YTD: -0.0809
+      1 Yr: -0.1934
+      3 Yr: -0.0255
+      5 Yr: -0.019
+    BRAZIL ADR:
+      MSCI Index: BRAZIL ADR
+      MSCI Index Code: '700403'
+      Last: 678.251
+      Day: 0.0038
+      MTD: -0.0028000000000000004
+      3MTD: 0.0138
+      YTD: -0.1168
+      1 Yr: -0.21760000000000002
+      3 Yr: -0.0327
+      5 Yr: -0.0233
+    CHILE:
+      MSCI Index: CHILE
+      MSCI Index Code: '915200'
+      Last: 2349.458
+      Day: 0.0108
+      MTD: -0.014499999999999999
+      3MTD: 0.0382
+      YTD: 0.036000000000000004
+      1 Yr: -0.09140000000000001
+      3 Yr: 0.12210000000000001
+      5 Yr: 0.051100000000000007
+    COLOMBIA:
+      MSCI Index: COLOMBIA
+      MSCI Index Code: '917000'
+      Last: 1177.36
+      Day: 0.0049
+      MTD: -0.026099999999999998
+      3MTD: -0.0137
+      YTD: 0.1387
+      1 Yr: 0.037599999999999995
+      3 Yr: 0.1924
+      5 Yr: 0.1534
+    MEXICO:
+      MSCI Index: MEXICO
+      MSCI Index Code: '848400'
+      Last: 6325.52
+      Day: 0.0027
+      MTD: -0.0232
+      3MTD: 0.1242
+      YTD: 0.1291
+      1 Yr: 0.0406
+      3 Yr: 0.1207
+      5 Yr: 0.006
+    PERU:
+      MSCI Index: PERU
+      MSCI Index Code: '960400'
+      Last: 1419.985
+      Day: 0.0139
+      MTD: -0.0026
+      3MTD: -0.025699999999999997
+      YTD: 0.026600000000000002
+      1 Yr: -0.0535
+      3 Yr: 0.11449999999999999
+      5 Yr: 0.0455
+    CZECH REPUBLIC:
+      MSCI Index: CZECH REPUBLIC
+      MSCI Index Code: '920000'
+      Last: 465.144
+      Day: 0.0292
+      MTD: 0.15109999999999998
+      3MTD: 0.1689
+      YTD: 0.0398
+      1 Yr: -0.1474
+      3 Yr: -0.076
+      5 Yr: -0.0679
+    HUNGARY:
+      MSCI Index: HUNGARY
+      MSCI Index Code: '934800'
+      Last: 480.717
+      Day: 0.0254
+      MTD: 0.0161
+      3MTD: 0.16940000000000002
+      YTD: 0.1105
+      1 Yr: -0.2175
+      3 Yr: -0.1041
+      5 Yr: -0.1542
+    POLAND:
+      MSCI Index: POLAND
+      MSCI Index Code: '961600'
+      Last: 745.497
+      Day: 0.0268
+      MTD: 0.0375
+      3MTD: 0.1537
+      YTD: 0.08900000000000001
+      1 Yr: -0.1986
+      3 Yr: -0.030299999999999997
+      5 Yr: -0.1174
+    RUSSIA:
+      MSCI Index: RUSSIA
+      MSCI Index Code: '105653'
+      Last: 751.226
+      Day: 0.0074
+      MTD: 0.0089
+      3MTD: 0.13019999999999998
+      YTD: 0.0196
+      1 Yr: -0.1551
+      3 Yr: 0.0626
+      5 Yr: -0.0911
+    RUSSIA ADR/GDR:
+      MSCI Index: RUSSIA ADR/GDR
+      MSCI Index Code: '700044'
+      Last: 453.69
+      Day: 0.0036
+      MTD: 0.0129
+      3MTD: 0.1213
+      YTD: 0.0226
+      1 Yr: -0.17370000000000002
+      3 Yr: 0.039900000000000005
+      5 Yr: 
+    TURKEY:
+      MSCI Index: TURKEY
+      MSCI Index Code: '979200'
+      Last: 536.251
+      Day: 0.027000000000000003
+      MTD: 0.0414
+      3MTD: 0.27449999999999997
+      YTD: 0.35700000000000004
+      1 Yr: 0.1839
+      3 Yr: 0.045
+      5 Yr: -0.0252
+    EGYPT:
+      MSCI Index: EGYPT
+      MSCI Index Code: '105766'
+      Last: 653.717
+      Day: -0.0002
+      MTD: 0.08779999999999999
+      3MTD: 0.127
+      YTD: 0.4844
+      1 Yr: 0.1753
+      3 Yr: -0.0756
+      5 Yr: -0.0653
+    MOROCCO:
+      MSCI Index: MOROCCO
+      MSCI Index Code: '105765'
+      Last: 329.0
+      Day: 0.0171
+      MTD: 0.0356
+      3MTD: -0.0011
+      YTD: -0.12210000000000001
+      1 Yr: -0.2759
+      3 Yr: -0.1009
+      5 Yr: -0.07519999999999999
+    SOUTH AFRICA:
+      MSCI Index: SOUTH AFRICA
+      MSCI Index Code: '971000'
+      Last: 531.112
+      Day: 0.010700000000000001
+      MTD: -0.011000000000000001
+      3MTD: 0.06849999999999999
+      YTD: 0.0499
+      1 Yr: -0.061799999999999994
+      3 Yr: 0.0821
+      5 Yr: 0.0227
+Developed Markets (DM)_2:
+  Market: Developed Markets (DM)
+  As Of: Aug 31, 2012
+  Currency: USD
+  Size: Small Cap
+  Price Level: Price
+  Style: None
+  Family: None
+  section: Country Performance
+  Indexes:
+    EAFE + CANADA SC:
+      MSCI Index: EAFE + CANADA SC
+      MSCI Index Code: '106237'
+      Last: 162.062
+      Day: 0.0085
+      MTD: 0.027000000000000003
+      3MTD: 0.0669
+      YTD: 0.050300000000000004
+      1 Yr: -0.0707
+      3 Yr: 0.0359
+      5 Yr: -0.053399999999999996
+    EAFE SC:
+      MSCI Index: EAFE SC
+      MSCI Index Code: '106232'
+      Last: 147.93
+      Day: 0.006500000000000001
+      MTD: 0.024900000000000002
+      3MTD: 0.0666
+      YTD: 0.0604
+      1 Yr: -0.0617
+      3 Yr: 0.0239
+      5 Yr: -0.059699999999999996
+    EAFE ex ISRAEL SC:
+      MSCI Index: EAFE ex ISRAEL SC
+      MSCI Index Code: '144101'
+      Last: 1166.039
+      Day: 0.006500000000000001
+      MTD: 0.0248
+      3MTD: 0.06709999999999999
+      YTD: 0.060599999999999994
+      1 Yr: -0.061500000000000006
+      3 Yr: 
+      5 Yr: 
+    EAFE ex UK SC:
+      MSCI Index: EAFE ex UK SC
+      MSCI Index Code: '106243'
+      Last: 135.547
+      Day: 0.0043
+      MTD: 0.0181
+      3MTD: 0.053200000000000004
+      YTD: 0.0294
+      1 Yr: -0.0966
+      3 Yr: 0.0075
+      5 Yr: -0.0638
+    EASEA INDEX (EAFE ex JAPAN) SC:
+      MSCI Index: EASEA INDEX (EAFE ex JAPAN) SC
+      MSCI Index Code: '106240'
+      Last: 193.798
+      Day: 0.0118
+      MTD: 0.0378
+      3MTD: 0.0867
+      YTD: 0.09390000000000001
+      1 Yr: -0.0572
+      3 Yr: 0.0351
+      5 Yr: -0.067
+    EMU SC:
+      MSCI Index: EMU SC
+      MSCI Index Code: '106333'
+      Last: 185.028
+      Day: 0.0181
+      MTD: 0.0482
+      3MTD: 0.0851
+      YTD: 0.0463
+      1 Yr: -0.1445
+      3 Yr: -0.0392
+      5 Yr: -0.1052
+    EU SC:
+      MSCI Index: EU SC
+      MSCI Index Code: '655069'
+      Last: 638.861
+      Day: 0.0163
+      MTD: 0.0466
+      3MTD: 0.1
+      YTD: 0.1105
+      1 Yr: -0.0342
+      3 Yr: 0.0265
+      5 Yr: -0.0732
+    EUROPE & MIDDLE EAST SC:
+      MSCI Index: EUROPE & MIDDLE EAST SC
+      MSCI Index Code: '144119'
+      Last: 1195.805
+      Day: 0.0159
+      MTD: 0.045599999999999995
+      3MTD: 0.0964
+      YTD: 0.10779999999999999
+      1 Yr: -0.0405
+      3 Yr: 
+      5 Yr: 
+    EUROPE SC:
+      MSCI Index: EUROPE SC
+      MSCI Index Code: '106233'
+      Last: 223.678
+      Day: 0.0161
+      MTD: 0.0458
+      3MTD: 0.098
+      YTD: 0.1092
+      1 Yr: -0.0398
+      3 Yr: 0.0333
+      5 Yr: -0.0689
+    EUROPE ex EMU SC:
+      MSCI Index: EUROPE ex EMU SC
+      MSCI Index Code: '300025'
+      Last: 2116.053
+      Day: 0.0148
+      MTD: 0.0443
+      3MTD: 0.10619999999999999
+      YTD: 0.15289999999999998
+      1 Yr: 0.0373
+      3 Yr: 0.0866
+      5 Yr: -0.0449
+    EUROPE ex SWITZERLAND SC:
+      MSCI Index: EUROPE ex SWITZERLAND SC
+      MSCI Index Code: '300027'
+      Last: 1865.818
+      Day: 0.0163
+      MTD: 0.04769999999999999
+      3MTD: 0.1042
+      YTD: 0.1149
+      1 Yr: -0.0296
+      3 Yr: 0.0322
+      5 Yr: -0.0723
+    EUROPE ex UK SC:
+      MSCI Index: EUROPE ex UK SC
+      MSCI Index Code: '106244'
+      Last: 223.449
+      Day: 0.0173
+      MTD: 0.0432
+      3MTD: 0.0858
+      YTD: 0.0633
+      1 Yr: -0.109
+      3 Yr: 0.0006
+      5 Yr: -0.0828
+    FAR EAST SC:
+      MSCI Index: FAR EAST SC
+      MSCI Index Code: '106236'
+      Last: 75.714
+      Day: -0.0051
+      MTD: -0.0013
+      3MTD: 0.027200000000000002
+      YTD: 0.0064
+      1 Yr: -0.0716
+      3 Yr: 0.0043
+      5 Yr: -0.044199999999999996
+    KOKUSAI INDEX (WORLD ex JP) SC:
+      MSCI Index: KOKUSAI INDEX (WORLD ex JP) SC
+      MSCI Index Code: '106239'
+      Last: 275.693
+      Day: 0.0079
+      MTD: 0.0361
+      3MTD: 0.0701
+      YTD: 0.0969
+      1 Yr: 0.0495
+      3 Yr: 0.1067
+      5 Yr: -0.0075
+    NORDIC COUNTRIES SC:
+      MSCI Index: NORDIC COUNTRIES SC
+      MSCI Index Code: '106234'
+      Last: 310.343
+      Day: 0.0172
+      MTD: 0.0341
+      3MTD: 0.1134
+      YTD: 0.1023
+      1 Yr: -0.004
+      3 Yr: 0.0747
+      5 Yr: -0.0584
+    NORTH AMERICA SC:
+      MSCI Index: NORTH AMERICA SC
+      MSCI Index Code: '106231'
+      Last: 344.938
+      Day: 0.0063
+      MTD: 0.0353
+      3MTD: 0.0634
+      YTD: 0.09820000000000001
+      1 Yr: 0.0993
+      3 Yr: 0.1412
+      5 Yr: 0.022000000000000002
+    PACIFIC SC:
+      MSCI Index: PACIFIC SC
+      MSCI Index Code: '106235'
+      Last: 93.123
+      Day: -0.005
+      MTD: -0.0001
+      3MTD: 0.030899999999999997
+      YTD: 0.0055000000000000005
+      1 Yr: -0.0866
+      3 Yr: 0.0137
+      5 Yr: -0.0458
+    PACIFIC ex JAPAN SC:
+      MSCI Index: PACIFIC ex JAPAN SC
+      MSCI Index Code: '106241'
+      Last: 127.57
+      Day: -0.0022
+      MTD: 0.011699999999999999
+      3MTD: 0.053899999999999997
+      YTD: 0.0471
+      1 Yr: -0.11259999999999999
+      3 Yr: 0.055099999999999996
+      5 Yr: -0.058600000000000006
+    WORLD SC:
+      MSCI Index: WORLD SC
+      MSCI Index Code: '106230'
+      Last: 229.487
+      Day: 0.0064
+      MTD: 0.0315
+      3MTD: 0.0645
+      YTD: 0.0842
+      1 Yr: 0.0359
+      3 Yr: 0.09369999999999999
+      5 Yr: -0.011399999999999999
+    WORLD ex AUSTRALIA SC:
+      MSCI Index: WORLD ex AUSTRALIA SC
+      MSCI Index Code: '106245'
+      Last: 227.188
+      Day: 0.0068000000000000005
+      MTD: 0.0326
+      3MTD: 0.0655
+      YTD: 0.0876
+      1 Yr: 0.0432
+      3 Yr: 0.0955
+      5 Yr: -0.0101
+    WORLD ex EMU SC:
+      MSCI Index: WORLD ex EMU SC
+      MSCI Index Code: '300029'
+      Last: 2050.732
+      Day: 0.0054
+      MTD: 0.0301
+      3MTD: 0.06280000000000001
+      YTD: 0.0876
+      1 Yr: 0.0538
+      3 Yr: 0.1079
+      5 Yr: -0.001
+    WORLD ex EUROPE SC:
+      MSCI Index: WORLD ex EUROPE SC
+      MSCI Index Code: '300030'
+      Last: 2037.51
+      Day: 0.004
+      MTD: 0.027999999999999997
+      3MTD: 0.0565
+      YTD: 0.0784
+      1 Yr: 0.0567
+      3 Yr: 0.1119
+      5 Yr: 0.0070999999999999995
+    WORLD ex ISRAEL SC:
+      MSCI Index: WORLD ex ISRAEL SC
+      MSCI Index Code: '144083'
+      Last: 1242.281
+      Day: 0.0064
+      MTD: 0.0315
+      3MTD: 0.0647
+      YTD: 0.08439999999999999
+      1 Yr: 0.0363
+      3 Yr: 
+      5 Yr: 
+    WORLD ex UK SC:
+      MSCI Index: WORLD ex UK SC
+      MSCI Index Code: '106242'
+      Last: 230.642
+      Day: 0.005699999999999999
+      MTD: 0.029900000000000003
+      3MTD: 0.0602
+      YTD: 0.07629999999999999
+      1 Yr: 0.0321
+      3 Yr: 0.09449999999999999
+      5 Yr: -0.0077
+    WORLD ex USA SC:
+      MSCI Index: WORLD ex USA SC
+      MSCI Index Code: '106238'
+      Last: 162.062
+      Day: 0.0085
+      MTD: 0.027000000000000003
+      3MTD: 0.0669
+      YTD: 0.050300000000000004
+      1 Yr: -0.0707
+      3 Yr: 0.0359
+      5 Yr: -0.053399999999999996
+    AUSTRIA SC:
+      MSCI Index: AUSTRIA SC
+      MSCI Index Code: '106208'
+      Last: 281.652
+      Day: 0.0104
+      MTD: 0.0409
+      3MTD: 0.0294
+      YTD: 0.0731
+      1 Yr: -0.1092
+      3 Yr: -0.0069
+      5 Yr: -0.030299999999999997
+    BELGIUM SC:
+      MSCI Index: BELGIUM SC
+      MSCI Index Code: '106209'
+      Last: 126.323
+      Day: 0.0101
+      MTD: 0.0178
+      3MTD: 0.0434
+      YTD: 0.019299999999999998
+      1 Yr: -0.1562
+      3 Yr: 0.0113
+      5 Yr: -0.0771
+    DENMARK SC:
+      MSCI Index: DENMARK SC
+      MSCI Index Code: '106211'
+      Last: 319.614
+      Day: 0.018600000000000002
+      MTD: 0.0793
+      3MTD: 0.1043
+      YTD: 0.20809999999999998
+      1 Yr: 0.0868
+      3 Yr: 0.0429
+      5 Yr: -0.13140000000000002
+    FINLAND SC:
+      MSCI Index: FINLAND SC
+      MSCI Index Code: '106212'
+      Last: 317.742
+      Day: 0.0179
+      MTD: 0.0067
+      3MTD: 0.0625
+      YTD: -0.009399999999999999
+      1 Yr: -0.16649999999999998
+      3 Yr: -0.0392
+      5 Yr: -0.0984
+    FRANCE SC:
+      MSCI Index: FRANCE SC
+      MSCI Index Code: '106213'
+      Last: 231.193
+      Day: 0.014499999999999999
+      MTD: 0.0472
+      3MTD: 0.0934
+      YTD: 0.09939999999999999
+      1 Yr: -0.1226
+      3 Yr: 0.0471
+      5 Yr: -0.0613
+    GERMANY SC:
+      MSCI Index: GERMANY SC
+      MSCI Index Code: '106214'
+      Last: 120.934
+      Day: 0.0161
+      MTD: 0.0337
+      3MTD: 0.06570000000000001
+      YTD: 0.10279999999999999
+      1 Yr: -0.0697
+      3 Yr: 0.0693
+      5 Yr: -0.0366
+    GREECE SC:
+      MSCI Index: GREECE SC
+      MSCI Index Code: '123155'
+      Last: 30.87
+      Day: 0.0242
+      MTD: 0.1131
+      3MTD: 0.33149999999999996
+      YTD: -0.1048
+      1 Yr: -0.3826
+      3 Yr: -0.40340000000000004
+      5 Yr: -0.3768
+    IRELAND SC:
+      MSCI Index: IRELAND SC
+      MSCI Index Code: '106216'
+      Last: 377.357
+      Day: 0.032
+      MTD: 0.0508
+      3MTD: 0.1052
+      YTD: 0.19469999999999998
+      1 Yr: 0.0622
+      3 Yr: -0.1082
+      5 Yr: -0.0512
+    ITALY SC:
+      MSCI Index: ITALY SC
+      MSCI Index Code: '106217'
+      Last: 184.019
+      Day: 0.0271
+      MTD: 0.0974
+      3MTD: 0.1124
+      YTD: -0.0127
+      1 Yr: -0.2556
+      3 Yr: -0.1555
+      5 Yr: -0.2024
+    NETHERLANDS SC:
+      MSCI Index: NETHERLANDS SC
+      MSCI Index Code: '106220'
+      Last: 99.33
+      Day: 0.0149
+      MTD: 0.0282
+      3MTD: 0.0346
+      YTD: -0.0088
+      1 Yr: -0.172
+      3 Yr: -0.057300000000000004
+      5 Yr: -0.10550000000000001
+    NORWAY SC:
+      MSCI Index: NORWAY SC
+      MSCI Index Code: '106222'
+      Last: 189.874
+      Day: 0.0152
+      MTD: 0.0571
+      3MTD: 0.1794
+      YTD: 0.17859999999999998
+      1 Yr: 0.0001
+      3 Yr: 0.0981
+      5 Yr: -0.0345
+    PORTUGAL SC:
+      MSCI Index: PORTUGAL SC
+      MSCI Index Code: '106223'
+      Last: 77.846
+      Day: 0.0265
+      MTD: 0.0875
+      3MTD: 0.1475
+      YTD: -0.0501
+      1 Yr: -0.2494
+      3 Yr: -0.2306
+      5 Yr: -0.21109999999999998
+    SPAIN SC:
+      MSCI Index: SPAIN SC
+      MSCI Index Code: '106225'
+      Last: 217.24
+      Day: 0.0189
+      MTD: 0.08810000000000001
+      3MTD: 0.1418
+      YTD: -0.111
+      1 Yr: -0.2555
+      3 Yr: -0.1523
+      5 Yr: -0.19699999999999998
+    SWEDEN SC:
+      MSCI Index: SWEDEN SC
+      MSCI Index Code: '106226'
+      Last: 306.019
+      Day: 0.0176
+      MTD: 0.0074
+      3MTD: 0.0958
+      YTD: 0.0623
+      1 Yr: 0.0304
+      3 Yr: 0.124
+      5 Yr: -0.0229
+    SWITZERLAND SC:
+      MSCI Index: SWITZERLAND SC
+      MSCI Index Code: '106227'
+      Last: 391.479
+      Day: 0.013000000000000001
+      MTD: 0.0223
+      3MTD: 0.0222
+      YTD: 0.0385
+      1 Yr: -0.151
+      3 Yr: 0.0478
+      5 Yr: -0.027999999999999997
+    UNITED KINGDOM SC:
+      MSCI Index: UNITED KINGDOM SC
+      MSCI Index Code: '106228'
+      Last: 210.356
+      Day: 0.0143
+      MTD: 0.049800000000000004
+      3MTD: 0.11599999999999999
+      YTD: 0.1845
+      1 Yr: 0.0819
+      3 Yr: 0.0873
+      5 Yr: -0.050499999999999996
+    AUSTRALIA SC:
+      MSCI Index: AUSTRALIA SC
+      MSCI Index Code: '106207'
+      Last: 209.426
+      Day: -0.0062
+      MTD: 0.0013
+      3MTD: 0.037000000000000005
+      YTD: -0.0075
+      1 Yr: -0.1447
+      3 Yr: 0.042300000000000004
+      5 Yr: -0.066
+    HONG KONG SC:
+      MSCI Index: HONG KONG SC
+      MSCI Index Code: '106215'
+      Last: 82.678
+      Day: -0.0051
+      MTD: 0.0232
+      3MTD: 0.009300000000000001
+      YTD: 0.0451
+      1 Yr: -0.1376
+      3 Yr: 0.0559
+      5 Yr: -0.0736
+    JAPAN SC:
+      MSCI Index: JAPAN SC
+      MSCI Index Code: '106218'
+      Last: 77.085
+      Day: -0.0067
+      MTD: -0.0066
+      3MTD: 0.0183
+      YTD: -0.0171
+      1 Yr: -0.07150000000000001
+      3 Yr: -0.0062
+      5 Yr: -0.0438
+    NEW ZEALAND SC:
+      MSCI Index: NEW ZEALAND SC
+      MSCI Index Code: '106221'
+      Last: 217.448
+      Day: 0.012199999999999999
+      MTD: 0.0382
+      3MTD: 0.1315
+      YTD: 0.1114
+      1 Yr: -0.0023
+      3 Yr: 0.059500000000000004
+      5 Yr: -0.0342
+    SINGAPORE SC:
+      MSCI Index: SINGAPORE SC
+      MSCI Index Code: '106224'
+      Last: 188.503
+      Day: 0.0098
+      MTD: 0.0269
+      3MTD: 0.1422
+      YTD: 0.2415
+      1 Yr: 0.0075
+      3 Yr: 0.0962
+      5 Yr: -0.0178
+    CANADA SC:
+      MSCI Index: CANADA SC
+      MSCI Index Code: '106210'
+      Last: 439.219
+      Day: 0.0216
+      MTD: 0.0403
+      3MTD: 0.0688
+      YTD: -0.0123
+      1 Yr: -0.1264
+      3 Yr: 0.1506
+      5 Yr: 0.005
+    USA SC:
+      MSCI Index: USA SC
+      MSCI Index Code: '106229'
+      Last: 334.354
+      Day: 0.0049
+      MTD: 0.0348
+      3MTD: 0.06280000000000001
+      YTD: 0.10949999999999999
+      1 Yr: 0.126
+      3 Yr: 0.14150000000000001
+      5 Yr: 0.0229
+    ISRAEL SC:
+      MSCI Index: ISRAEL SC
+      MSCI Index Code: '655074'
+      Last: 701.432
+      Day: 0.0060999999999999995
+      MTD: 0.0326
+      3MTD: 0.0233
+      YTD: 0.0446
+      1 Yr: -0.0689
+      3 Yr: -0.0168
+      5 Yr: -0.053399999999999996
+All Country (DM+EM):
+  Market: All Country (DM+EM)
+  As Of: Aug 31, 2012
+  Currency: USD
+  Size: All Cap (Large+Mid+Small+Micro Cap)
+  Price Level: Price
+  Style: None
+  Family: None
+  Indexes:
+    AC ASIA AC:
+      MSCI Index: AC ASIA AC
+      MSCI Index Code: '144840'
+      Last: 898.758
+      Day: -0.005600000000000001
+      MTD: -0.005699999999999999
+      3MTD: 0.0285
+      YTD: 0.026099999999999998
+      1 Yr: -0.0679
+      3 Yr: 0.0064
+      5 Yr: 
+    AC ASIA PACIFIC AC:
+      MSCI Index: AC ASIA PACIFIC AC
+      MSCI Index Code: '144848'
+      Last: 914.119
+      Day: -0.0043
+      MTD: -0.0058
+      3MTD: 0.042699999999999995
+      YTD: 0.0323
+      1 Yr: -0.0643
+      3 Yr: 0.0139
+      5 Yr: 
+    AC ASIA PACIFIC ex JAPAN AC:
+      MSCI Index: AC ASIA PACIFIC ex JAPAN AC
+      MSCI Index Code: '144847'
+      Last: 914.108
+      Day: 0.001
+      MTD: -0.0049
+      3MTD: 0.0587
+      YTD: 0.061399999999999996
+      1 Yr: -0.0591
+      3 Yr: 0.049100000000000005
+      5 Yr: 
+    AC ASIA ex JAPAN AC:
+      MSCI Index: AC ASIA ex JAPAN AC
+      MSCI Index Code: '144846'
+      Last: 885.713
+      Day: 0.0005
+      MTD: -0.0043
+      3MTD: 0.0377
+      YTD: 0.0601
+      1 Yr: -0.0641
+      3 Yr: 0.0478
+      5 Yr: 
+    AC EUROPE AC:
+      MSCI Index: AC EUROPE AC
+      MSCI Index Code: '144841'
+      Last: 973.452
+      Day: 0.013000000000000001
+      MTD: 0.0406
+      3MTD: 0.1294
+      YTD: 0.0575
+      1 Yr: -0.0286
+      3 Yr: -0.0003
+      5 Yr: 
+    AC FAR EAST AC:
+      MSCI Index: AC FAR EAST AC
+      MSCI Index Code: '144850'
+      Last: 911.671
+      Day: -0.0054
+      MTD: -0.0063
+      3MTD: 0.0268
+      YTD: 0.0236
+      1 Yr: -0.0633
+      3 Yr: 0.008199999999999999
+      5 Yr: 
+    AC FAR EAST ex JAPAN AC:
+      MSCI Index: AC FAR EAST ex JAPAN AC
+      MSCI Index Code: '144849'
+      Last: 909.268
+      Day: 0.0015
+      MTD: -0.0053
+      3MTD: 0.0352
+      YTD: 0.0581
+      1 Yr: -0.0547
+      3 Yr: 0.0559
+      5 Yr: 
+    AC PACIFIC AC:
+      MSCI Index: AC PACIFIC AC
+      MSCI Index Code: '144852'
+      Last: 925.777
+      Day: -0.0040999999999999995
+      MTD: -0.0063
+      3MTD: 0.04190000000000001
+      YTD: 0.0304
+      1 Yr: -0.0603
+      3 Yr: 0.015700000000000002
+      5 Yr: 
+    AC PACIFIC ex JAPAN AC:
+      MSCI Index: AC PACIFIC ex JAPAN AC
+      MSCI Index Code: '144851'
+      Last: 933.832
+      Day: 0.0017000000000000001
+      MTD: -0.005600000000000001
+      3MTD: 0.0583
+      YTD: 0.06
+      1 Yr: -0.052000000000000005
+      3 Yr: 0.055
+      5 Yr: 
+    ACWI + FRONTIER MARKETS(ACWI FM) AC:
+      MSCI Index: ACWI + FRONTIER MARKETS(ACWI FM) AC
+      MSCI Index Code: '144845'
+      Last: 1040.58
+      Day: 0.0054
+      MTD: 0.0207
+      3MTD: 0.078
+      YTD: 0.0761
+      1 Yr: 0.0334
+      3 Yr: 0.057999999999999996
+      5 Yr: 
+    ACWI AC:
+      MSCI Index: ACWI AC
+      MSCI Index Code: '144844'
+      Last: 1041.955
+      Day: 0.0054
+      MTD: 0.0207
+      3MTD: 0.0782
+      YTD: 0.0765
+      1 Yr: 0.034
+      3 Yr: 0.058600000000000006
+      5 Yr: 
+    ACWI ex AUSTRALIA AC:
+      MSCI Index: ACWI ex AUSTRALIA AC
+      MSCI Index Code: '144853'
+      Last: 1043.593
+      Day: 0.0055000000000000005
+      MTD: 0.0216
+      3MTD: 0.07690000000000001
+      YTD: 0.07690000000000001
+      1 Yr: 0.0369
+      3 Yr: 0.0587
+      5 Yr: 
+    ACWI ex EMU AC:
+      MSCI Index: ACWI ex EMU AC
+      MSCI Index Code: '144854'
+      Last: 1059.861
+      Day: 0.0038
+      MTD: 0.016399999999999998
+      3MTD: 0.07150000000000001
+      YTD: 0.0805
+      1 Yr: 0.047599999999999996
+      3 Yr: 0.0748
+      5 Yr: 
+    ACWI ex JAPAN AC:
+      MSCI Index: ACWI ex JAPAN AC
+      MSCI Index Code: '144842'
+      Last: 1054.288
+      Day: 0.006999999999999999
+      MTD: 0.0231
+      3MTD: 0.0836
+      YTD: 0.08449999999999999
+      1 Yr: 0.0441
+      3 Yr: 0.0676
+      5 Yr: 
+    ACWI ex USA AC:
+      MSCI Index: ACWI ex USA AC
+      MSCI Index Code: '144843'
+      Last: 937.343
+      Day: 0.005699999999999999
+      MTD: 0.0189
+      3MTD: 0.0849
+      YTD: 0.041100000000000005
+      1 Yr: -0.0533
+      3 Yr: 0.0123
+      5 Yr: 

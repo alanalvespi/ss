@@ -1,0 +1,40 @@
+---
+Developed Markets (DM):
+  Market: Developed Markets (DM)
+  As Of: Sep 01, 2012
+  Currency: USD
+  Size: Standard (Large+Mid Cap)
+  Price Level: Price
+  Style: None
+  Family: None
+  section: Country Performance
+  Indexes: {}
+Emerging Markets (EM):
+  Market: Emerging Markets (EM)
+  As Of: Sep 01, 2012
+  Currency: USD
+  Size: Standard (Large+Mid Cap)
+  Price Level: Price
+  Style: None
+  Family: None
+  section: Country Performance
+  Indexes: {}
+Developed Markets (DM)_2:
+  Market: Developed Markets (DM)
+  As Of: Sep 01, 2012
+  Currency: USD
+  Size: Small Cap
+  Price Level: Price
+  Style: None
+  Family: None
+  section: Country Performance
+  Indexes: {}
+All Country (DM+EM):
+  Market: All Country (DM+EM)
+  As Of: Sep 01, 2012
+  Currency: USD
+  Size: All Cap (Large+Mid+Small+Micro Cap)
+  Price Level: Price
+  Style: None
+  Family: None
+  Indexes: {}

@@ -1,0 +1,15 @@
+output redirected to ../../public/data/feeders/loadfunds/2012/09/03/loadfunds.log
+Using database database: sentrysystem, :user => root, :password => , :host => localhost, :port => 
+
+E-RL360_loadfunds:InvalidRow, Could not process row 140 
+E-getCurrency:ParseFailed, could not parse currency in <Parvest Equity Brazil C Acc>
+
+E-RL360_loadfunds:NoIntId, No Internal Id, Could not process row 155
+
+E-RL360_loadfunds:NoIntId, No Internal Id, Could not process row 156
+
+E-RL360_loadfunds:NoIntId, No Internal Id, Could not process row 157
+No of Rows Inserted : 0
+No of Rows Updated  : 1194
+No of Rows Ignored  : 0
+No of Errors        : 4

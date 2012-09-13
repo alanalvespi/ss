@@ -24,13 +24,25 @@ dirname = ''
  Dir::mkdir(dirname) unless FileTest::directory?(dirname) 
 end
 
-log_fn = "#{dirname}RL360ClientUpdate.log"
+logdirname = ''
+['../../public/logs/feeders/client_update',year,month,day].each do |part| 
+ logdirname = logdirname + part + '/'
+ Dir::mkdir(logdirname) unless FileTest::directory?(logdirname) 
+end
+
+
+
+log_fn = "#{logdirname}client_update.log"
 puts "redirecting output to #{log_fn}"
 
 $stdout.reopen(log_fn,"w")
 $stderr = $stdout
 puts "output redirected to #{log_fn}"
 
+
+marker_fn = "#{logdirname}Started_#{valuta}.mark"
+marker_file = File.new(marker_fn, "w")
+marker_file.close()
 
 
 #
@@ -66,7 +78,7 @@ raise WaError.new('E-DailyMarketUpdate:ParmError, host     parameter not specifi
 
 
 $now = Time.now
-RL360_ISIN::Load()              # load Isins
+RL360_ISIN::Load()              # load ISINs
 
 $db = Wa.openDatabase()   # connect to database
 
@@ -89,7 +101,7 @@ unless (company = Company.find(:company_name=>company_name)) then
 end
 
 # Data Conversion Helpers
-plantypes     = {'CL'=>'Oracle','QN'=>'Quantum','PM'=>'Portafolio Management Service'}
+plantypes     = {'CL'=>'Oracle','QN'=>'Quantum','PM'=>'Portfolio Management Service'}
 premiumtypes  = {'CL'=>true,'QN'=>false,'PM'=>true}
 
 
@@ -98,12 +110,16 @@ premiumtypes  = {'CL'=>true,'QN'=>false,'PM'=>true}
 csv_file = 'data/RL360 Daily.CSV'
 rowno = 0
 
-$clientsinserted      = 0
-$plantypesinserted    = 0
-$policiesinserted     = 0
-$plantypesinserted    = 0
-$policyfundsinserted  = 0
-$errors               = 0
+$clientsinserted       = 0
+$plantypesinserted     = 0
+$plantypesupdated      = 0
+$policiesinserted      = 0
+$policiesupdated       = 0
+$plantypefundsinserted = 0
+$plantypefundsupdated  = 0
+$policyfundsinserted   = 0
+$policyfundsupdated    = 0
+$errors                = 0
 
 last_policy   = nil
 last_plantype = nil
@@ -150,7 +166,7 @@ File.open(csv_file, 'r') do |filehandle|
     isin = RL360_ISIN::ISINS[fund_identifier]
     unless (isin) then
       puts WaError.new("E-RL360UpdateClient:NoIsin, Unknown Isin for #{fund_identifier} in Policy #{policy_number}, on row #{rowno}") 
-      $errors = $errors + 1
+      $errors += 1
       next
     end
     begin
@@ -171,7 +187,7 @@ File.open(csv_file, 'r') do |filehandle|
         $db[:clients].insert(:client_name=>client_name, :created_at=>$now, :updated_at=>$now, :state=>1, :reason=>"New") # Create new Client!!!
         db_client = $db[:clients].filter(:client_name => client_name).first                         # Get newly added row
         client = Client.new(db_client)
-        $clientsinserted = $clientsinserted + 1      
+        $clientsinserted += 1      
       end
       #
       # If Plantype does not exist, add it to database
@@ -183,7 +199,7 @@ File.open(csv_file, 'r') do |filehandle|
           :created_at=>$now, :updated_at=>$now, :state=>1, :reason=>"New")
         db_obj = $db[:plantypes].filter(:plantype_name => plantype_name,:company_id=>company.company_id).first # Get newly added row
         plantype = Plantype.new(db_obj)
-        $plantypesinserted = $plantypesinserted + 1      
+        $plantypesinserted += 1      
       end
       #
       # If PlantypeFunds exists, check if currency has changed, 
@@ -194,6 +210,7 @@ File.open(csv_file, 'r') do |filehandle|
         fld[:fund_currency] = fund_currency if (plantypefund.fund_currency != fund_currency) 
         $db[:plantypefunds].filter(:fund_id=>plantypefund.fund_id).update( fld)
         plantypefund.upd(fld)  # Update local copy...
+        $plantypefundsupdated += 1
       else
         $db[:plantypefunds].insert(
           :fund_id          => nil,                 # int AUTO_INCREMENT NOT NULL,
@@ -213,7 +230,7 @@ File.open(csv_file, 'r') do |filehandle|
           )
         o = $db[:plantypefunds].filter(:fund_identifier=>fund_identifier,:company_id=>company.company_id).first
         plantypefund = Plantypefund.new(o)
-        $plantypesinserted = $plantypesinserted + 1
+        $plantypefundsinserted += 1
       end
       #
       # Update Policy
@@ -228,6 +245,7 @@ File.open(csv_file, 'r') do |filehandle|
         end
         $db[:policies].filter(:policy_id=>policy.policy_id).update( fld)
         policy.upd(fld)  # Update local copy...
+        $policiesupdated += 1      
       else  # insert into database
         $db[:policies].insert(
           :client_id                => client.client_id,
@@ -241,7 +259,7 @@ File.open(csv_file, 'r') do |filehandle|
           :created_at=>$now, :updated_at=>$now, :state=>1, :reason=>"New")
         db_policy = $db[:policies].filter(:policy_number => policy_number).first # Get newly added row
         policy = Policy.new(db_policy)
-        $policiesinserted = $policiesinserted + 1      
+        $policiesinserted += 1      
       end
       
       
@@ -254,6 +272,7 @@ File.open(csv_file, 'r') do |filehandle|
         fld[:policyfund_value] = policyfund_value if (policyfund.policyfund_value != policyfund_value) 
         $db[:policyfunds].filter(:fund_id=>policyfund.fund_id).update( fld)
         policyfund.upd(fld)  # Update local copy...
+        $policyfundsupdated += 1      
       else
         $db[:policyfunds].insert(
             :policyfund_id    => nil,                   # int AUTO_INCREMENT NOT NULL,
@@ -264,7 +283,7 @@ File.open(csv_file, 'r') do |filehandle|
             )
         o = $db[:policyfunds].filter(:policy_id=>policy.policy_id, :fund_id => plantypefund.fund_id).first # Get newly added row
         policyfund = Policyfund.new(o)
-        $policyfundsinserted = $policyfundsinserted + 1      
+        $policyfundsinserted += 1      
       end
       
       #
@@ -307,10 +326,18 @@ File.open(csv_file, 'r') do |filehandle|
     end
   end
 end
-puts "Number of rows read            : #{rowno}"
-puts "Number of rows with errors     : #{$errors}"
-puts "Number of clients inserted     : #{$clientsinserted}"
-puts "Number of plantypes inserted   : #{$plantypesinserted}"
-puts "Number of $policies inserted   : #{$policiesinserted}"
-puts "Number of $plantypes inserted  : #{$plantypesinserted}"
-puts "Number of $policyfunds inserted: #{$policyfundsinserted}"
+puts "                   Process Sumary"
+puts "====================================================="
+puts "Number of rows read               : #{rowno}"
+puts "Number of rows with errors        : #{$errors}"
+puts "Number of clients inserted        : #{$clientsinserted}"
+puts "Number of plantypes inserted      : #{$plantypesinserted}"
+puts "Number of plantypes updated       : #{$plantypesupdated}"
+puts "Number of $policies inserted      : #{$policiesinserted}"
+puts "Number of $policies updated       : #{$policiesupdated}"
+puts "Number of $plantypefunds inserted : #{$plantypefundsinserted}"
+puts "Number of $plantypefunds updated  : #{$plantypefundsupdated}"
+puts "Number of $policyfunds inserted   : #{$policyfundsinserted}"
+puts "Number of $policyfunds inserted   : #{$policyfundsupdated}"
+puts "====================================================="
+

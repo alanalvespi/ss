@@ -47,19 +47,6 @@ class DB_Table
   end  
 end
 
-class Company < DB_Table
-  attr_accessor   :company_id           ,# int AUTO_INCREMENT NOT NULL,
-                  :company_name         ,# varchar(45),
-                  :company_last_update   # date,
-  self.table = :companies
-  self.instances = []
-  
-  def to_s
-    "Company::#{@company_id}:(#{@company_name})"
-  end
-end
-
-
 class Client < DB_Table
   attr_accessor     :client_id                      ,# int AUTO_INCREMENT NOT NULL COMMENT 'Client Identification number',
                     :client_name                    ,# varchar(45) NOT NULL COMMENT 'Client Name',
@@ -68,7 +55,9 @@ class Client < DB_Table
                     :client_company_address_change  ,# int COMMENT 'Company Address has changed, Harmony needs to look at this\r\n',
                     :last_mod                       ,# date,
                     :state                          ,# smallint NOT NULL DEFAULT '0' COMMENT '0-Normal, 1-Error',
-                    :reason                          # varchar(255),
+                    :reason                         ,# varchar(255),
+                    :created_at                     ,# datetime not null
+                    :updated_at                      # datetime not null
   self.table = :clients
   self.instances = []
   
@@ -79,13 +68,56 @@ class Client < DB_Table
 end
 
 
+class Company < DB_Table
+  attr_accessor   :company_id           ,# int AUTO_INCREMENT NOT NULL,
+                  :company_name         ,# varchar(45),
+                  :company_last_update  ,# date,
+                  :created_at           ,# datetime not null
+                  :updated_at           # datetime not null
+  self.table = :companies
+  self.instances = []
+  
+  def to_s
+    "Company::#{@company_id}:(#{@company_name})"
+  end
+end
+
+
+class Plantypefund < DB_Table
+  attr_accessor   :fund_id          ,# int AUTO_INCREMENT NOT NULL,
+                  :fund_name        ,# varchar(100),
+                  :fund_identifier  ,# varchar(20),
+                  :market_id        ,# int,
+                  :fund_currency    ,# varchar(3),
+                  :fund_fkey        ,# varchar(20),
+                  :fund_type        ,# varchar(20),
+                  :company_id       ,# int,
+                  :plantype_id      ,# int NOT NULL,
+                  :fund_isin        ,# varchar(45),
+                  :state            ,# smallint NOT NULL DEFAULT '0' COMMENT '0-Okay, 1-Error',
+                  :reason           ,# varchar(255), 
+                  :created_at       ,# datetime not null
+                  :updated_at        # datetime not null
+  self.table = :plantypefunds
+  self.instances = []
+  
+  def to_s
+    return "Plantypefund::#{fund_identifier}:(#{fund_name})"
+  end
+end
+
+
 class Plantype < DB_Table
   attr_accessor     :plantype_id        ,# int AUTO_INCREMENT NOT NULL,
                     :plantype_name      ,# varchar(20),
                     :company_id         ,# int NOT NULL,
                     :plantype_currency  ,# varchar(3) NOT NULL,
-                    :deposit_fund_id     # int,    
-                  
+                    :deposit_fund_id    ,# int,
+                    :last_mod           ,# date,
+                    :state              ,# int,
+                    :reason             ,# varchar(255),
+                    :created_at         ,# datetime NOT NULL,
+                    :updated_at         # datetime NOT NULL,                        
   self.table = :plantypes
   self.instances = []
 
@@ -108,8 +140,12 @@ class Policy  < DB_Table
                   :policy_value                ,# double COMMENT 'total value of Policy',
                   :policy_single_premium       ,# int,
                   :policy_total_invested       ,# double,
-                  :policy_missing               # int NOT NULL DEFAULT '0' COMMENT 'Policy was included in last CVS Client Update',
-  self.table = :policies
+                  :policy_missing              ,# int NOT NULL DEFAULT '0' COMMENT 'Policy was included in last CVS Client Update',
+                  :last_mod                    ,# date,
+                  :state                       ,# int,
+                  :reason                      ,# varchar(255),
+                  :created_at                  ,# datetime NOT NULL,
+                  :updated_at                   # datetime NOT NULL,  self.table = :policies
   self.instances = []
   
   def to_s
@@ -118,34 +154,16 @@ class Policy  < DB_Table
   
 end
 
-class Plantypefund < DB_Table
-  attr_accessor   :fund_id          ,# int AUTO_INCREMENT NOT NULL,
-                  :fund_name        ,# varchar(100),
-                  :fund_identifier  ,# varchar(20),
-                  :market_id        ,# int,
-                  :fund_currency    ,# varchar(3),
-                  :fund_fkey        ,# varchar(20),
-                  :fund_type        ,# varchar(20),
-                  :company_id       ,# int,
-                  :plantype_id      ,# int NOT NULL,
-                  :fund_isin        ,# varchar(45),
-                  :last_mod         ,# timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                  :state            ,# smallint NOT NULL DEFAULT '0' COMMENT '0-Okay, 1-Error',
-                  :reason            # varchar(255), 
-  self.table = :plantypefunds
-  self.instances = []
-  
-  def to_s
-    return "Plantypefund::#{fund_identifier}:(#{fund_name})"
-  end
-end
-
-
 class Policyfund < DB_Table
   attr_accessor     :policyfund_id     ,# int AUTO_INCREMENT NOT NULL,
                     :policy_id         ,# int,
                     :fund_id           ,# int,
-                    :policyfund_value  # double COMMENT 'Value of funds held for this policy',
+                    :policyfund_value  ,# double COMMENT 'Value of funds held for this policy',
+                    :last_mod          ,# date,
+                    :state             ,# int,
+                    :reason            ,# varchar(255),
+                    :created_at        ,# datetime NOT NULL,
+                    :updated_at         # datetime NOT NULL,  
   self.table = :policyfunds
   self.instances = []
   

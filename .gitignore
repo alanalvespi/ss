@@ -13,6 +13,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-public/data
 Gemfile.lock
 Gemfile.lock
