@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Komodo Project File - DO NOT EDIT -->
 <project id="061ae909-528f-4e02-a68e-2c21d3d4cfb5" kpf_version="5" name="ss.komodoproject">
+<file id="4984fb66-36ab-45a0-956b-a7a15cb4f0ad" idref="061ae909-528f-4e02-a68e-2c21d3d4cfb5" name="feeder_controller.rb" url="app/controllers/feeder_controller.rb">
+</file>
 <preference-set idref="061ae909-528f-4e02-a68e-2c21d3d4cfb5">
 <preference-set id="Invocations">
 <preference-set id="Project">

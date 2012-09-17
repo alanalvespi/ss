@@ -24,15 +24,15 @@ dirname = ''
  Dir::mkdir(dirname) unless FileTest::directory?(dirname) 
 end
 
-logdirname = ''
-['../../public/logs/feeders/client_update',year,month,day].each do |part| 
- logdirname = logdirname + part + '/'
- Dir::mkdir(logdirname) unless FileTest::directory?(logdirname) 
-end
+#logdirname = ''
+#['../../public/logs/feeders/client_update',year,month,day].each do |part| 
+# logdirname = logdirname + part + '/'
+# Dir::mkdir(logdirname) unless FileTest::directory?(logdirname) 
+#end
 
 
 
-log_fn = "#{logdirname}client_update.log"
+log_fn = "#{dirname}client_update.log"
 puts "redirecting output to #{log_fn}"
 
 $stdout.reopen(log_fn,"w")
@@ -40,7 +40,7 @@ $stderr = $stdout
 puts "output redirected to #{log_fn}"
 
 
-marker_fn = "#{logdirname}Started_#{year}#{month}#{day}.mark"
+marker_fn = "#{dirname}Started_#{year}#{month}#{day}.mark"
 marker_file = File.new(marker_fn, "w")
 marker_file.close()
 

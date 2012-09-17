@@ -25,8 +25,10 @@ Ss::Application.routes.draw do
 
   
   # Special Routes for Feeders
-  match "/feeder/:id"               => "feeder#show"
-  match "/feeder/start/:id"         => "feeder#start"
+  match "/feeder/:id"                 => "feeder#show"
+  match "/feeder/start/:id"           => "feeder#start"
+  match "/feeders/client_update/data"  => "feeder#client_upload"
+  match "/feeders/loadfunds/data/"     => "feeder#funds_upload"
   
   # special Routes for Calculations
   match "/calculations/switch"       => "calculations#switch"

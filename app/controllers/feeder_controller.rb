@@ -145,22 +145,34 @@ end
       cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} valuta=#{valuta} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
       puts "About to execute <#{cmdline}>"
       system(cmdline)
-      redirect_to("/logs/feeders/market_update/#{year}/#{month}/#{day}/market_update.log")
+      redirect_to("/data/feeders/market_update/#{year}/#{month}/#{day}/market_update.log")
 
     when 'client_update'
       cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
       puts "About to execute <#{cmdline}>"
       result = system(cmdline)
-      redirect_to("/logs/feeders/client_update/#{year}/#{month}/#{day}/client_update.log")
+      redirect_to("/data/feeders/client_update/#{year}/#{month}/#{day}/client_update.log")
       
     when 'loadfunds'
       cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
       puts "About to execute <#{cmdline}>"
       result = system(cmdline)
-      redirect_to("/logs/feeders/loadfunds/#{year}/#{month}/#{day}/RL360loadfunds.log")
-
+      redirect_to("/data/feeders/loadfunds/#{year}/#{month}/#{day}/RL360loadfunds.log")
     end
     
     @feeder = "#{batch_name} Execution Started"     
   end
+  
+  def client_upload
+    name =  'RL360_Daily.CSV'
+    directory = "feeders/client_update/data/"
+    # create the file path
+    path = File.join(directory, name)
+    # write the file
+    File.open(path, "wb") { |f| f.write(params[:Filedata].read) }
+    print "File uploaded..."
+    redirect_to("/data/feeders/client_update/2012/09/03/RL360ClientUpdate.log.log")
+  end
+  
+  
 end
