@@ -171,7 +171,16 @@ end
     # write the file
     File.open(path, "wb") { |f| f.write(params[:Filedata].read) }
     print "File uploaded..."
-    redirect_to("/data/feeders/client_update/2012/09/03/RL360ClientUpdate.log.log")
+    
+    # Today 
+    as_of = Date.today
+    
+    day   = "%02d" % as_of.day
+    month = "%02d" % as_of.month
+    year  = "%4d" % as_of.year
+    
+    #redirect_to("/data/feeders/client_update/2012/09/03/RL360ClientUpdate.log.log")
+    redirect_to("/data/feeders/client_update/#{year}-#{month}-#{day}/RL360ClientUpdate.log")
   end
   
   
