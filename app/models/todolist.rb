@@ -1,3 +1,3 @@
-class Todolist < ActiveRecord::Base  
-  attr_accessible :tablename, :id, :description, :state, :reason
+class Todolist < ActiveRecord::Base
+  attr_accessible :description, :id, :reason, :state, :tablename
 end

@@ -1,4 +1,6 @@
 Ss::Application.routes.draw do
+  resources :todolists
+
   resources :strategies
 
   resources :markets
