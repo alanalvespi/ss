@@ -51,7 +51,7 @@ class TestController < ApplicationController
     # Update SQL For Initial Market Reset...
     
     @calculations = {}
-    book = Excel.new('Public/Test/TestData.xls')
+    book = Excel.new('public/Test/TestData.xls')
     book.default_sheet = 'Markets Initial Entry'
     first_row = book.first_row
     last_row  = book.last_row
@@ -108,7 +108,7 @@ class TestController < ApplicationController
   
   def calculations
     @calculations = {}   
-    book = Excel.new('Public/Test/TestData.xls')
+    book = Excel.new('public/Test/TestData.xls')
     book.default_sheet = 'Market Test Days'
     first_row = book.first_row
     last_row  = book.last_row
