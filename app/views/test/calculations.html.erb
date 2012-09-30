@@ -1,0 +1,74 @@
+<HTML>
+	<HEAD>
+		<TITLE>Test Calculations</TITLE>
+	</HEAD>
+	<BODY >
+		  <script type="text/javascript">
+		  	function runningIframe(stepno) {
+		  		var eleid = 'Step-'+stepno
+		  		var ifrm = document.getElementById(eleid)
+		  		ifrm = (ifrm.contentWindow) ? ifrm.contentWindow : (ifrm.contentDocument.document) ? ifrm.contentDocument.document : ifrm.contentDocument;
+            	ifrm.document.open();
+            	ifrm.document.write('Running...');
+            	ifrm.document.close();
+		  	}
+		  </script>
+		<H1>Test Calculations...</H1>
+		<table border="1" width="100%">
+			<%  step = 1 %>
+			
+			<tr valign="top">
+					<FORM  action="/Test/Test_init_market"  target="Step-1" onsubmit="runningIframe(<%=step%>)">
+					<td> 1- <INPUT name="client_update_submit" type="submit" value="Init Markets" ></td>			
+					</FORM>
+					<td ><iframe src="blank.html"  name="Step-1" id="Step-1" width="100%"></iframe></td>
+			</tr>
+				
+			
+			<%	@calculations.keys.sort.each do |d|
+					step += 1
+					
+			%>
+			<tr valign="top">
+					<FORM  action="/feeder/start/market_update" target="Step-<%=step%>" onsubmit="runningIframe(<%=step%>)">
+					<td width="200"><%=step%>- <INPUT name="market_update_submit" type="submit" value="Run Market <%= d %>" >
+							<input type="hidden" name="valuta" size=21 value="<%= d %>">
+					</td>
+					</FORM>
+					<td ><iframe src="blank.html" name="Step-<%=step%>" id="Step-<%=step%>" width="100%"></iframe></td>
+			</tr>
+			<% step += 1 %>
+			<tr valign="top">
+					<FORM  action="/calculations/switch" target="Step-<%=step%>" onsubmit="runningIframe(<%=step%>)">
+					<td width="200"><%=step%>- <INPUT name="market_update_submit" type="submit" value="Calculate <%= d %>" >
+						<% @calculations[d].each do |m| %>
+							<br><%= Integer(m['Market ID']) %>:<%= m['Market'][0..9] %>[<%= m['Price'] %>]<%= m['BUY or SELL'] %><%= m['HIGH/LOW'] %>
+						<% end %>
+					</td>
+					</FORM>
+					<td ><iframe src="blank.html"  name="Step-<%=step%>" id="Step-<%=step%>" width="100%"></iframe></td>
+			</tr>
+			<% step += 1 %>
+			<tr valign="top">
+					<FORM  action="/Test/Generate_Instructions/" target="Step-<%=step%>" onsubmit="runningIframe(<%=step%>)">
+					<td width="200"><%=step%>- <INPUT name="market_update_submit" type="submit" value="Gen Inst <%= d %>" >
+						<%  if @calculations.keys.length == 0 then %>
+							<p> no elements changed...</p>
+						<%	else
+								@calculations[d].each do |m| 
+									if m['BUY or SELL'] == 'BUY' or m['BUY or SELL'] == 'SELL' then 
+							%>						
+										<br><%= Integer(m['Market ID']) %>:<%= m['Market'][0..9] %>[<%= m['BUY or SELL'] %>]
+						<% 			end
+								end 
+							end %>
+					</td>
+					</FORM>
+					<td ><iframe src="blank.html"  name="Step-<%=step%>" id="Step-<%=step%>" width="100%"></iframe></td>
+			</tr>
+			<% end %>
+			
+		</table>
+		
+	</BODY>
+</HTML>

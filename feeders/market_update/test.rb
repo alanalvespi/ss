@@ -1,52 +1,94 @@
+#!/usr/local/bin/ruby -w
 
-
-
-
+require 'rubygems'
+require 'roo'
+require 'json'
+require 'sequel'
+require 'yaml'
+require '../util/wa'
 
 #
-# test run program from ruby
+# Load Job Parameters
 #
-puts "about to execute..."
-env      = 'production'
-execdir  = 'market_update'
-pgm      = 'DailyMarketUpdate.rb'
-logfile  = 'test.log'
-valuta   = '2012-08-28'
-database = 'ss'
-user     = 'deploy'
-password = 'LeIhJhLFdD'
-host     = 'ec2-23-23-212-26.compute-1.amazonaws.com'
-port     = '3306'
-#  logfile=#{logfile} 
 
-#result = system("bundle exec ruby -C#{execdir} #{pgm} valuta=#{valuta} database=#{database} username=#{user} password=#{password} host=#{host} port=#{port}")
+valuta = nil
 
-#if result then
-#  puts "successfully executed #{pgm}"
-#else
-#  puts "execution of #{pgm} returned error"
-#end
+Wa.loadArguments(
+  {'valuta'=>nil,
+  'username'=>nil,
+  'password'=>nil,
+  'database'=>nil,
+  'host'=>'localhost',
+  'port'=>'3306',
+  'logfile'=>nil
+  })
+
+valuta = ENV['valuta'] 
 
 
-require 'find'
-require "active_support/core_ext"
-dir = 'data'
-data = {}
-Find.find(dir) do |path|
-  #p "\n>>#{path}::"
-  parts = path.split('/')
-  t = data
-  # travel/make directory structures 
-  parts[0..-2].each { |p|
-    next unless p
-    #p "[#{p}]" 
-    p = "_#{p}" if p.to_i
-    t[p] = {} unless t.has_key?(p)
-    t = t[p]
-  }
 
-  t[parts[-1]] = { "path"=> path, "name"=>parts[-1], "size"=>File.size(path), "create"=>File.ctime(path), "modify"=>File.mtime(path) } unless FileTest.directory?(path)
+raise WaError.new('E-DailyMarketUpdate:ParmError, username parameter not specified, please add username="db-username" to command ') unless ENV.has_key?('username')
+raise WaError.new('E-DailyMarketUpdate:ParmError, database parameter not specified, please add database="db-name"     to command ') unless ENV.has_key?('database')
+raise WaError.new('E-DailyMarketUpdate:ParmError, host     parameter not specified, please add     host="hostname"    to command ') unless ENV.has_key?('host')
+raise WaError.new('E-DailyMarketUpdate:ParmError, port     parameter not specified, please add     port="port-no"     to command ') unless ENV.has_key?('port')
+
+
+begin 
+  DB = Wa.openDatabase()
 end
 
+@TestResults = [{'Test started at:'=>Time.now}]
 
-p data.to_xml(:root=>'market_update')
+#mysql_exe = "c:\\wamp\\bin\\mysql\\mysql5.5.20\\bin\\mysql.exe"
+#require 'open3'
+#sin, sout, serr = Open3.popen3("#{mysql_exe} --user=#{ENV['username']} -e Initial_market.sql")
+#results = serr.readlines 
+#results += sout.readlines
+   
+# SQL For Initial Market Reset...
+stmts = [
+  
+  "update markets 
+     set markets.market_in = 0, 
+         markets.market_reference_price = 8654.617,
+         markets.market_reference_date = '2011-12-19',
+         markets.market_last_switch_price = 865.617,
+         markets.market_last_switch_date = '2011-12-19',
+         markets.market_current_process_date = '2011-12-31'
+  where markets.market_id = 194;",
+   
+  "update markets 
+     set markets.market_in = 0, 
+         markets.market_reference_price = 343.773,
+         markets.market_reference_date = '2011-12-20',
+         markets.market_last_switch_price = 343.773,
+         markets.market_last_switch_date = '2011-12-20',
+         markets.market_current_process_date = '2011-12-31'
+  where markets.market_id = 94;",
+  
+   
+  "update markets 
+     set markets.market_in = 0, 
+         markets.market_reference_price = 55.579,
+         markets.market_reference_date = '2011-12-19',
+         markets.market_last_switch_price = 55.579,
+         markets.market_last_switch_date = '2011-12-19',
+         markets.market_current_process_date = '2011-12-31'
+  where markets.market_id = 92;"
+]
+
+
+
+
+
+# Initialize Market records...
+count = 0
+stmts.each do |s| 
+  DB.run(s) 
+end
+
+# Run Calculate Switches...
+
+
+
+puts @TestResults

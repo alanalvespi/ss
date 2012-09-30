@@ -25,15 +25,18 @@ Ss::Application.routes.draw do
 
   
   # Special Routes for Feeders
-  match "/feeder/:id"                 => "feeder#show"
-  match "/feeder/start/:id"           => "feeder#start"
-  match "/feeders/client_update/data"  => "feeder#client_upload"
-  match "/feeders/loadfunds/data/"     => "feeder#funds_upload"
+  match "/feeder/:id"                   => "feeder#show"
+  match "/feeder/start/:id"             => "feeder#start"
+  match "/feeders/client_update/data"   => "feeder#client_upload"
+  match "/feeders/loadfunds/data/"      => "feeder#funds_upload"
   
   # special Routes for Calculations
-  match "/calculations/switch"       => "calculations#switch"
+  match "/calculations/switch"          => "calculations#switch"
   
-  
+  # Routes for testing...
+  match "/Test/Calculations"            => "test#calculations" 
+  match "/Test/Test_init_market"        => "test#init_markets"
+  match "/Test/Generate_Instructions"   => "test#generate_instructions"
    
   # The priority is based upon order of creation:
   # first created -> highest priority.

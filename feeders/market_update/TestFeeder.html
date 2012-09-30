@@ -5,6 +5,7 @@
 	</HEAD>
 	<BODY >
 		<H1>Test Start of Batch Feeders...</H1>
+		
 		<H3>Start Market Update Batch...</H3>
 		<FORM  name="market_update_form" action="/feeder/start/market_update" target="_blank">
 			Valuta: <INPUT type="text" name="valuta" size=21 >
@@ -23,6 +24,11 @@
 			<INPUT name="loadfunds_submit" type="submit" value="LoadFunds" >
 		</FORM>
 		<a href="/feeder/loadfunds.xml" target="_blank">Get XML of Load Funds Directory</a>
+		
+		<H3>Start Switch Calculations...</H3>
+		<FORM  name="loadfund_form" action="/feeder/calculations/switch"  target="_blank">
+			<INPUT name="loadfunds_submit" type="submit" value="LoadFunds" >
+		</FORM>
 		
 	</BODY>
 </HTML>

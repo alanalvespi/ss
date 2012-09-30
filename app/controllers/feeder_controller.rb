@@ -144,7 +144,7 @@ end
     when 'market_update'
       cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} valuta=#{valuta} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
       puts "About to execute <#{cmdline}>"
-      system(cmdline)
+      result = system(cmdline)
       redirect_to("/data/feeders/market_update/#{year}/#{month}/#{day}/market_update.log")
 
     when 'client_update'

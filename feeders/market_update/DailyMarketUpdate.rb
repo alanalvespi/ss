@@ -101,7 +101,7 @@ log_fn = "#{dirname}market_update.log"
 puts "redirecting output to #{log_fn}"
 
 $stdout.reopen(log_fn,"w")
-$stderr = $stdout
+#$stderr = $stdout
 puts "output redirected to #{log_fn}"
 
 

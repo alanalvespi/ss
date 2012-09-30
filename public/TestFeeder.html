@@ -5,24 +5,43 @@
 	</HEAD>
 	<BODY >
 		<H1>Test Start of Batch Feeders...</H1>
-		<H3>Start Market Update Batch...</H3>
-		<FORM  name="market_update_form" action="/feeder/start/market_update" target="_blank">
-			Valuta: <INPUT type="text" name="valuta" size=21 >
-			<INPUT name="market_update_submit" type="submit" value="Market_Update" >
-		</FORM>
-		<a href="/feeder/market_update.xml" target="_blank">Get XML of Market Update Directory</a>
 		
-		<H3>Start Client Update Batch...</H3>
-		<FORM  name="client_update_form" action="/feeder/start/client_update"  target="_blank">
-			<INPUT name="client_update_submit" type="submit" value="Client_Update" >
-		</FORM>
-		<a href="/feeder/client_update.xml" target="_blank">Get XML of Client Update Directory</a>
-		
-		<H3>Start Load Funds Batch...</H3>
-		<FORM  name="loadfund_form" action="/feeder/start/loadfunds"  target="_blank">
-			<INPUT name="loadfunds_submit" type="submit" value="LoadFunds" >
-		</FORM>
-		<a href="/feeder/loadfunds.xml" target="_blank">Get XML of Load Funds Directory</a>
+		<table border="1">
+			<tr>
+				<FORM  name="market_update_form" action="/feeder/start/market_update" target="_blank">
+					<td><b> Market Update Batch...</b></td>
+					<td>	Valuta: <INPUT type="text" name="valuta" size=21 >
+						<INPUT name="market_update_submit" type="submit" value="Market_Update" >
+					</td>
+					<td>
+						<a href="/feeder/market_update.xml" target="_blank">Get XML of Market Update Directory</a>
+					</td>
+				</FORM>
+			</tr>
+			<tr>
+				<FORM  name="client_update_form" action="/feeder/start/client_update"  target="_blank">
+					<td><b> Client Update Batch...</b></td>
+					<td><INPUT name="client_update_submit" type="submit" value="Client_Update" ></td>
+					<td><a href="/feeder/client_update.xml" target="_blank">Get XML of Client Update Directory</a></td>
+					
+				</FORM>
+			</tr>
+			<tr>	
+				<FORM  name="loadfund_form" action="/feeder/start/loadfunds"  target="_blank">
+					<td><b>Start Load Funds Batch...</b></td>
+					<td><INPUT name="loadfunds_submit" type="submit" value="LoadFunds" ></td>
+					<td><a href="/feeder/loadfunds.xml" target="_blank">Get XML of Load Funds Directory</a></td>
+				</FORM>
+			</tr>
+			<tr>	
+				<FORM  name="loadfund_form" action="/calculations/switch"  target="_blank">
+					<td><b>Switch Calculations...</b></td>
+					<td><INPUT name="loadfunds_submit" type="submit" value="Calculate Switches" ></td>
+					<td></td>
+				</FORM>
+			</tr>
+
+		</table>
 		
 	</BODY>
 </HTML>
