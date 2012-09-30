@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120911160808) do
+ActiveRecord::Schema.define(:version => 20120929025456) do
 
   create_table "clients", :primary_key => "client_id", :force => true do |t|
     t.string   "client_name"
@@ -143,19 +143,29 @@ ActiveRecord::Schema.define(:version => 20120911160808) do
     t.datetime "updated_at",                                      :null => false
   end
 
-  create_table "strategies", :primary_key => "strategy_id", :force => true do |t|
+  create_table "strategies", :force => true do |t|
+    t.integer  "strategy_id"
     t.string   "strategy_name"
-    t.integer  "strategy_initial_switch_percentage"
-    t.integer  "strategy_filter"
-    t.decimal  "strategy_trigger_in",                :precision => 10, :scale => 0
-    t.decimal  "strategy_trigger_out",               :precision => 10, :scale => 0
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
+    t.float    "strategy_initial_switch_percentage"
+    t.float    "strategy_filter"
+    t.float    "strategy_trigger_in"
+    t.float    "strategy_trigger_out"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   create_table "strategies_markets", :primary_key => "strategy_market_id", :force => true do |t|
     t.integer  "strategy_id"
     t.integer  "market_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "todolists", :force => true do |t|
+    t.string   "tablename"
+    t.string   "description"
+    t.string   "state"
+    t.string   "reason"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
