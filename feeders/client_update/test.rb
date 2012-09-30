@@ -5,7 +5,7 @@ puts "about to execute..."
 env      = 'development'
 execdir  = '.'
 pgm      = 'rl360ClientUpdate.rb'
-logfile  = 'test.log'
+logfile  = 'test_log.txt'
 database = 'sentrysystem'
 user     = 'root'
 password = ''

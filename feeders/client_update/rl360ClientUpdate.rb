@@ -32,7 +32,7 @@ end
 
 
 
-log_fn = "#{dirname}client_update.log"
+log_fn = "#{dirname}client_update_log.txt"
 puts "redirecting output to #{log_fn}"
 
 $stdout.reopen(log_fn,"w")
