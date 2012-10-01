@@ -1,5 +1,5 @@
 require 'roo'
-
+require 'iconv'
 
 #
 # Hack to close Roo work sheets
