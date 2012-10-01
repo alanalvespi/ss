@@ -1,6 +1,6 @@
 class CreateStrategies < ActiveRecord::Migration
   def change
-    create_table :strategies do |t|
+    create_table :strategies,{:primary_key => :strategy_id}  do |t|
       t.integer :strategy_id
       t.string :strategy_name
       t.float :strategy_initial_switch_percentage
