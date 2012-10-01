@@ -1,15 +1,15 @@
 class CreateTodolists < ActiveRecord::Migration
-  def change
-    create_table :todolists do |t|
-      t.integer :id
-      t.string :tablename
-      t.string :description
-      t.string :state
-      t.string :reason
+  #def change
+  #  create_table :todolists do |t|
+  #   t.integer :id
+  #    t.string :tablename
+  #    t.string :description
+  #    t.string :state
+  #    t.string :reason
 
-      t.timestamps
-    end
-  end
+  #    t.timestamps
+  #  end
+  #end
   
   def self.up
       sql = 
