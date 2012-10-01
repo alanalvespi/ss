@@ -186,7 +186,7 @@ xls_list.keys().each do |xls_name|
   xls_url = xls_url.sub('Month', as_of.strftime("%b"))
   xls_url = xls_url.sub('Day',   day)
   filename = dirname + xls[:filename]
-  getXLS(xls_url,filename)
+  getXLS(xls_url,filename) unless File.exist?(filename)
   book = Excel.new(filename)
   book.default_sheet = book.sheets.first
   parse_index_values = false
