@@ -71,7 +71,7 @@ class TestController < ApplicationController
       end
       
       vals = {}
-      'A'.upto('F') do |col|
+      'A'.upto('G') do |col|
         head = colheads[col]
         value = book.cell(row,col)
         vals[head] = value
