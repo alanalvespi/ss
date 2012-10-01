@@ -87,7 +87,7 @@ end
       'market_update' => {
         'execdir'     => "feeders/#{batch_name}",
         'pgm'         => 'DailyMarketUpdate.rb',
-        'logfile'     => 'DailyMarketUpdate.log',
+        'logfile'     => 'DailyMarketUpdate_log.txt',
         'database'    => db_conf['database'],
         'user'        => db_conf['username'],
         'password'    => db_conf['password'],
@@ -97,7 +97,7 @@ end
       'client_update' => {
         'execdir'     => "feeders/#{batch_name}",
         'pgm'         => 'RL360ClientUpdate.rb',
-        'logfile'     => 'RL360ClientUpdate.log',
+        'logfile'     => 'RL360ClientUpdate_log.txt',
         'database'    => db_conf['database'],
         'user'        => db_conf['username'],
         'password'    => db_conf['password'],
@@ -107,7 +107,7 @@ end
       'loadfunds' => {
         'execdir'     => "feeders/#{batch_name}",
         'pgm'         => 'RL360_loadfunds.rb',
-        'logfile'     => 'RL360_loadfunds.log',
+        'logfile'     => 'RL360_loadfunds_log.txt',
         'database'    => db_conf['database'],
         'user'        => db_conf['username'],
         'password'    => db_conf['password'],
@@ -145,19 +145,19 @@ end
       cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} valuta=#{valuta} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
       puts "About to execute <#{cmdline}>"
       result = system(cmdline)
-      redirect_to("/data/feeders/market_update/#{year}/#{month}/#{day}/market_update.log")
+      redirect_to("/data/feeders/market_update/#{year}/#{month}/#{day}/market_update_log.txt")
 
     when 'client_update'
       cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
       puts "About to execute <#{cmdline}>"
       result = system(cmdline)
-      redirect_to("/data/feeders/client_update/#{year}/#{month}/#{day}/client_update.log")
+      redirect_to("/data/feeders/client_update/#{year}/#{month}/#{day}/client_update_log.txt")
       
     when 'loadfunds'
       cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
       puts "About to execute <#{cmdline}>"
       result = system(cmdline)
-      redirect_to("/data/feeders/loadfunds/#{year}/#{month}/#{day}/RL360loadfunds.log")
+      redirect_to("/data/feeders/loadfunds/#{year}/#{month}/#{day}/RL360loadfunds_log.txt")
     end
     
     @feeder = "#{batch_name} Execution Started"     
@@ -179,8 +179,8 @@ end
     month = "%02d" % as_of.month
     year  = "%4d" % as_of.year
     
-    #redirect_to("/data/feeders/client_update/2012/09/03/RL360ClientUpdate.log.log")
-    redirect_to("/data/feeders/client_update/#{year}-#{month}-#{day}/RL360ClientUpdate.log")
+    #redirect_to("/data/feeders/client_update/2012/09/03/RL360ClientUpdate_log.txt_log.txt")
+    redirect_to("/data/feeders/client_update/#{year}-#{month}-#{day}/RL360ClientUpdate_log.txt")
   end
   
   

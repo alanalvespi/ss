@@ -35,7 +35,7 @@ end
 
 
 
-log_fn = "#{dirname}#{feedername}.log"
+log_fn = "#{dirname}#{feedername}_log.txt"
 puts "redirecting output to #{log_fn}"
 
 $stdout.reopen(log_fn,"w")

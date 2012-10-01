@@ -97,7 +97,7 @@ end
 
 
 
-log_fn = "#{dirname}market_update.log"
+log_fn = "#{dirname}market_update_log.txt"
 puts "redirecting output to #{log_fn}"
 
 $stdout.reopen(log_fn,"w")

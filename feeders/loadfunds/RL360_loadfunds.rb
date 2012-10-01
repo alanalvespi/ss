@@ -25,7 +25,7 @@ end
 
 
 
-log_fn = "#{dirname}RL360loadfunds.log"
+log_fn = "#{dirname}RL360loadfunds_log.txt"
 puts "redirecting output to #{log_fn}"
 
 $stdout.reopen(log_fn,"w")
@@ -104,7 +104,7 @@ plantype_list    = DB[:plantypes].map {|r| r[:plantype_id]}
 db_PlantypeFunds = DB[:plantypefunds]
 
 
-xls_fname = 'data/RL360/RL360_Funds.xls'
+xls_fname = 'data/RL360/Quantum/RL360_Funds_#{year}#{month}#{day}.xls'
 
 book = Excel.new(xls_fname)
 book.default_sheet = book.sheets.first
