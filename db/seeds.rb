@@ -11,5 +11,8 @@ plantypes = Plantype.create([{plantype_name:'Oracle'                      , comp
                              {plantype_name:'Quantum'                     , company_id: cid, state:0},
                              {plantype_name:'Portfolio Management Service', company_id: cid, state:0}
                            ])
-currencies = Currency.create([{currency_name:'USD'},{currency_name:'GBP'},{currency_name:'EUR'}])                           
+currencies = Currency.create([{currency_name:'USD'},{currency_name:'GBP'},{currency_name:'EUR'}])    
+strategies = Strategies.create([{strategy_id:1, strategy_name:'Defensive', strategy_initial_switch_percentage:20, 
+            strategy_filter:30, strategy_trigger_in:7.8, strategy_trigger_out:-4.3, created_at:Time.now(),  updated_at:Time.now()
+}])                       
                            
