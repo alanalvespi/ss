@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-companies = Company.create([{company_name:'RL360'}])
-cid = companies[0].company_id
+companies = Company.create([{company_id: 1, company_name:'RL360'}])
+cid = 1
 plantypes = Plantype.create([{plantype_name:'Oracle'                      , company_id: cid, state:0},
                              {plantype_name:'Quantum'                     , company_id: cid, state:0},
                              {plantype_name:'Portfolio Management Service', company_id: cid, state:0}
