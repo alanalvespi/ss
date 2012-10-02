@@ -39,6 +39,7 @@ Ss::Application.routes.draw do
   match "/Test/Calculations"            => "test#calculations" 
   match "/Test/Test_init_market"        => "test#init_markets"
   match "/Test/Generate_Instructions"   => "test#generate_instructions"
+  match "/Test/Uploadtestdata"          => "test#uploadFile"
    
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -144,5 +144,11 @@ class TestController < ApplicationController
 
   end
   
+  def uploadFile    
+    File.open("public/Test/TestData.xls", "wb") { |f| f.write(params[:datafile].read) }
+    print "File uploaded..."
+    redirect_to "/Test/Calculations", :notice => "File uploaded at " + Time.now.to_s 
+    #redirect_to post_url(@calculations), :status=> :found, :notice => "Pay attention to the road"
+  end
   
 end
