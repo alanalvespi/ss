@@ -74,7 +74,7 @@ class CreateTodolists < ActiveRecord::Migration
         select
           'policyfunds' AS tablename,
           policyfunds.policyfund_id AS id,
-          concat(policyfunds.policy_id,:,policyfunds.fund_id) AS description,
+          concat(policyfunds.policy_id,':',policyfunds.fund_id) AS description,
           policyfunds.state AS state,
           policyfunds.reason AS reason
         from policyfunds
