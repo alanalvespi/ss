@@ -133,7 +133,7 @@ class TestController < ApplicationController
         head = colheads[col]
         value = book.cell(row,col)
         if (head == 'Override') then
-          if (value ==  'Y' or value == 'y') then
+          if (value ==  -1) then
             value = 'Override'
           else
             value = ''
