@@ -31,10 +31,10 @@ require 'find'
       
       if   ((m.market_in == 0) and (m.market_dailychange > override_out))  then   
         m.market_override = 1
-        noOverride += ", #{m.market_id}:#{m.market_friendly_name}"
+        noOverride += ", #{m.market_id}:#{m.market_friendly_name}[#{m.market_dailychange}]"
       elsif ((m.market_in ==1) and (m.market_dailychange < override_in))  then  
         m.market_override = 1
-        noOverride += ", #{m.market_id}:#{m.market_friendly_name}"
+        noOverride += ", #{m.market_id}:#{m.market_friendly_name}[#{m.market_dailychange}]"
       end
       
       # Calculate market Switch
