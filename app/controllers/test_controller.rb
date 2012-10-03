@@ -64,14 +64,14 @@ class TestController < ApplicationController
       
       unless (colheads) then
         colheads = {}
-        'A'.upto('J') do |col|
+        'A'.upto('H') do |col|
           colheads[col] = book.cell(row,col)
         end
         next          
       end
       
       vals = {}
-      'A'.upto('G') do |col|
+      'A'.upto('H') do |col|
         head = colheads[col]
         value = book.cell(row,col)
         vals[head] = value
@@ -86,6 +86,7 @@ class TestController < ApplicationController
         market.market_reference_date        = vals['Ref date']
         market.market_last_switch_price     = vals['Switch price']
         market.market_last_switch_date      = vals['Switch date']
+        market.market_current_process_date  = vals['market_current_process_date']
         # markets.market_current_process_date = '2011-12-31'  No longer required as first Market day is initial setting...
         market.save
         @calculations[mid] = "Okay:#{vals}"
@@ -131,6 +132,13 @@ class TestController < ApplicationController
       'A'.upto('J') do |col|
         head = colheads[col]
         value = book.cell(row,col)
+        if (head == 'Override') then
+          if (value ==  'Y' or value == 'y') then
+            value = 'Override'
+          else
+            value = ''
+          end
+        end
         vals[head] = value
       end
       d = vals['Date']

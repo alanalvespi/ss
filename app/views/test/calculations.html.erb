@@ -50,7 +50,7 @@
 					<FORM  action="/calculations/switch" target="Step-<%=step%>" onsubmit="runningIframe(<%=step%>)">
 					<td width="200"><%=step%>- <INPUT name="market_update_submit" type="submit" value="Calculate <%= d %>" >
 						<% @calculations[d].each do |m| %>
-							<br><%= Integer(m['Market ID']) %>:<%= m['Market'][0..9] %>[<%= m['Price'] %>]<%= m['BUY or SELL'] %><%= m['HIGH/LOW'] %>
+							<br><%= Integer(m['Market ID']) %>:<%= m['Market'][0..9] %>[<%= m['Price'] %>]<%= m['BUY or SELL'] %><%= m['HIGH/LOW'] %><%= m['Override'] %>
 						<% end %>
 					</td>
 					</FORM>
