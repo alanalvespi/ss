@@ -1,0 +1,7 @@
+output redirected to ../../public/data/feeders/market_update/2012/02/01/market_update_log.txt
+Using database database: sentrysystem, :user => root, :password => , :host => localhost, :port => 3306
+=========================================================================
+Number of Rows Insterted: 0
+Number of Rows Updated:   206
+Number of Rows Insterted: 0
+Market Update As Of: 2012-02-01 Complete

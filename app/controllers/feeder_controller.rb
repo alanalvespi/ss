@@ -73,94 +73,21 @@ def genxml(t, x )
   }
   return "#{x}\n</dir>"
   
-end
+  end
 
 
   # Get /feeder/start/market_update
   
   def start
     batch_name = params[:id]
-    env = Rails.env
-    db_conf = Ss::Application.config.database_configuration[env]
+    valuta     = nil
+    valuta     = params[:valuta] if params.has_key?(:valuta)
+    
+    @feeder = Feeder.new(batch_name,valuta)
+    
+    redirect_to @feeder.logfilename
+    
 
-    configuration  = {
-      'market_update' => {
-        'execdir'     => "feeders/#{batch_name}",
-        'pgm'         => 'DailyMarketUpdate.rb',
-        'logfile'     => 'DailyMarketUpdate_log.txt',
-        'database'    => db_conf['database'],
-        'user'        => db_conf['username'],
-        'password'    => db_conf['password'],
-        'host'        => db_conf['host'],
-        'port'        => db_conf['port']
-      },
-      'client_update' => {
-        'execdir'     => "feeders/#{batch_name}",
-        'pgm'         => 'RL360ClientUpdate.rb',
-        'logfile'     => 'RL360ClientUpdate_log.txt',
-        'database'    => db_conf['database'],
-        'user'        => db_conf['username'],
-        'password'    => db_conf['password'],
-        'host'        => db_conf['host'],
-        'port'        => db_conf['port']
-      },
-      'loadfunds' => {
-        'execdir'     => "feeders/#{batch_name}",
-        'pgm'         => 'RL360_loadfunds.rb',
-        'logfile'     => 'RL360_loadfunds_log.txt',
-        'database'    => db_conf['database'],
-        'user'        => db_conf['username'],
-        'password'    => db_conf['password'],
-        'host'        => db_conf['host'],
-        'port'        => db_conf['port'],
-      }
-    }
-    
-    
-    c = configuration[batch_name]
-    
-    c['host'] = 'localhost' unless c['host']
-    c['port'] = '3306'      unless c['port']
-    
-    
-    
-    as_of = Date.today 
-    
-    if params.has_key?(:valuta) then
-      valuta = params[:valuta] 
-      as_of = Date.parse(valuta)   
-    end
-    
-      
-    # Valuta Date
-    
-    day   = "%02d" % as_of.day
-    month = "%02d" % as_of.month
-    year  = "%4d" % as_of.year
-
-
-    case batch_name
-      
-    when 'market_update'
-      cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} valuta=#{valuta} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
-      puts "About to execute <#{cmdline}>"
-      result = system(cmdline)
-      redirect_to("/data/feeders/market_update/#{year}/#{month}/#{day}/market_update_log.txt")
-
-    when 'client_update'
-      cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
-      puts "About to execute <#{cmdline}>"
-      result = system(cmdline)
-      redirect_to("/data/feeders/client_update/#{year}/#{month}/#{day}/client_update_log.txt")
-      
-    when 'loadfunds'
-      cmdline = "bundle exec ruby -C#{c['execdir']} #{c['pgm']} database=#{c['database']} username=#{c['user']} password=#{c['password']} host=#{c['host']} port=#{c['port']}"
-      puts "About to execute <#{cmdline}>"
-      result = system(cmdline)
-      redirect_to("/data/feeders/loadfunds/#{year}/#{month}/#{day}/RL360loadfunds_log.txt")
-    end
-    
-    @feeder = "#{batch_name} Execution Started"     
   end
   
   def client_upload

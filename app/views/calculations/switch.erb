@@ -1,7 +1,12 @@
 <table vspace="0" cellspacing="0">
-	<% @calculations.each do |k, v| %>
+	<% if (@calculations.markets == 0) then %>
+	<h1>Error: No markets processed</h1>
+	<p>No Markets have Current Date > Processing Date</p>
+	<% else %>
+	<% @calculations.labeled.each do |k, v| %>
 		<tr>
 			<td > <%= k %></td><td><%= v %></td>
 		</tr>
+	<% end %>
 	<% end %>
 </table>

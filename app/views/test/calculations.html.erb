@@ -22,6 +22,7 @@
 			</p>			
 		</form>
 		<%= notice %>
+		
 		<table border="1" width="100%">
 			<%  step = 1 %>
 			
@@ -33,7 +34,8 @@
 			</tr>
 				
 			
-			<%	@calculations.keys.sort.each do |d|
+			<%	tests = @test.tests 
+				tests.keys.sort.each do |d|
 					step += 1
 					
 			%>
@@ -49,9 +51,12 @@
 			<tr valign="top">
 					<FORM  action="/calculations/switch" target="Step-<%=step%>" onsubmit="runningIframe(<%=step%>)">
 					<td width="200"><%=step%>- <INPUT name="market_update_submit" type="submit" value="Calculate <%= d %>" >
-						<% @calculations[d].each do |m| %>
-							<br><%= Integer(m['Market ID']) %>:<%= m['Market'][0..9] %>[<%= m['Price'] %>]<%= m['BUY or SELL'] %><%= m['HIGH/LOW'] %><%= m['Override'] %>
-						<% end %>
+						<% tests[d]['expected'].each do |m| 
+							act = "#{m['BUY or SELL']} #{m['HIGH/LOW']} #{m['Override']}" 
+							if (act != "  ") then %>
+								<br><%= Integer(m['Market ID']) %>:<%= m['Market'][0..9] %>[<%= m['Price'] %>]<%= act %>
+						   <% end 
+						end %>
 					</td>
 					</FORM>
 					<td ><iframe src="blank.html"  name="Step-<%=step%>" id="Step-<%=step%>" width="100%"></iframe></td>
@@ -60,10 +65,10 @@
 			<tr valign="top">
 					<FORM  action="/Test/Generate_Instructions/" target="Step-<%=step%>" onsubmit="runningIframe(<%=step%>)">
 					<td width="200"><%=step%>- <INPUT name="market_update_submit" type="submit" value="Gen Inst <%= d %>" >
-						<%  if @calculations.keys.length == 0 then %>
+						<%  if tests.keys.length == 0 then %>
 							<p> no elements changed...</p>
 						<%	else
-								@calculations[d].each do |m| 
+								tests[d]['expected'].each do |m| 
 									if m['BUY or SELL'] == 'BUY' or m['BUY or SELL'] == 'SELL' then 
 							%>						
 										<br><%= Integer(m['Market ID']) %>:<%= m['Market'][0..9] %>[<%= m['BUY or SELL'] %>]

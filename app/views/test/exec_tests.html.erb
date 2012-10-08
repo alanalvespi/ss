@@ -1,0 +1,25 @@
+<HTML>
+	<HEAD>
+		<TITLE>Test Calculations</TITLE>
+	</HEAD>
+	<BODY >
+		<H1>Full Test of Calculations...</H1>
+		<p><%= @test.rc %></p>
+		
+		<table border="1" width="100%">
+			<%	tests = @test.tests 
+				tests.keys.sort.each do |d|
+					test = tests[d]
+			%>
+			<tr valign="top">
+					<td width="200"><%= d %></td>
+					<td ><%= test.results %>
+						<br><%= test.timings.join(', ') %>
+					</td>
+			</tr>			
+			<% end %>
+			
+		</table>
+		
+	</BODY>
+</HTML>

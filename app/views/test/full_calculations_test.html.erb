@@ -1,0 +1,66 @@
+<HTML>
+	<HEAD>
+		<TITLE>Test Calculations</TITLE>
+	</HEAD>
+	<BODY >
+		<H1>Test Calculations...</H1>
+		
+		<table border="1" width="100%">
+			<tr valign="top">
+					<td width="200">Initialize Markets 
+					</td>
+					<td  style="vertical-align: top; font-size:smaller; ">
+						<%= @test.results.keys.sort.each do |mid| %>
+						<dt><%= mid %></dt><dd><%= @test.results[mid] %></dd>
+						<% end %> 
+					</td>
+			</tr>
+			<%  step = 1 
+			 	tests = @test.tests 
+				tests.keys.sort.each do |d|
+					step += 1	
+					test = tests[d]				
+			%>
+			<tr valign="top">
+					<td width="200"><%= d %> 
+						<% test['expected'].each do |m| 
+							act = "#{m['BUY or SELL']} #{m['HIGH/LOW']} #{m['Override']}" 
+							if (act != "  ") then %>
+								<br></font size="8"><%= Integer(m['Market ID']) %>:<%= m['Market'][0..9] %>[<%= m['Price'] %>]<%= act %></font>
+						   <% end 
+						end %>
+					</td>
+					<td  style="vertical-align: top; font-size:smaller; ">
+						<%  if test.has_key?('result') then %>
+								<%= test['rc'] %> 
+								<% if test['errors'].length == 0 then %>
+									<% test['timings'].each do |t| %>
+										<br /><%= t %>
+									<% end %>
+									<% test['result'].each do |r| %>
+										<br /><%= r %>
+									<% end %>
+									<% if test.has_key?('instructions') then
+									   test['instructions'].keys.sort.each do |k| 
+									    i = test['instructions'][k]%>
+										<br />Instruction: <%= i %>
+									<% end %>
+									<% end %>
+								<% else %>
+									<% test['errors'].each do |e| %>
+										<br /><%= e %>
+									<% end %>
+								<% end %>
+								
+						<% else %>
+							Test was skipped...
+						<% end %>
+						
+					</td>
+			</tr>
+			<% end %>
+			
+		</table>
+		
+	</BODY>
+</HTML>
