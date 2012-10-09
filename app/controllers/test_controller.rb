@@ -118,7 +118,13 @@ end
     @test = Test.new()
     @test.init_markets('public/Test/TestData.xls','Markets Initial Entry','A','H')
     @test.get_tests('public/Test/TestData.xls','Market Test Days','A','M')
-    @test.exec_tests()
+    
+    
+    time = Benchmark.realtime do
+      @test.exec_tests()
+    end
+    puts "Exec_tests took #{time}s"
+
 
     respond_to do |format|
       format.html { render  erb: @test} 

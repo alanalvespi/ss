@@ -7,6 +7,7 @@ class Test
   end
   
   def _getExcelSheet(filename,sheetname,from,to)
+    # json is not any faster than excel...
     rows =[]
       book = Excel.new(filename)
       book.default_sheet = sheetname
@@ -85,19 +86,33 @@ class Test
       vals['Override'] = override 
       vals['Market ID'] = Integer(vals['Market ID'])
 
-
-      # identify the type of result to be tested
-      vals['Type'] = ''
-      vals['Type'] = vals['BUY or SELL'] if (vals['BUY or SELL'] == 'BUY' or vals['BUY or SELL'] == 'SELL') 
-      vals['Type'] = vals['HIGH/LOW'] if (vals['HIGH/LOW'] == 'LOW' or vals['HIGH/LOW'] == 'HIGH') 
-      vals['Type'] = vals['Override'] if (vals['Override'] == 'Override') 
-
-      ds = d.strftime("%Y-%m-%d")
+      # setup storage for new test...
+      ds = d
+      ds = d.strftime("%Y-%m-%d") if (d.class == Date) 
       unless (@tests.has_key?(ds)) then
         @tests[ds] = {}
         @tests[ds]['expected'] = []
       end
-      @tests[ds]['expected'].push(vals)
+
+      # identify the type of result to be tested
+      vals['Type'] = ''
+      if (vals['BUY or SELL'] == 'BUY' or vals['BUY or SELL'] == 'SELL') then
+        t = vals.clone
+        t['Type'] = t['BUY or SELL']
+        @tests[ds]['expected'].push(t)
+      end
+          
+      if (vals['HIGH/LOW'] == 'LOW' or vals['HIGH/LOW'] == 'HIGH') then
+        t = vals.clone
+        t['Type'] = t['HIGH/LOW']
+        @tests[ds]['expected'].push(t)
+      end
+        
+      if (vals['Override'] == 'Override') then
+        t = vals.clone
+        t['Type'] = t['Override']
+        @tests[ds]['expected'].push(t)
+      end
     end  
   end
 
@@ -125,7 +140,7 @@ class Test
       timings.push("Switch Calculation took #{time*1000}ms")
       
       
-      # check that each result is actually happened
+      # check that each result actually happened
       test_list = {}
       test.each do |r|
         ident = "#{r['Market ID']}:#{r['Market']}"
@@ -138,7 +153,7 @@ class Test
           else
             errors.push("Missing BUY #{ident} ")
           end 
-        when 'Sell'
+        when 'SELL'
           if calculation.out.has_key?(mid) then
             result.push(calculation.out[mid])
             geninstruction = true

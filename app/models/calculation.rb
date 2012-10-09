@@ -59,6 +59,9 @@ class Calculation
           @override[m.market_id]=override_str;
         else
           m.market_switch = 'In'
+          if (m.market_current_price > m.market_reference_price) then
+            @high[m.market_id] = "High [#{m.market_id}]:#{m.market_friendly_name}(#{m.market_current_price})"
+          end
           m.market_last_switch_price = m.market_current_price
           m.market_last_switch_date  = m.market_current_date
           m.market_reference_price   = m.market_current_price
@@ -71,6 +74,9 @@ class Calculation
           @override[m.market_id] = override_str
         else
           m.market_switch = 'Out'
+          if (m.market_current_price < m.market_reference_price) then
+            @low[m.market_id] = "Low [#{m.market_id}]:#{m.market_friendly_name}(#{m.market_current_price})"
+          end
           m.market_last_switch_price = m.market_current_price
           m.market_last_switch_date  = m.market_current_date
           m.market_reference_price   = m.market_current_price
