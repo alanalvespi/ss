@@ -4,6 +4,15 @@
 	</HEAD>
 	<BODY >
 		<H1>Test Calculations...</H1>
+		<form action="Uploadtestdata" enctype="multipart/form-data" method="post">
+			<p>
+			Upload new TestData.xls:
+			<input type="file" name="datafile" size="40">
+			<input type="submit" value="Send">
+			</p>			
+		</form>
+		<%= notice %>
+		
 		
 		<table border="1" width="100%">
 			<tr valign="top">
