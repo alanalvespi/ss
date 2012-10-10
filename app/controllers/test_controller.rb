@@ -111,6 +111,14 @@ end
   end
   
   
+  def uploadFile2    
+    File.open("public/Test/TestData.xls", "wb") { |f| f.write(params[:datafile].read) }
+    print "File uploaded..."
+    redirect_to "/Test/DoTest", :notice => "File uploaded at " + Time.now.to_s 
+    #redirect_to post_url(@calculations), :status=> :found, :notice => "Pay attention to the road"
+  end
+  
+  
   def full_calculations_test
   # Open TestData.xls
   # Execute all Tests defined there...

@@ -88,9 +88,16 @@ class Test
 
       # setup storage for new test...
       ds = d
-      ds = d.strftime("%Y-%m-%d") if (d.class == Date) 
+      ds = d.strftime("%Y-%m-%d") if (d.class == Date)
+      year, month, day = ds.split('-')
+      data_files = {'AC.xls'  => "/data/feeders/market_update/#{year}/#{month}/#{day}/AC.xls",
+                    'DM.xls'  => "/data/feeders/market_update/#{year}/#{month}/#{day}/DM.xls",
+                    'EMxls'   => "/data/feeders/market_update/#{year}/#{month}/#{day}/EM.xls",
+                    'SC.xls'  => "/data/feeders/market_update/#{year}/#{month}/#{day}/SC.xls",
+                    'log.txt' => "/data/feeders/market_update/#{year}/#{month}/#{day}/market_update_log.txt"
+                   } 
       unless (@tests.has_key?(ds)) then
-        @tests[ds] = {}
+        @tests[ds] = {'data_files'=>data_files}
         @tests[ds]['expected'] = []
       end
 

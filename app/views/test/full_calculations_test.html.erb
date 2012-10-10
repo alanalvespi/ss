@@ -4,7 +4,7 @@
 	</HEAD>
 	<BODY >
 		<H1>Test Calculations...</H1>
-		<form action="Uploadtestdata" enctype="multipart/form-data" method="post">
+		<form action="Uploadtestdata2" enctype="multipart/form-data" method="post">
 			<p>
 			Upload new TestData.xls:
 			<input type="file" name="datafile" size="40">
@@ -59,8 +59,11 @@
 									<% test['errors'].each do |e| %>
 										<br /><%= e %>
 									<% end %>
+									<br /> Used Data:
+									<% test['data_files'].keys.each do |fn| %>
+										<a href="<%= test['data_files'][fn] %>"><%= fn %></a>  
+									<% end %>
 								<% end %>
-								
 						<% else %>
 							Test was skipped...
 						<% end %>

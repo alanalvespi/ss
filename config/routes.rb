@@ -40,6 +40,7 @@ Ss::Application.routes.draw do
   match "/Test/Test_init_market"        => "test#init_markets"
   match "/Test/Generate_Instructions"   => "test#generate_instructions"
   match "/Test/Uploadtestdata"          => "test#uploadFile"
+  match "/Test/Uploadtestdata2"         => "test#uploadFile2"
   match "/Test/DoTest"                  => "test#full_calculations_test"
   
    
