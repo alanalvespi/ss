@@ -216,7 +216,7 @@ class Test
       
       calculation.override.keys.each do |mid| 
         unless (test_list.has_key?(mid)) then
-          errors.push("Unexpected Override #{mid}")          
+          errors.push("Unexpected Override #{calculation.overrride[mid]}")          
         end
       end      
       
