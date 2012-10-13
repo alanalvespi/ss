@@ -104,7 +104,7 @@ plantype_list    = DB[:plantypes].map {|r| r[:plantype_id]}
 db_PlantypeFunds = DB[:plantypefunds]
 
 
-xls_fname = 'data/RL360/Quantum/RL360_Funds_#{year}#{month}#{day}.xls'
+xls_fname = "../../public/data/feeders/loadfunds/RL360/RL360_Funds.xls"
 
 book = Excel.new(xls_fname)
 book.default_sheet = book.sheets.first
