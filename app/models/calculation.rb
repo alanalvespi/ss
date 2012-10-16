@@ -39,7 +39,8 @@ class Calculation
       if (m.market_current_price  and m.market_reference_price) then
         m.market_change_from_ref = (m.market_current_price / m.market_reference_price) - 1.0
       else 
-        m.market_change_from_ref = 0.0
+        # m.market_change_from_ref = 0.0
+        next
       end
       m.market_override = 0
       override_out= ((s.strategy_filter / 100.0 ) * (s.strategy_trigger_in  / 100.0))
