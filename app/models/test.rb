@@ -59,6 +59,8 @@ class Test
         market.market_last_switch_price     = vals['Switch price']
         market.market_last_switch_date      = vals['Switch date']
         market.market_current_process_date  = vals['market_current_process_date']
+        market.market_in                    = 0
+        market.market_in                    = 1 if (vals['IN/OUT'] == 'IN')
         # markets.market_current_process_date = '2011-12-31'  No longer required as first Market day is initial setting...
         market.save
         @results[mid] = "Okay:#{vals}"
