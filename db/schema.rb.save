@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120911160808) do
+ActiveRecord::Schema.define(:version => 20120929025456) do
 
   create_table "clients", :primary_key => "client_id", :force => true do |t|
     t.string   "client_name"
@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(:version => 20120911160808) do
     t.string   "reason"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-    t.integer  "product_id",        :null => false
   end
 
   create_table "plantypestrategyfunds", :primary_key => "plantypestrategyfund_id", :force => true do |t|
@@ -144,19 +143,15 @@ ActiveRecord::Schema.define(:version => 20120911160808) do
     t.datetime "updated_at",                                      :null => false
   end
 
-  create_table "products", :primary_key => "product_id", :force => true do |t|
-    t.string "product_name", :limit => 125, :null => false
-    t.string "product_code", :limit => 2,   :null => false
-  end
-
-  create_table "strategies", :primary_key => "strategy_id", :force => true do |t|
+  create_table "strategies", :force => true do |t|
+    t.integer  "strategy_id"
     t.string   "strategy_name"
-    t.integer  "strategy_initial_switch_percentage"
-    t.integer  "strategy_filter"
-    t.decimal  "strategy_trigger_in",                :precision => 10, :scale => 1
-    t.decimal  "strategy_trigger_out",               :precision => 10, :scale => 1
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
+    t.float    "strategy_initial_switch_percentage"
+    t.float    "strategy_filter"
+    t.float    "strategy_trigger_in"
+    t.float    "strategy_trigger_out"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   create_table "strategies_markets", :primary_key => "strategy_market_id", :force => true do |t|
@@ -166,12 +161,13 @@ ActiveRecord::Schema.define(:version => 20120911160808) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "todolists", :id => false, :force => true do |t|
-    t.string  "tablename",   :limit => 13, :default => "", :null => false
-    t.integer "id",                        :default => 0,  :null => false
-    t.string  "description"
-    t.integer "state"
-    t.string  "reason"
+  create_table "todolists", :force => true do |t|
+    t.string   "tablename"
+    t.string   "description"
+    t.string   "state"
+    t.string   "reason"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

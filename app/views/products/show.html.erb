@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+    <tr><td>product_id</td><td><%= @product.product_id %></td></tr>
+	<tr><td>product_name</td><td><%= @product.product_name %></td></tr>
+	<tr><td>product_code</td><td><%= @product.product_code %></td></tr>
+</table>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

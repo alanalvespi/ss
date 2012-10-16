@@ -1,4 +1,6 @@
 Ss::Application.routes.draw do
+  resources :products
+
   resources :todolists
 
   resources :strategies
@@ -14,6 +16,8 @@ Ss::Application.routes.draw do
   resources :policies
 
   resources :plantypes
+
+  resources :products
 
   resources :clients
 
