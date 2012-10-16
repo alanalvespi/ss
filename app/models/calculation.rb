@@ -36,7 +36,11 @@ class Calculation
       @markets += 1
       
       # Calculate Override... 
-      m.market_change_from_ref = (m.market_current_price / m.market_reference_price) - 1.0
+      if (m.market_current_price  and m.market_reference_price) then
+        m.market_change_from_ref = (m.market_current_price / m.market_reference_price) - 1.0
+      else 
+        m.market_change_from_ref = 0.0
+      end
       m.market_override = 0
       override_out= ((s.strategy_filter / 100.0 ) * (s.strategy_trigger_in  / 100.0))
       override_in = ((s.strategy_filter / 100.0 ) * (s.strategy_trigger_out / 100.0))
