@@ -73,6 +73,7 @@ class Feeder
       puts "About to execute <#{@cmdline}>"
       result = system(@cmdline)
       @logfilename = "/data/feeders/loadfunds/#{year}/#{month}/#{day}/RL360loadfunds_log.txt"
+      
     end
     
     return result
@@ -300,5 +301,7 @@ class Feeder
     log.puts "Market Update As Of: #{valuta} Complete"
     log.close()
   end
+  
+
   
 end

@@ -14,7 +14,6 @@ class PlantypesController < ApplicationController
   # GET /plantypes/1.json
   def show
     @plantype = Plantype.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @plantype }
@@ -25,7 +24,6 @@ class PlantypesController < ApplicationController
   # GET /plantypes/new.json
   def new
     @plantype = Plantype.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @plantype }

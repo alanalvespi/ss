@@ -88,7 +88,11 @@ class TestController < ApplicationController
     # Update SQL For Initial Market Reset...
     
     @test = Test.new()
-    @test.init_markets('public/Test/TestData.xls','Markets Initial Entry','A','H')
+    begin 
+      @test.init_markets('public/Test/TestData.xls','Markets Initial Entry','A','H')
+    rescue 
+      puts "#{$!}"
+    end
     respond_to do |format|
       format.html { render text: @test.results.to_yaml.gsub("\n",'<br>')} 
     end
@@ -140,4 +144,36 @@ end
     end
   end
 
+#  def delete_database
+#    @test = Test.new()
+#    begin
+#      @test.delete_database('public/Test/Seeding.xls')
+#    rescue
+#      puts "#{$!}"
+#    end
+#    
+#    
+#    respond_to do |format|
+#      format.html { render  erb: @test} 
+#      format.json { render json: @test}
+#    end
+#  end
+
+  def init_database
+    @test = Test.new()
+    begin
+      @test.init_database('public/Test/Seeding.xls')
+    rescue
+      puts "#{$!}"
+    end
+    
+    
+    respond_to do |format|
+      format.html { render  erb: @test} 
+      format.json { render json: @test}
+    end
+    
+  end
+  
+  
 end

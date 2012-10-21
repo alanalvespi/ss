@@ -1,0 +1,17 @@
+<HTML>
+	<HEAD>
+		<TITLE>Initialize Database</TITLE>
+	</HEAD>
+	<BODY >
+		<H1>Database Initialization</H1>
+		
+		<table border="1" width="100%">
+			<%	@test.results.keys.each do  |tname| %>
+			<tr valign="top">
+					<td width="200"><%= tname %></td>
+					<td ><%= @test.results[tname] %></td>
+			</tr>			
+			<% end %>
+		</table>
+	</BODY>
+</HTML>

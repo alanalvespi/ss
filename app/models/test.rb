@@ -256,4 +256,169 @@ class Test
     return instructions
   end
   
+  def delete_database()
+    tables = ['policyfunds',
+              'currencies',
+              'strategies_markets',
+              'policies',
+              'clients',
+              'plantype_strategies',
+              'plantypestrategyfunds',
+              'plantypes',
+              'plantypefunds',
+              'markets',
+              'strategies',
+              'companies',
+              'products'
+             ]
+
+    # Delete all data from all tables...             
+    #ActiveRecord::Base.transaction do
+      tables.each do |tab|
+        ActiveRecord::Base.connection.execute("Delete from #{tab};")
+      end
+    #end             
+      @results = {'result'=> "Deleted all rows from #{tables.join(', ')}"}
+                 
+  end
+  
+  def init_database(filename)
+    delete_database()
+    @results = {}
+                    
+    no_markets = 0
+    # Load Excel
+    now = Date.today()
+    sheets = _getExcel(filename)
+    sheets.keys.each do |sname|
+      sheet = sheets[sname]
+      @results[sname] = 0 unless @results.has_key?(sname)
+      puts "Table #{sname}"
+      
+      begin 
+        case sname
+  
+        when 'markets'
+          sheet.each do |row|
+            m = Market.new()
+            row.keys.each { |n| m[n] = row[n] unless (n[0] == '_') }
+            m.created_at = now
+            m.updated_at = now
+            m.save
+            @results[sname] = @results[sname] + 1
+          end
+  
+        when 'companies'
+          sheet.each do |row|
+            m = Company.new()
+            row.keys.each { |n| m[n] = row[n] unless (n[0] == '_') }
+            m.created_at = now
+            m.updated_at = now
+            m.save
+            @results[sname] = @results[sname] + 1
+          end
+          
+        when 'products'
+          sheet.each do |row|
+            m = Product.new()
+            row.keys.each { |n| m[n] = row[n] unless (n[0] == '_') }
+            m.save
+            @results[sname] = @results[sname] + 1
+          end
+          
+        when 'plantypes'
+          sheet.each do |row|
+            m = Plantype.new()
+            row.keys.each { |n| m[n] = row[n] unless (n[0] == '_') }
+            m.save
+            @results[sname] = @results[sname] + 1
+          end
+          
+        when 'plantypefunds'
+          sheet.each do |row|
+            m = Plantypefunds.new()
+            row.keys.each { |n| m[n] = row[n] unless (n[0] == '_') }
+            m.save
+            @results[sname] = @results[sname] + 1
+          end
+          
+        when 'strategies'
+          sheet.each do |row|
+            m = Strategy.new()
+            row.keys.each { |n| m[n] = row[n] unless (n[0] == '_') }
+            m.save
+            @results[sname] = @results[sname] + 1
+          end
+          
+        when 'plantype_strategies'
+          sheet.each do |row|
+            m = Plantype_strategy.new()
+            row.keys.each { |n| m[n] = row[n] unless (n[0] == '_') }
+            m.save
+            @results[sname] = @results[sname] + 1
+          end
+          
+        when 'plantypestrategyfunds'
+          sheet.each do |row|
+            m = Plantypestrategyfunds.new()
+            row.keys.each { |n| m[n] = row[n] unless (n[0] == '_') }
+            m.save
+            @results[sname] = @results[sname] + 1
+          end
+          
+        end
+      rescue
+        @results['errors'] = "Error inserting #{@results[sname] + 1} element into #{sname}"
+        @results['Reason'] = "#{$!}"
+        puts  @results['errors'] 
+      end
+      
+    end              
+  end
+
+     
+
+  def _getExcel(filename)
+    # json is not any faster than excel...
+    sheets = {}
+    
+
+    book = Excel.new(filename)
+    book.sheets.each do | sname |
+      rows =[]
+      book.default_sheet = sname
+      first_row = book.first_row
+      last_row  = book.last_row
+      from      = book.first_column_as_letter
+      to        = book.last_column_as_letter
+      first_cell = nil
+      colheads = nil
+      # Loop over all Rows...
+      first_row.upto(last_row) do |row|
+        first_cell = book.cell(row,'A')
+        next unless (first_cell)
+        
+        unless (colheads) then
+          colheads = {}
+          from.upto(to) do |col|
+            colheads[col] = book.cell(row,col)
+          end
+          next          
+        end
+        
+        vals ={}
+        from.upto(to) do |col|
+          head = colheads[col]
+          value = book.cell(row,col)
+          vals[head] = value
+        end
+        rows.push(vals)
+      end
+      sheets[sname] = rows      
+    end
+    book.get_workbook.get_io.close  # Added close to Excel workbook
+    return sheets
+  end
+
+  
 end
