@@ -1,0 +1,38 @@
+output redirected to ../../public/data/feeders/client_update/2012/10/15/client_update_log.txt
+Using database database: sentrysystem, :user => root, :password => , :host => localhost, :port => 
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for 30453 in Policy CL10000216, on row 11
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0220 in Policy PM10000220, on row 27
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0236 in Policy PM10000236, on row 28
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0329 in Policy PM10000329, on row 29
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0439 in Policy PM10000439, on row 30
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0482 in Policy PM10000482, on row 31
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0734 in Policy PM10000734, on row 32
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0755 in Policy PM10000755, on row 33
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for I0825 in Policy PM10000825, on row 34
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for 23056 in Policy QN10000022, on row 39
+
+E-RL360UpdateClient:NoIsin, Unknown Isin for 23056 in Policy QN10000022, on row 47
+              Process Sumary
+=======================================
+Number of rows read              : 86
+Number of rows with errors       : 11
+Number of clients inserted       : 0
+Number of plantypes inserted     : 0
+Number of plantypes updated      : 0
+Number of policies inserted      : 0
+Number of policies updated       : 72
+Number of plantypefunds inserted : 0
+Number of plantypefunds updated  : 72
+Number of policyfunds inserted   : 0
+Number of policyfunds updated    : 72
+=======================================

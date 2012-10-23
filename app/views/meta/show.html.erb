@@ -1,0 +1,30 @@
+<HTML>
+	<HEAD>
+		<TITLE>Meta Data</TITLE>
+	</HEAD>
+	<BODY >
+		<H1>Meta Data For Table <%= @tablename %></H1>
+		<% cols = []
+			@meta.keys.each do  |cname| 
+				col = @meta[cname] 
+				cols[col['cno'] - 1] = col
+			end
+		%>
+		<table border="1" width="100%">
+			<thead>
+				<tr>
+					<% cols[0].keys.each() do |k| %>
+						<th><%= k %></th>
+					<% end %>
+				</tr>
+			</thead>
+			<% cols.each() do |c| %>
+				<tr valign="top">
+				<% c.keys.each() do |k| %>
+					<td><%= c[k] %></td>
+				<% end %>
+				</tr>			
+			<% end %>
+		</table>
+	</BODY>
+</HTML>

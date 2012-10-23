@@ -29,6 +29,10 @@ Ss::Application.routes.draw do
 
   resources :companies
 
+  # Special Routes for Tables
+  match "/meta"                        => "meta#all"
+  match "/meta/:id"                    => "meta#show"
+  
   
   # Special Routes for Feeders
   match "/feeder/:id"                   => "feeder#show"

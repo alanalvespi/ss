@@ -1,0 +1,5 @@
+output redirected to ../../public/data/feeders/loadfunds/2012/10/11/RL360loadfunds_log.txt
+Using database database: sentrysystem, :user => root, :password => , :host => localhost, :port => 
+C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/roo-1.10.1/lib/roo/excel.rb:115:in `initialize': file data/RL360/Quantum/RL360_Funds_#{year}#{month}#{day}.xls does not exist (IOError)
+	from RL360_loadfunds.rb:109:in `new'
+	from RL360_loadfunds.rb:109:in `<main>'

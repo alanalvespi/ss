@@ -1,0 +1,408 @@
+package Tables
+{
+	import com.sva.components.JRWDataGrid;
+	
+	import flash.events.Event;
+	import flash.events.MouseEvent;
+	import flash.net.URLLoader;
+	import flash.net.URLRequest;
+	import flash.net.URLRequestHeader;
+	import flash.net.URLRequestMethod;
+	import flash.utils.Dictionary;
+	
+	import mx.collections.ArrayList;
+	import mx.containers.TitleWindow;
+	import mx.controls.dataGridClasses.DataGridColumn;
+	import mx.core.ClassFactory;
+	import mx.managers.PopUpManager;
+	
+	import spark.components.Button;
+	import spark.components.Form;
+	import spark.components.FormItem;
+	import spark.components.HGroup;
+	import spark.components.TextInput;
+	
+	
+	public class JRW<%= @tablename %> 
+	{
+		// Class Variables
+		static private var ldr_getAll:URLLoader = new URLLoader();
+		static public  var restSingularName:String = '<%= @tablename %>'; 
+		static public  var restPluralName:String   = '<%= @routename.downcase %>'; 
+		static public  var UrlGetAll:String = sva.BASEURL + '/' + restPluralName + '.json';
+		static public  var UrlUpdate:String = sva.BASEURL + '/' + restPluralName + '/';
+		static public  var UrlAdd:String    = sva.BASEURL + '/' + restPluralName;
+		
+
+		[Bindable]
+		static public var Instances:Object = new Object();
+		
+		[Bindable]
+		static public var Rows:ArrayList = new ArrayList();
+		
+		static public function Load():void 
+		{
+			ldr_getAll.addEventListener(Event.COMPLETE , ldr_getAll_complete );
+			ldr_getAll.load(new URLRequest(UrlGetAll));
+		}
+		
+		static private function ldr_getAll_complete(e:Event):void 
+		{
+			var rows:Array = JSON.parse(e.currentTarget.data) as Array;
+			Rows.removeAll();
+			for each (var r:Object in rows) 
+			{
+				var c:JRW<%= @tablename %>;
+				var pkey:String = r[Meta['PrimaryKey']]; 
+				if ( pkey in Instances) 
+				{ 
+					c = Instances[pkey];
+					c.update(r);
+				} else {
+					c = new JRW<%= @tablename %>(r);	
+				}
+			}
+		}
+		
+		public static function MakeDateFromJson(ds:String):Date 
+		{
+			if (ds == null) return null ;
+			var datestring:String = ds.replace(/-/g,"/");
+			datestring = datestring.replace("T", " ");
+			datestring = datestring.replace("Z", " GMT");
+			var n:Number = Date.parse(datestring);
+			var date:Date = new Date(n);
+			return date;
+		}
+		
+		private static function onUpdateComplete(e:Event):void
+		{
+			// Values where stored in database...
+			trace("<%= @tablename %> update Complete");
+			// var loader:URLLoader = URLLoader(e.target);
+			// if (loader.data == '') return;
+		}
+		
+		private static function onDeleteComplete(e:Event):void
+		{
+			// Values where stored in database...
+			trace("<%= @tablename %> Delete Complete");
+			// var loader:URLLoader = URLLoader(e.target);
+			// if (loader.data == '') return;
+		}
+		
+		private static var twAddPopUp:TitleWindow;
+		public  static var AddObject:Object;
+		
+		public static function addPopUp(grid:JRWDataGrid):void
+		{
+			AddObject = new Object();
+			twAddPopUp= PopUpManager.createPopUp(grid, TitleWindow, false) as TitleWindow;
+			twAddPopUp.title = 'New <%= @tablename %>';
+			var form:Form = new Form();
+			var colarray:Array = new Array();
+			for each (var fld:Object in Meta.Fields) {
+				if (fld['col']) {
+					colarray[fld.cno - 1] = fld;
+				}
+			}
+			
+			// Okay now for each field in colno order....
+			for each (fld in colarray) {
+				if (fld.edit == 'true') {
+					var item:FormItem = new FormItem();
+					item.label = fld.col;
+					var ti:TextInput = new TextInput();
+					ti.prompt = fld.col;
+					ti.addEventListener(Event.CHANGE,PopUpValueChange);
+					item.addElement(ti);
+					form.addElement(item);
+				}
+			}
+			twAddPopUp.addElement(form);
+			var hg:HGroup = new HGroup();
+			hg.verticalAlign = 'middle';
+			hg.horizontalAlign = 'center';
+			hg.percentWidth=100;
+			
+			var s:Button = new Button();
+			s.label = 'Save';
+			s.addEventListener(MouseEvent.CLICK,handleSaveClick);
+			hg.addElement(s);
+			
+			var c:Button = new Button();
+			c.label = 'Cancel';
+			c.addEventListener(MouseEvent.CLICK,handleCancelClick);
+			hg.addElement(c);
+			
+			twAddPopUp.addElement(hg);
+			PopUpManager.centerPopUp(twAddPopUp);
+			
+		}
+		
+		public static function PopUpValueChange(e:Event):void 
+		{
+			var fname:String = e.currentTarget.accessibilityName;
+			var value:String = e.currentTarget.text;
+			AddObject[fname]=e.currentTarget.text;
+
+			trace('Changed '+fname+' to '+value);
+		}
+		
+		public static function handleSaveClick(e:MouseEvent):void 
+		{
+			
+			PopUpManager.removePopUp(twAddPopUp);
+			twAddPopUp = null;
+			AddCompany(AddObject);
+			//trace ('Save:',AddObject);
+		}
+		
+		
+		public static function handleCancelClick(e:MouseEvent):void 
+		{
+			PopUpManager.removePopUp(twAddPopUp);
+			twAddPopUp = null;
+		}
+		
+		public static function AddCompany(values:Object):void
+		{
+			var loader:URLLoader = new URLLoader();
+			var req:URLRequest = new URLRequest();
+			req.url = UrlAdd + '.json';
+			loader.addEventListener(Event.COMPLETE, onAddComplete);
+			
+			
+			req.data = JSON.stringify({"<%= @tablename.downcase %>":values});
+			
+			req.method = URLRequestMethod.POST;															
+			//req.requestHeaders.push(new URLRequestHeader("X-HTTP-Method-Override", URLRequestMethod.PUT));															
+			req.requestHeaders.push(new URLRequestHeader("Content-type", 'application/json'));															
+			loader.load(req);
+		}
+		
+		public static function onAddComplete(e:Event):void
+		{
+			trace("add <%= @tablename %> Complete");
+			var result:Object = JSON.parse(e.currentTarget.data) ;
+			new JRW<%= @tablename %>(result);
+		}
+		
+		
+		public static function GetDataGridColumns():Array { return MakeGridColumns(Meta.Fields); };
+		public static function MakeGridColumns (flds:Object):Array
+		{
+			var cols:Array = new Array();
+			var col:DataGridColumn;
+			var fld:Object;
+			var fldname:String;
+			var cno:int;
+			var c:ClassFactory;
+			
+			// build an array of flds in column order....
+			var colarray:Array = new Array();
+			for (fldname in flds) {
+				fld = flds[fldname];
+				if (fld['col']) {
+					colarray[fld.cno - 1] = fld;
+				}
+			}
+			
+			// Okay now for each field in colno order....
+			for each (fld in colarray) {
+				if (fld['col']) {
+					//					if (fld.type == 'Date') {
+					//						col = new DateColumn(fld.name);
+					//						col.headerText = fld.col;
+					//						col.editable   = fld.edit;
+					//						cols.addItem(col);
+					//					// } else if (fld.type == 'Boolean') {
+					//						//col.itemRenderer = new ClassFactory(CheckBox);
+					//					} else {
+					
+					col = new DataGridColumn();
+					col.headerText = fld.col;
+					col.dataField  = fld.name;
+					col.editable   = (fld.edit == 'true');
+					//						if (fld.type == 'Date') {
+					//							c = new ClassFactory();
+					//							//c.properties = {data: "data."+fld.name};
+					//							c.generator = DateField;
+					//							col.rendererIsEditor = true; 
+					//							col.itemRenderer = c;
+					//						} else if (fld.type == 'Boolean') {
+					//							c = new ClassFactory();
+					//							c.properties = {data: fld.name};
+					//							c.generator = CheckBox;
+					//							col.itemRenderer = c;
+					//							col.rendererIsEditor = true; 
+					//						}
+					cols.push(col);
+					//					}
+				}
+			}
+			
+			return cols;
+		} 
+		
+		
+		// Meta Information 
+		static public var Meta:Object =
+			{"Fields":
+				
+	<%	pkey = ''
+		d1 = '{'
+		@meta.keys.each do  |cname| 
+		col = @meta[cname] 
+		pkey = cname if (col['primary'] == true) %>
+		
+		<%= d1 %>"<%= col['name'] %>":
+			<%  d1 = ','
+			    delim = '{'
+				col.keys.each() do |k| %>
+					<%= delim %>'<%= k %>':'<%= col[k] %>'
+			<% 		delim = ',' 
+			   end %>
+		                }
+	<% end %>
+		}
+		,"Name": "<%= @tablename %>"
+		,"PrimaryKey" : "<%= pkey %>"
+		};
+		
+		private var mdtlist:Array = new Array();
+		
+		// Instance variables
+	<%	pkey = ''
+		@meta.keys.each do  |cname| 
+		col = @meta[cname] 
+		pkey = cname if (col['primary'] == true)
+		%>
+		public var _<%= col['name'] %>:<%= col['asType'] %>;
+	<% end %>
+		
+		// Getters
+	<%	@meta.keys.each do  |cname| 
+		col = @meta[cname] 
+		%>
+		public function get <%= col['name'] %>():<%= col['asType'] %> { return _<%= col['name'] %>;};
+	<% end %>
+		
+		// Setters
+	<%	@meta.keys.each do  |cname| 
+		col = @meta[cname] 
+		%>
+		public function set <%= col['name'] %>(value:<%= col['asType'] %>):void { changeField('<%= col['name'] %>',value);};
+	<% end %>
+		
+		public function JRW<%= @tablename %>(values:Object)
+		{
+			for (var k:String in values) 
+			{
+				var i:String = '_' + k;
+				if (Meta['Fields'][k]['asType'] == 'Date')
+				{
+					this[i] = MakeDateFromJson(values[k])
+				} else {
+					this[i] = values[k];	
+				}				
+			};
+			Instances[this.primaryKeyValue()] = this;
+			Rows.addItem(this);
+		}
+		
+		public function changeField(name:String, value:*):void 
+		{
+			var internal_name:String = '_' + name; 
+			if (this[internal_name] != value) {
+				this[internal_name] = value;
+				this.mdtlist.push(name);
+			}
+		}
+		
+		public function primaryKey():String
+		{
+			return "<%= pkey %>";
+		}
+
+		public function primaryKeyValue():Object
+		{
+			return <%= pkey %>;
+		}
+		
+		public function update(r:Object):void 
+		{
+			for (var k:String in r) 
+			{
+				if (this[k] != r[k]) {
+					Rows.itemUpdated(this,k,this[k],r[k]);
+					mdtlist.push(k);
+					this[k] = r[k];
+				}
+			};
+		}		
+		
+		public function is_modified():Boolean
+		{
+			return (mdtlist.length != 0);
+		}
+		
+		private function build_update_message():String {
+			var obj:Object = new Object();
+			obj[primaryKey()] = primaryKeyValue();
+			while (mdtlist.length > 0) {
+				var fn:String = mdtlist.pop();
+				obj[fn] = this[fn];
+			}
+			return JSON.stringify({"<%= @tablename.downcase %>":obj});
+		}
+		
+		public function save():void 
+		{
+			if (mdtlist.length < 1) return ;
+			
+			var loader:URLLoader = new URLLoader();
+			var req:URLRequest = new URLRequest();
+			req.url = UrlUpdate + primaryKeyValue() + '.json';
+			loader.addEventListener(Event.COMPLETE, onUpdateComplete);
+			
+			
+			req.data = build_update_message();
+			
+			req.method = URLRequestMethod.POST;															
+			req.requestHeaders.push(new URLRequestHeader("X-HTTP-Method-Override", URLRequestMethod.PUT));															
+			req.requestHeaders.push(new URLRequestHeader("Content-type", 'application/json'));															
+			loader.load(req);
+		}
+		
+		public function del():void 
+		{
+			var loader:URLLoader = new URLLoader();
+			var req:URLRequest = new URLRequest();
+			req.url = UrlUpdate + primaryKeyValue() + '.json';
+			loader.addEventListener(Event.COMPLETE, onDeleteComplete);
+			
+			
+			req.data = "dummy data";
+			
+			req.method = URLRequestMethod.POST;															
+			req.requestHeaders.push(new URLRequestHeader("X-HTTP-Method-Override", URLRequestMethod.DELETE));															
+			loader.load(req);
+			
+			// Delete Item from Storages....
+			delete Instances[primaryKeyValue()];
+			Rows.removeItem(this);
+		}
+		
+		private function NonMutableField(fname:String):void {
+			throw ("E-NonMutableField, Attempt to modify "+fname+" which is not mutable");
+		}
+		
+		public function toString():String
+		{
+			return 'JRW<%= @tablename %>('+primaryKeyValue().to_string()+')'
+		}
+	}
+}
+
+
