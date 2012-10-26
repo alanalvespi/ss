@@ -2,7 +2,7 @@ class PlantypestrategyfundsController < ApplicationController
   # GET /plantypestrategyfunds
   # GET /plantypestrategyfunds.json
   def index
-    @plantypestrategyfunds = Plantypestrategyfunds.all
+    @plantypestrategyfunds = Plantypestrategyfund.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class PlantypestrategyfundsController < ApplicationController
   # GET /plantypestrategyfunds/1
   # GET /plantypestrategyfunds/1.json
   def show
-    @plantypestrategyfund = Plantypestrategyfunds.find(params[:id])
+    @plantypestrategyfund = Plantypestrategyfund.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class PlantypestrategyfundsController < ApplicationController
   # GET /plantypestrategyfunds/new
   # GET /plantypestrategyfunds/new.json
   def new
-    @plantypestrategyfund = Plantypestrategyfunds.new
+    @plantypestrategyfund = Plantypestrategyfund.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +34,13 @@ class PlantypestrategyfundsController < ApplicationController
 
   # GET /plantypestrategyfunds/1/edit
   def edit
-    @plantypestrategyfund = Plantypestrategyfunds.find(params[:id])
+    @plantypestrategyfund = Plantypestrategyfund.find(params[:id])
   end
 
   # POST /plantypestrategyfunds
   # POST /plantypestrategyfunds.json
   def create
-    @plantypestrategyfund = Plantypestrategyfunds.new(params[:plantypestrategyfund])
+    @plantypestrategyfund = Plantypestrategyfund.new(params[:plantypestrategyfund])
 
     respond_to do |format|
       if @plantypestrategyfund.save
@@ -56,7 +56,7 @@ class PlantypestrategyfundsController < ApplicationController
   # PUT /plantypestrategyfunds/1
   # PUT /plantypestrategyfunds/1.json
   def update
-    @plantypestrategyfund = Plantypestrategyfunds.find(params[:id])
+    @plantypestrategyfund = Plantypestrategyfund.find(params[:id])
 
     respond_to do |format|
       if @plantypestrategyfund.update_attributes(params[:plantypestrategyfund])
@@ -72,7 +72,7 @@ class PlantypestrategyfundsController < ApplicationController
   # DELETE /plantypestrategyfunds/1
   # DELETE /plantypestrategyfunds/1.json
   def destroy
-    @plantypestrategyfund = Plantypestrategyfunds.find(params[:id])
+    @plantypestrategyfund = Plantypestrategyfund.find(params[:id])
     @plantypestrategyfund.destroy
 
     respond_to do |format|

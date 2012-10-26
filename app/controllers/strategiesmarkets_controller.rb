@@ -1,8 +1,8 @@
-class StrategiesMarketsController < ApplicationController
+class StrategiesmarketsController < ApplicationController
   # GET /strategies_markets
   # GET /strategies_markets.json
   def index
-    @strategies_markets = StrategiesMarket.all
+    @strategies_markets = Strategiesmarket.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class StrategiesMarketsController < ApplicationController
   # GET /strategies_markets/1
   # GET /strategies_markets/1.json
   def show
-    @strategies_market = StrategiesMarket.find(params[:id])
+    @strategies_market = Strategiesmarket.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class StrategiesMarketsController < ApplicationController
   # GET /strategies_markets/new
   # GET /strategies_markets/new.json
   def new
-    @strategies_market = StrategiesMarket.new
+    @strategies_market = Strategiesmarket.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +34,13 @@ class StrategiesMarketsController < ApplicationController
 
   # GET /strategies_markets/1/edit
   def edit
-    @strategies_market = StrategiesMarket.find(params[:id])
+    @strategies_market = Strategiesmarket.find(params[:id])
   end
 
   # POST /strategies_markets
   # POST /strategies_markets.json
   def create
-    @strategies_market = StrategiesMarket.new(params[:strategies_market])
+    @strategies_market = Strategiesmarket.new(params[:strategies_market])
 
     respond_to do |format|
       if @strategies_market.save
@@ -56,7 +56,7 @@ class StrategiesMarketsController < ApplicationController
   # PUT /strategies_markets/1
   # PUT /strategies_markets/1.json
   def update
-    @strategies_market = StrategiesMarket.find(params[:id])
+    @strategies_market = Strategiesmarket.find(params[:id])
 
     respond_to do |format|
       if @strategies_market.update_attributes(params[:strategies_market])
@@ -72,7 +72,7 @@ class StrategiesMarketsController < ApplicationController
   # DELETE /strategies_markets/1
   # DELETE /strategies_markets/1.json
   def destroy
-    @strategies_market = StrategiesMarket.find(params[:id])
+    @strategies_market = Strategiesmarket.find(params[:id])
     @strategies_market.destroy
 
     respond_to do |format|

@@ -1,37 +1,48 @@
-package Tables
+package com.westrick.sva.tables
 {
-	import com.sva.components.JRWDataGrid;
+	import com.westrick.restx.TableGrid;
+	import com.westrick.restx.TableSelector;
+	
 	
 	import flash.events.Event;
+	import flash.events.EventDispatcher;
+	import flash.events.IEventDispatcher;
 	import flash.events.MouseEvent;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	import flash.net.URLRequestHeader;
 	import flash.net.URLRequestMethod;
 	import flash.utils.Dictionary;
+	import flash.utils.getDefinitionByName;
 	
 	import mx.collections.ArrayList;
 	import mx.containers.TitleWindow;
-	import mx.controls.dataGridClasses.DataGridColumn;
 	import mx.core.ClassFactory;
 	import mx.managers.PopUpManager;
 	
+	import spark.components.Application;
 	import spark.components.Button;
+	import spark.components.CheckBox;
+	import spark.components.DataGrid;
 	import spark.components.Form;
 	import spark.components.FormItem;
 	import spark.components.HGroup;
 	import spark.components.TextInput;
+	import spark.components.gridClasses.ComboBoxGridItemEditor;
+	import spark.components.gridClasses.GridColumn;
 	
 	
-	public class JRW<%= @tablename %> 
+	
+	public class <%= @tablename %> 
 	{
 		// Class Variables
+		// Class Variables
+		static public  var BASEURL:String;
 		static private var ldr_getAll:URLLoader = new URLLoader();
-		static public  var restSingularName:String = '<%= @tablename %>'; 
-		static public  var restPluralName:String   = '<%= @routename.downcase %>'; 
-		static public  var UrlGetAll:String = sva.BASEURL + '/' + restPluralName + '.json';
-		static public  var UrlUpdate:String = sva.BASEURL + '/' + restPluralName + '/';
-		static public  var UrlAdd:String    = sva.BASEURL + '/' + restPluralName;
+		static public  var RestXName:String   = '<%= @routename.downcase %>'; 
+		static public  function UrlGetAll():String { return BASEURL + '/' + RestXName + '.json';}
+		static public  function UrlUpdate():String { return BASEURL + '/' + RestXName + '/';}
+		static public  function UrlAdd():String    { return BASEURL + '/' + RestXName;}
 		
 
 		[Bindable]
@@ -40,10 +51,11 @@ package Tables
 		[Bindable]
 		static public var Rows:ArrayList = new ArrayList();
 		
-		static public function Load():void 
+		static public function Load(baseurl:String):void 
 		{
+			BASEURL = baseurl;
 			ldr_getAll.addEventListener(Event.COMPLETE , ldr_getAll_complete );
-			ldr_getAll.load(new URLRequest(UrlGetAll));
+			ldr_getAll.load(new URLRequest(UrlGetAll()));
 		}
 		
 		static private function ldr_getAll_complete(e:Event):void 
@@ -52,14 +64,14 @@ package Tables
 			Rows.removeAll();
 			for each (var r:Object in rows) 
 			{
-				var c:JRW<%= @tablename %>;
-				var pkey:String = r[Meta['PrimaryKey']]; 
+				var c:<%= @tablename %>;
+				var pkey:String = r[Meta[PrimaryKey()]]; 
 				if ( pkey in Instances) 
 				{ 
 					c = Instances[pkey];
 					c.update(r);
 				} else {
-					c = new JRW<%= @tablename %>(r);	
+					c = new <%= @tablename %>(r);	
 				}
 			}
 		}
@@ -94,7 +106,7 @@ package Tables
 		private static var twAddPopUp:TitleWindow;
 		public  static var AddObject:Object;
 		
-		public static function addPopUp(grid:JRWDataGrid):void
+		public static function addPopUp(grid:DataGrid):void
 		{
 			AddObject = new Object();
 			twAddPopUp= PopUpManager.createPopUp(grid, TitleWindow, false) as TitleWindow;
@@ -154,7 +166,7 @@ package Tables
 			
 			PopUpManager.removePopUp(twAddPopUp);
 			twAddPopUp = null;
-			AddCompany(AddObject);
+			Add(AddObject);
 			//trace ('Save:',AddObject);
 		}
 		
@@ -165,11 +177,11 @@ package Tables
 			twAddPopUp = null;
 		}
 		
-		public static function AddCompany(values:Object):void
+		public static function Add(values:Object):void
 		{
 			var loader:URLLoader = new URLLoader();
 			var req:URLRequest = new URLRequest();
-			req.url = UrlAdd + '.json';
+			req.url = UrlAdd() + '.json';
 			loader.addEventListener(Event.COMPLETE, onAddComplete);
 			
 			
@@ -185,15 +197,15 @@ package Tables
 		{
 			trace("add <%= @tablename %> Complete");
 			var result:Object = JSON.parse(e.currentTarget.data) ;
-			new JRW<%= @tablename %>(result);
+			new <%= @tablename %>(result);
 		}
 		
 		
-		public static function GetDataGridColumns():Array { return MakeGridColumns(Meta.Fields); };
-		public static function MakeGridColumns (flds:Object):Array
+		public static function GetDataGridColumns():ArrayList { return MakeGridColumns(Meta.Fields); };
+		public static function MakeGridColumns (flds:Object):ArrayList
 		{
-			var cols:Array = new Array();
-			var col:DataGridColumn;
+			var cols:ArrayList = new ArrayList();
+			var col:GridColumn;
 			var fld:Object;
 			var fldname:String;
 			var cno:int;
@@ -211,51 +223,32 @@ package Tables
 			// Okay now for each field in colno order....
 			for each (fld in colarray) {
 				if (fld['col']) {
-					//					if (fld.type == 'Date') {
-					//						col = new DateColumn(fld.name);
-					//						col.headerText = fld.col;
-					//						col.editable   = fld.edit;
-					//						cols.addItem(col);
-					//					// } else if (fld.type == 'Boolean') {
-					//						//col.itemRenderer = new ClassFactory(CheckBox);
-					//					} else {
-					
-					col = new DataGridColumn();
-					col.headerText = fld.col;
+					col = new GridColumn();
+					col.headerText = fld.col_name;
 					col.dataField  = fld.name;
 					col.editable   = (fld.edit == 'true');
-					//						if (fld.type == 'Date') {
-					//							c = new ClassFactory();
-					//							//c.properties = {data: "data."+fld.name};
-					//							c.generator = DateField;
-					//							col.rendererIsEditor = true; 
-					//							col.itemRenderer = c;
-					//						} else if (fld.type == 'Boolean') {
-					//							c = new ClassFactory();
-					//							c.properties = {data: fld.name};
-					//							c.generator = CheckBox;
-					//							col.itemRenderer = c;
-					//							col.rendererIsEditor = true; 
-					//						}
-					cols.push(col);
-					//					}
+					cols.addItem(col);
+					if (fld.referenced_class) {
+						var cls:Object		= getDefinitionByName('com.westrick.sva.tables.' + fld.referenced_class);  
+						col.labelFunction 	= cls.LabelFunction;
+						col.itemEditor 		= cls.ProductSelector();
+					}
 				}
-			}
-			
+			}			
 			return cols;
 		} 
-		
 		
 		// Meta Information 
 		static public var Meta:Object =
 			{"Fields":
-				
+
 	<%	pkey = ''
+		display = ''
 		d1 = '{'
 		@meta.keys.each do  |cname| 
 		col = @meta[cname] 
-		pkey = cname if (col['primary'] == true) %>
-		
+		pkey = cname if (col['primary'] == true) 
+		display = cname if (col['display'] == '#') %>
 		<%= d1 %>"<%= col['name'] %>":
 			<%  d1 = ','
 			    delim = '{'
@@ -269,6 +262,29 @@ package Tables
 		,"Name": "<%= @tablename %>"
 		,"PrimaryKey" : "<%= pkey %>"
 		};
+		
+		static public function PrimaryKey():String
+		{
+			return "<%= pkey %>";
+		}
+
+		static public function ProductSelector():ClassFactory
+		{
+			var productRenderer:ClassFactory = new ClassFactory(TableSelector);
+			productRenderer.properties = { dataProvider: Rows, labelField: '<%= display %>', pkey: PrimaryKey() };
+			return productRenderer;
+		}
+		
+		static public function LabelFunction(item:Object, column:GridColumn):String
+		{
+			var id:int = item[column.dataField];
+			var lbl:String = '';
+			if (id in Instances) {
+				lbl = Instances[id].<%= display %>;
+			}
+			return lbl;			
+		}
+		
 		
 		private var mdtlist:Array = new Array();
 		
@@ -295,7 +311,7 @@ package Tables
 		public function set <%= col['name'] %>(value:<%= col['asType'] %>):void { changeField('<%= col['name'] %>',value);};
 	<% end %>
 		
-		public function JRW<%= @tablename %>(values:Object)
+		public function <%= @tablename %>(values:Object)
 		{
 			for (var k:String in values) 
 			{
@@ -320,11 +336,6 @@ package Tables
 			}
 		}
 		
-		public function primaryKey():String
-		{
-			return "<%= pkey %>";
-		}
-
 		public function primaryKeyValue():Object
 		{
 			return <%= pkey %>;
@@ -349,7 +360,7 @@ package Tables
 		
 		private function build_update_message():String {
 			var obj:Object = new Object();
-			obj[primaryKey()] = primaryKeyValue();
+			obj[PrimaryKey()] = primaryKeyValue();
 			while (mdtlist.length > 0) {
 				var fn:String = mdtlist.pop();
 				obj[fn] = this[fn];
@@ -363,7 +374,7 @@ package Tables
 			
 			var loader:URLLoader = new URLLoader();
 			var req:URLRequest = new URLRequest();
-			req.url = UrlUpdate + primaryKeyValue() + '.json';
+			req.url = UrlUpdate() + primaryKeyValue() + '.json';
 			loader.addEventListener(Event.COMPLETE, onUpdateComplete);
 			
 			
@@ -379,7 +390,7 @@ package Tables
 		{
 			var loader:URLLoader = new URLLoader();
 			var req:URLRequest = new URLRequest();
-			req.url = UrlUpdate + primaryKeyValue() + '.json';
+			req.url = UrlUpdate() + primaryKeyValue() + '.json';
 			loader.addEventListener(Event.COMPLETE, onDeleteComplete);
 			
 			
@@ -400,7 +411,7 @@ package Tables
 		
 		public function toString():String
 		{
-			return 'JRW<%= @tablename %>('+primaryKeyValue().to_string()+')'
+			return '<%= @tablename %>('+primaryKeyValue().to_string()+')'
 		}
 	}
 }

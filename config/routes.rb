@@ -7,11 +7,13 @@ Ss::Application.routes.draw do
 
   resources :markets
 
+  resources :monitoredmarkets
+
   resources :plantypefunds
 
   resources :policyfunds
 
-  resources :strategies_markets
+  resources :strategiesmarkets
 
   resources :policies
 
